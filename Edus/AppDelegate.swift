@@ -7,15 +7,100 @@
 //
 
 import UIKit
+import Parse
+import Bolts
+import ParseUI
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var parseLoginHelper: ParseLoginHelper!
+    
+
+    override init() {
+        super.init()
+        
+        parseLoginHelper = ParseLoginHelper {[unowned self] user, error in
+            // Initialize the ParseLoginHelper with a callback
+            if let error = error {
+                // 1
+                ErrorHandling.defaultErrorHandler(error)
+            } else  if let user = user {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                //creation
+                let classNavEntry = storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry")
+                //presentation
+                self.window?.rootViewController!.presentViewController(classNavEntry, animated:true, completion:nil)
+            }
+        }
+    }
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
+            clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
+        
+        
+        //LOG IN STUFF
+        let user = PFUser.currentUser()
+        
+        let startViewController: UIViewController
+        
+        if (user != nil) {
+            // 3
+            // if we have a user, set the ClassNavEntry to be the initial View Controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //problem may arise here
+            startViewController =
+                storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry") as! UINavigationController
+        } else {
+            // 4
+            // Otherwise set the LoginViewController to be the first
+            let loginViewController = PFLogInViewController()
+            loginViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten]
+            loginViewController.delegate = parseLoginHelper
+            loginViewController.signUpController?.delegate = parseLoginHelper
+            startViewController = loginViewController
+            
+            let roseColor = UIColor(red: 210/255, green: 77/255, blue: 87/255, alpha: 1)
+            loginViewController.view.backgroundColor = roseColor
+            let logoView = UIImageView(image: UIImage(named: "logInLogo.png"))
+            loginViewController.logInView?.logo = logoView
+            
+            loginViewController.signUpController?.view.backgroundColor = roseColor
+            loginViewController.signUpController?.signUpView?.logo = nil
+        }
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = startViewController
+        self.window?.makeKeyAndVisible()
+        
+        
+        //PFUser.logInWithUsername("test", password: "test")
+        
+        if let user = PFUser.currentUser() {
+            print("Log in successful")
+        } else {
+            print("No logged in user :(")
+        }
+        //END LOGIN
+        
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        //DETERMINE SECURITY ACCESS
+        let acl = PFACL()
+        acl.setPublicReadAccess(true)
+        PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
+        
+        
+        
         return true
     }
 

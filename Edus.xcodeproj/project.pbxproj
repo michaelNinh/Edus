@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE601640052A399FA99A441E /* Pods_Edus.framework */; };
 		91374D421BF190D20052157B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D411BF190D20052157B /* AppDelegate.swift */; };
 		91374D441BF190D20052157B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D431BF190D20052157B /* ViewController.swift */; };
 		91374D471BF190D20052157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91374D451BF190D20052157B /* Main.storyboard */; };
@@ -14,6 +15,30 @@
 		91374D4C1BF190D20052157B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91374D4A1BF190D20052157B /* LaunchScreen.storyboard */; };
 		91374D571BF190D20052157B /* EdusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D561BF190D20052157B /* EdusTests.swift */; };
 		91374D621BF190D20052157B /* EdusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D611BF190D20052157B /* EdusUITests.swift */; };
+		91374D711BF191110052157B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D6F1BF191110052157B /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		91374D721BF191110052157B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D701BF191110052157B /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		91374D741BF1914D0052157B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D731BF1914D0052157B /* AudioToolbox.framework */; };
+		91374D761BF191550052157B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D751BF191550052157B /* CFNetwork.framework */; };
+		91374D781BF1915E0052157B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D771BF1915E0052157B /* CoreGraphics.framework */; };
+		91374D7A1BF191620052157B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D791BF191620052157B /* CoreLocation.framework */; };
+		91374D7C1BF191670052157B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D7B1BF191670052157B /* QuartzCore.framework */; };
+		91374D7E1BF1916C0052157B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D7D1BF1916C0052157B /* Security.framework */; };
+		91374D801BF191730052157B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D7F1BF191730052157B /* StoreKit.framework */; };
+		91374D821BF1917D0052157B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D811BF1917D0052157B /* SystemConfiguration.framework */; };
+		91374D841BF191850052157B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D831BF191850052157B /* libz.tbd */; };
+		91374D861BF1918E0052157B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D851BF1918E0052157B /* libsqlite3.tbd */; };
+		91374D931BF1989D0052157B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D901BF1989D0052157B /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
+		91374D941BF1989D0052157B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D911BF1989D0052157B /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		91374D951BF1989D0052157B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D921BF1989D0052157B /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D971BF199720052157B /* ParseLoginHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D991BF19BAE0052157B /* ErrorHandling.swift */; settings = {ASSET_TAGS = (); }; };
+		91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D9E1BF1A23F0052157B /* UserModel.swift */; settings = {ASSET_TAGS = (); }; };
+		91374DA11BF1CC7E0052157B /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DA01BF1CC7E0052157B /* SchoolModel.swift */; settings = {ASSET_TAGS = (); }; };
+		91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DA21BF1CEE00052157B /* ClassroomModel.swift */; settings = {ASSET_TAGS = (); }; };
+		91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DA51BF1D37B0052157B /* AddNewSchoolViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */; settings = {ASSET_TAGS = (); }; };
+		91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4781B7331569D08A889F79F0 /* Pods-Edus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.release.xcconfig"; sourceTree = "<group>"; };
+		54D13EF6F29ACC79A717BDE0 /* Pods-Edus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.debug.xcconfig"; sourceTree = "<group>"; };
 		91374D3E1BF190D20052157B /* Edus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91374D411BF190D20052157B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91374D431BF190D20052157B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +74,31 @@
 		91374D5D1BF190D20052157B /* EdusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91374D611BF190D20052157B /* EdusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdusUITests.swift; sourceTree = "<group>"; };
 		91374D631BF190D20052157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91374D6F1BF191110052157B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
+		91374D701BF191110052157B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
+		91374D731BF1914D0052157B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		91374D751BF191550052157B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		91374D771BF1915E0052157B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		91374D791BF191620052157B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		91374D7B1BF191670052157B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91374D7D1BF1916C0052157B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		91374D7F1BF191730052157B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		91374D811BF1917D0052157B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		91374D831BF191850052157B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		91374D851BF1918E0052157B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		91374D901BF1989D0052157B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		91374D911BF1989D0052157B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		91374D921BF1989D0052157B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		91374D971BF199720052157B /* ParseLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginHelper.swift; sourceTree = "<group>"; };
+		91374D991BF19BAE0052157B /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		91374D9E1BF1A23F0052157B /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		91374DA01BF1CC7E0052157B /* SchoolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
+		91374DA21BF1CEE00052157B /* ClassroomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomModel.swift; sourceTree = "<group>"; };
+		91374DA51BF1D37B0052157B /* AddNewSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewSchoolViewController.swift; path = viewControllers/AddNewSchoolViewController.swift; sourceTree = "<group>"; };
+		91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableSchoolListQuery.swift; path = Queryers/AvailableSchoolListQuery.swift; sourceTree = "<group>"; };
+		91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSchoolViewController.swift; path = viewControllers/SelectSchoolViewController.swift; sourceTree = "<group>"; };
+		91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableSchoolTableViewCell.swift; path = Views/AvailableSchoolTableViewCell.swift; sourceTree = "<group>"; };
+		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91374D861BF1918E0052157B /* libsqlite3.tbd in Frameworks */,
+				91374D841BF191850052157B /* libz.tbd in Frameworks */,
+				91374D821BF1917D0052157B /* SystemConfiguration.framework in Frameworks */,
+				91374D801BF191730052157B /* StoreKit.framework in Frameworks */,
+				91374D941BF1989D0052157B /* FBSDKLoginKit.framework in Frameworks */,
+				91374D7E1BF1916C0052157B /* Security.framework in Frameworks */,
+				91374D7C1BF191670052157B /* QuartzCore.framework in Frameworks */,
+				91374D7A1BF191620052157B /* CoreLocation.framework in Frameworks */,
+				91374D781BF1915E0052157B /* CoreGraphics.framework in Frameworks */,
+				91374D931BF1989D0052157B /* FBSDKCoreKit.framework in Frameworks */,
+				91374D761BF191550052157B /* CFNetwork.framework in Frameworks */,
+				91374D741BF1914D0052157B /* AudioToolbox.framework in Frameworks */,
+				91374D951BF1989D0052157B /* ParseUI.framework in Frameworks */,
+				91374D721BF191110052157B /* Parse.framework in Frameworks */,
+				91374D711BF191110052157B /* Bolts.framework in Frameworks */,
+				2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		818AEDEFC4758C0ED703A6F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54D13EF6F29ACC79A717BDE0 /* Pods-Edus.debug.xcconfig */,
+				4781B7331569D08A889F79F0 /* Pods-Edus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		91374D351BF190D20052157B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +158,8 @@
 				91374D551BF190D20052157B /* EdusTests */,
 				91374D601BF190D20052157B /* EdusUITests */,
 				91374D3F1BF190D20052157B /* Products */,
+				818AEDEFC4758C0ED703A6F3 /* Pods */,
+				C98ED44228804CA3031D602A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +176,12 @@
 		91374D401BF190D20052157B /* Edus */ = {
 			isa = PBXGroup;
 			children = (
+				91374DAE1BF2A3E60052157B /* Views */,
+				91374DA71BF29DDD0052157B /* Queryers */,
+				91374DA41BF1D3500052157B /* ViewControllers */,
+				91374D9B1BF1A2120052157B /* Models */,
+				91374D961BF199610052157B /* Helpers */,
+				91374D871BF1919F0052157B /* frameworks */,
 				91374D411BF190D20052157B /* AppDelegate.swift */,
 				91374D431BF190D20052157B /* ViewController.swift */,
 				91374D451BF190D20052157B /* Main.storyboard */,
@@ -125,6 +210,88 @@
 			path = EdusUITests;
 			sourceTree = "<group>";
 		};
+		91374D871BF1919F0052157B /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91374D901BF1989D0052157B /* FBSDKCoreKit.framework */,
+				91374D911BF1989D0052157B /* FBSDKLoginKit.framework */,
+				91374D921BF1989D0052157B /* ParseUI.framework */,
+				91374D851BF1918E0052157B /* libsqlite3.tbd */,
+				91374D831BF191850052157B /* libz.tbd */,
+				91374D6F1BF191110052157B /* Bolts.framework */,
+				91374D701BF191110052157B /* Parse.framework */,
+				91374D811BF1917D0052157B /* SystemConfiguration.framework */,
+				91374D7F1BF191730052157B /* StoreKit.framework */,
+				91374D7D1BF1916C0052157B /* Security.framework */,
+				91374D7B1BF191670052157B /* QuartzCore.framework */,
+				91374D791BF191620052157B /* CoreLocation.framework */,
+				91374D771BF1915E0052157B /* CoreGraphics.framework */,
+				91374D751BF191550052157B /* CFNetwork.framework */,
+				91374D731BF1914D0052157B /* AudioToolbox.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		91374D961BF199610052157B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				91374D971BF199720052157B /* ParseLoginHelper.swift */,
+				91374D991BF19BAE0052157B /* ErrorHandling.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		91374D9B1BF1A2120052157B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91374D9E1BF1A23F0052157B /* UserModel.swift */,
+				91374DA01BF1CC7E0052157B /* SchoolModel.swift */,
+				91374DA21BF1CEE00052157B /* ClassroomModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		91374DA41BF1D3500052157B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				91374DB11BF2A4870052157B /* SchoolLevelControllers */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		91374DA71BF29DDD0052157B /* Queryers */ = {
+			isa = PBXGroup;
+			children = (
+				91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */,
+			);
+			name = Queryers;
+			sourceTree = "<group>";
+		};
+		91374DAE1BF2A3E60052157B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		91374DB11BF2A4870052157B /* SchoolLevelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				91374DA51BF1D37B0052157B /* AddNewSchoolViewController.swift */,
+				91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */,
+			);
+			name = SchoolLevelControllers;
+			sourceTree = "<group>";
+		};
+		C98ED44228804CA3031D602A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE601640052A399FA99A441E /* Pods_Edus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +299,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91374D661BF190D20052157B /* Build configuration list for PBXNativeTarget "Edus" */;
 			buildPhases = (
+				3309D64CDAE72B308E9CE58C /* Check Pods Manifest.lock */,
 				91374D3A1BF190D20052157B /* Sources */,
 				91374D3B1BF190D20052157B /* Frameworks */,
 				91374D3C1BF190D20052157B /* Resources */,
+				D72B9DAE659DE95AB25488A3 /* Embed Pods Frameworks */,
+				98CCB025CD2D88BBA2B31783 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,12 +420,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3309D64CDAE72B308E9CE58C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		98CCB025CD2D88BBA2B31783 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Edus/Pods-Edus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D72B9DAE659DE95AB25488A3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Edus/Pods-Edus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		91374D3A1BF190D20052157B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */,
+				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,
+				91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */,
+				91374DA11BF1CC7E0052157B /* SchoolModel.swift in Sources */,
+				91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */,
+				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
+				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,
+				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
+				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,8 +621,14 @@
 		};
 		91374D671BF190D20052157B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54D13EF6F29ACC79A717BDE0 /* Pods-Edus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Edus",
+				);
 				INFOPLIST_FILE = Edus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cognitus.Edus;
@@ -405,8 +638,14 @@
 		};
 		91374D681BF190D20052157B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4781B7331569D08A889F79F0 /* Pods-Edus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Edus",
+				);
 				INFOPLIST_FILE = Edus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cognitus.Edus;
@@ -481,6 +720,7 @@
 				91374D681BF190D20052157B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91374D691BF190D20052157B /* Build configuration list for PBXNativeTarget "EdusTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +729,7 @@
 				91374D6B1BF190D20052157B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91374D6C1BF190D20052157B /* Build configuration list for PBXNativeTarget "EdusUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +738,7 @@
 				91374D6E1BF190D20052157B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
