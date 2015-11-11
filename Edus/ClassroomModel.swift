@@ -13,19 +13,29 @@ class Classroom: PFObject, PFSubclassing{
     
     var professorLastName: String?
     var classTitle: String?
-    var toUser: PFUser?
     var toSchool: School?
     //these would come in introductory, intermediate, advance, levels. would require users to know which classification is needed!
     var subjectLevel: String?
+    var subject: String?
+    var enrolledUsers: [PFUser]?
     
     func enrollClass(){
         let classroom = PFObject(className: "Classroom")
         classroom["professor"] = self.professorLastName
-        classroom["toUser"] = PFUser.currentUser()
         classroom["classTitle"] = self.classTitle
-        classroom["toSchool"] = PFUser.currentUser()!["activeSchool"] as? String
-        classroom.saveInBackground()
-        print("enrolled class")
+        classroom["subject"] = self.subject
+        
+        classroom["toSchool"] = PFUser.currentUser()!["activeSchool"] as? School
+        
+        classroom.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
+        classroom.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("added student to class.")
+        }
+        
+        PFUser.currentUser()!.addObject(classroom, forKey: "enrolledClasses")
+        PFUser.currentUser()!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("added class to student.")
+        }
     }
     
     
@@ -33,7 +43,6 @@ class Classroom: PFObject, PFSubclassing{
     func setClass(){
         self.professorLastName = self["professorLastName"] as? String
         self.classTitle = self["classTitle"] as? String
-        self.toUser = PFUser.currentUser()
         self.toSchool = self["toSchool"] as? School
     }
     

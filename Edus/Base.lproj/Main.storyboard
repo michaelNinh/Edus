@@ -109,7 +109,7 @@
         <!--Create a class-->
         <scene sceneID="SaX-8g-LN8">
             <objects>
-                <viewController id="u8H-VC-dE0" sceneMemberID="viewController">
+                <viewController id="u8H-VC-dE0" customClass="CreateNewClassViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="byH-O8-Q0O"/>
                         <viewControllerLayoutGuide type="bottom" id="uPn-cY-Gc8"/>
@@ -125,6 +125,7 @@
                                         <rect key="frame" x="8" y="153" width="53" height="30"/>
                                         <state key="normal" title="Subject"/>
                                         <connections>
+                                            <action selector="subjectButton:" destination="u8H-VC-dE0" eventType="touchUpInside" id="kQf-fX-uEA"/>
                                             <segue destination="Pjf-Wz-OUx" kind="show" id="cSR-EX-ijE"/>
                                         </connections>
                                     </button>
@@ -139,11 +140,11 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tuQ-ld-Pwu">
-                                        <rect key="frame" x="8" y="210" width="201" height="29"/>
+                                        <rect key="frame" x="8" y="207" width="275" height="29"/>
                                         <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                            <segment title="thrid"/>
+                                            <segment title="Intro"/>
+                                            <segment title="Intermediate"/>
+                                            <segment title="Advanced"/>
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
@@ -152,8 +153,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a class" id="h7w-KR-iyZ">
-                        <barButtonItem key="rightBarButtonItem" title="Add class" id="M9Y-fg-tGK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add class" id="M9Y-fg-tGK">
+                            <connections>
+                                <action selector="addClassButton:" destination="u8H-VC-dE0" id="7h3-20-e12"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="classNameField" destination="h1o-Ll-nIt" id="HfJ-93-1zt"/>
+                        <outlet property="levelSegementControlButton" destination="tuQ-ld-Pwu" id="bjh-o8-ubA"/>
+                        <outlet property="professorLastNameField" destination="Yjp-Tz-xpQ" id="8AB-x4-hG4"/>
+                        <outlet property="subjectText" destination="ic4-c5-bS0" id="kZm-YT-nie"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4G-5E-80N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

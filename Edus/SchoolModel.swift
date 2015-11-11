@@ -19,7 +19,6 @@ class School: PFObject, PFSubclassing{
     //this is async - using "school.save" requires knowledge of throws? must learn
     //creation of an entirely new school, first student
     func createNewSchool(){
-        print("FUCK")
         let school = PFObject(className: "School")
         school["schoolName"] = self.schoolName
         //must use currentUserObjId, parse will not take user in array
@@ -38,7 +37,6 @@ class School: PFObject, PFSubclassing{
     
     func enrolledSchool(){
         let school = PFObject(className: "School")
-        //append current User into enrolledUsersList
         school.saveInBackground()
     }
     
