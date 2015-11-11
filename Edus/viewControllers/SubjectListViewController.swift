@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import Parse
 
 class SubjectListViewController: UIViewController {
     
-    var subjectList = ["Biology", "Organic Chemistry","Physics","Chemistry","Consulting","Finance","Accounting"]
+    var subjectList: [SubjectList] = []
+    var selectedSubject: SubjectList?
 
     @IBOutlet weak var subjectListTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetSubjectList.getSubjectList { (result:[PFObject]?, error: NSError?) -> Void in
+            self.subjectList = result as? [SubjectList] ?? []
+            for subject in self.subjectList{
+                subject.setSubjectName()
+                print(subject.subjectName)
+                self.subjectListTableView.reloadData()
+            }
+            self.subjectListTableView.reloadData()
 
-        // Do any additional setup after loading the view.
+        }
+        
+        subjectListTableView.reloadData()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,37 +52,33 @@ class SubjectListViewController: UIViewController {
 
 }
 
-/*
+
 extension SubjectListViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedSchool = availableSchools[indexPath.row]
-        let currentUser = PFUser.currentUser()!
-        //this code adds a new colm into parse database -> transfer this over to adding new school as well
-        currentUser["activeSchoolName"] = self.selectedSchool?.schoolName
-        currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("User assigned school saved.")
+        self.selectedSubject = subjectList[indexPath.row]
+        //this should call a "prepare for segue" and pass back the selected subject
         }
         //confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
         //let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         //mixpanel.track("school added")
     }
-}
+
 
 extension SubjectListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableSchools.count
+        return subjectList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("schoolCell") as! AvailableSchoolTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("subjectCell") as! SubjectListTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
-        cell.schoolOption.text = availableSchools[indexPath.row].schoolName
+        cell.subjectOption.text = subjectList[indexPath.row].subjectName
         
         return cell
     }
     
     
 }
-*/
+
 

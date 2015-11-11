@@ -12,6 +12,8 @@
 		9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */; };
 		9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */; };
 		9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */; };
+		912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */; };
+		912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099911BF3B28300078E74 /* SubjectListQuery.swift */; };
 		91374D421BF190D20052157B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D411BF190D20052157B /* AppDelegate.swift */; };
 		91374D441BF190D20052157B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D431BF190D20052157B /* ViewController.swift */; };
 		91374D471BF190D20052157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91374D451BF190D20052157B /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewClassViewController.swift; path = viewControllers/CreateNewClassViewController.swift; sourceTree = "<group>"; };
 		9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListViewController.swift; path = viewControllers/SubjectListViewController.swift; sourceTree = "<group>"; };
 		9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListTableViewCell.swift; path = Views/SubjectListTableViewCell.swift; sourceTree = "<group>"; };
+		9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListModel.swift; path = Models/SubjectListModel.swift; sourceTree = "<group>"; };
+		912099911BF3B28300078E74 /* SubjectListQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListQuery.swift; path = Queryers/SubjectListQuery.swift; sourceTree = "<group>"; };
 		91374D3E1BF190D20052157B /* Edus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91374D411BF190D20052157B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91374D431BF190D20052157B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				91374D9E1BF1A23F0052157B /* UserModel.swift */,
 				91374DA01BF1CC7E0052157B /* SchoolModel.swift */,
 				91374DA21BF1CEE00052157B /* ClassroomModel.swift */,
+				9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */,
+				912099911BF3B28300078E74 /* SubjectListQuery.swift */,
 			);
 			name = Queryers;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 			files = (
 				91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */,
 				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
+				912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,
 				912099881BF2E59900078E74 /* SelectClassViewController.swift in Sources */,
 				91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */,
@@ -507,6 +514,7 @@
 				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,
 				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
 				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,
+				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
