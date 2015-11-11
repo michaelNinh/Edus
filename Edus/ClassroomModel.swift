@@ -19,6 +19,7 @@ class Classroom: PFObject, PFSubclassing{
     var subject: String?
     var enrolledUsers: [PFUser]?
     
+    //THIS IS FOR CREATING A NEW CLASS
     func enrollClass(){
         let classroom = PFObject(className: "Classroom")
         classroom["professorLastName"] = self.professorLastName
@@ -40,6 +41,38 @@ class Classroom: PFObject, PFSubclassing{
         PFUser.currentUser()!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("added class to student.")
         }
+    }
+    
+    //THIS IS ADDING STUDENT INTO EXISTING CLASS
+    func addIntoClass(){
+        //query into classname "Classroom"
+        let addQuery = PFQuery(className: "Classroom")
+        //get classroom with matching objId to self (the target)
+        addQuery.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
+            if error != nil{
+                print("damn son thur an error")
+                //if the result can be assigned as a classroom
+            }else if let classroom = result{
+                //add user Id into classroom's enrolled users
+                classroom.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
+                classroom.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                    print("added student to class.")
+                    
+                    //add classroom Id into User's enrolled
+                    PFUser.currentUser()!.addObject(classroom, forKey: "enrolledClasses")
+                    PFUser.currentUser()!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                        print("added class to student.")
+                    }
+                    
+                }
+                
+            }
+        }
+        
+        
+        
+        
+        
     }
     
     

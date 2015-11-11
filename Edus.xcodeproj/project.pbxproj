@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE601640052A399FA99A441E /* Pods_Edus.framework */; };
-		912099881BF2E59900078E74 /* SelectClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099871BF2E59900078E74 /* SelectClassViewController.swift */; };
+		911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */; };
+		911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24F91BF3C04300B5510D /* AddClassViewController.swift */; };
+		911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */; };
 		9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */; };
 		9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */; };
 		9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */; };
@@ -67,7 +69,9 @@
 /* Begin PBXFileReference section */
 		4781B7331569D08A889F79F0 /* Pods-Edus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.release.xcconfig"; sourceTree = "<group>"; };
 		54D13EF6F29ACC79A717BDE0 /* Pods-Edus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.debug.xcconfig"; sourceTree = "<group>"; };
-		912099871BF2E59900078E74 /* SelectClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectClassViewController.swift; path = viewControllers/SelectClassViewController.swift; sourceTree = "<group>"; };
+		911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetAvailableClassesForSchool.swift; path = Queryers/GetAvailableClassesForSchool.swift; sourceTree = "<group>"; };
+		911B24F91BF3C04300B5510D /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClassViewController.swift; path = viewControllers/AddClassViewController.swift; sourceTree = "<group>"; };
+		911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClassTableViewCell.swift; path = Views/AddClassTableViewCell.swift; sourceTree = "<group>"; };
 		912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewClassViewController.swift; path = viewControllers/CreateNewClassViewController.swift; sourceTree = "<group>"; };
 		9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListViewController.swift; path = viewControllers/SubjectListViewController.swift; sourceTree = "<group>"; };
 		9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListTableViewCell.swift; path = Views/SubjectListTableViewCell.swift; sourceTree = "<group>"; };
@@ -166,9 +170,9 @@
 		912099841BF2E52500078E74 /* ClassLevelControllers */ = {
 			isa = PBXGroup;
 			children = (
-				912099871BF2E59900078E74 /* SelectClassViewController.swift */,
 				912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */,
 				9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */,
+				911B24F91BF3C04300B5510D /* AddClassViewController.swift */,
 			);
 			name = ClassLevelControllers;
 			sourceTree = "<group>";
@@ -288,6 +292,7 @@
 			children = (
 				91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */,
 				912099911BF3B28300078E74 /* SubjectListQuery.swift */,
+				911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */,
 			);
 			name = Queryers;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			children = (
 				91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */,
 				9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */,
+				911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -500,10 +506,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */,
+				911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */,
 				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
 				912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,
-				912099881BF2E59900078E74 /* SelectClassViewController.swift in Sources */,
 				91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */,
 				9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */,
 				91374DA11BF1CC7E0052157B /* SchoolModel.swift in Sources */,
@@ -511,9 +517,11 @@
 				9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */,
 				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
 				9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */,
+				911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */,
 				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,
 				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
 				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,
+				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
 				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
 			);

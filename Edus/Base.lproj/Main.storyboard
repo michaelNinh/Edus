@@ -67,7 +67,7 @@
         <!--Add a class-->
         <scene sceneID="gus-Yd-97U">
             <objects>
-                <viewController id="GQF-3m-gz8" sceneMemberID="viewController">
+                <viewController id="GQF-3m-gz8" customClass="AddClassViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hCz-tb-vHs"/>
                         <viewControllerLayoutGuide type="bottom" id="ZoF-gI-2Ud"/>
@@ -80,15 +80,30 @@
                                 <rect key="frame" x="0.0" y="96" width="600" height="445"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qxx-IH-vbU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" id="Qxx-IH-vbU" customClass="AddClassTableViewCell" customModule="Edus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qxx-IH-vbU" id="nhs-og-JFd">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vm-Sa-Wcv">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="classOptionLabel" destination="7vm-Sa-Wcv" id="abU-Zj-Pd4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GQF-3m-gz8" id="lLr-fm-hnd"/>
+                                    <outlet property="delegate" destination="GQF-3m-gz8" id="YVs-ZL-vGw"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-LH-jwX">
                                 <rect key="frame" x="20" y="562" width="46" height="30"/>
@@ -101,10 +116,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a class" id="EOk-Lu-pxA"/>
+                    <connections>
+                        <outlet property="classroomsTableView" destination="gjl-Ec-8Ot" id="X6A-yz-eDs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIR-OS-bJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="928"/>
+            <point key="canvasLocation" x="2220" y="1235"/>
         </scene>
         <!--Create class-->
         <scene sceneID="SaX-8g-LN8">
@@ -366,6 +384,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="il3-2c-d1r"/>
+        <segue reference="jiu-E5-Qb2"/>
     </inferredMetricsTieBreakers>
 </document>
