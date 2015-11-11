@@ -25,7 +25,13 @@ class Classroom: PFObject, PFSubclassing{
         classroom["classTitle"] = self.classTitle
         classroom["subject"] = self.subject
         
-        classroom["toSchool"] = PFUser.currentUser()!["activeSchool"] as? School
+        let currentUser = PFUser.currentUser()!
+        //create a query for class _User
+        //query where key "User" == currentUser
+        //query.includekey "activeSchool"
+        let activeSchool = PFUser.currentUser()!["activeSchool"]!.fetchIfNeededInBackground() as! School
+        
+        classroom["toSchool"] = PFUser.currentUser()!["activeSchool"] as! School
         
         classroom.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
         classroom.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
