@@ -27,8 +27,6 @@ class CreateNewClassViewController: UIViewController {
     
     @IBAction func addClassButton(sender: AnyObject) {
         let classroom = Classroom()
-        classroom.classTitle = self.classNameField.text
-        classroom.professorLastName = self.professorLastNameField.text
         classroom.subject = self.selectedSubject?.subjectName
         
         
@@ -43,6 +41,10 @@ class CreateNewClassViewController: UIViewController {
         default:
             break;
         }
+        
+        classroom.classTitle = self.classNameField.text
+        classroom.professorLastName = self.professorLastNameField.text
+        
         classroom.enrollClass()
     }
     

@@ -22,11 +22,12 @@ class Classroom: PFObject, PFSubclassing{
     //THIS IS FOR CREATING A NEW CLASS
     func enrollClass(){
         let classroom = PFObject(className: "Classroom")
-        classroom["professorLastName"] = self.professorLastName
-        classroom["classTitle"] = self.classTitle
+    
         classroom["subject"] = self.subject
         classroom["subjectLevel"] = self.subjectLevel
         classroom["toSchoolName"] = PFUser.currentUser()!["activeSchoolName"] as! String
+        classroom["classTitle"] = self.classTitle
+        classroom["professorLastName"] = self.professorLastName
         
         //in order for this to work, need to figure out how to pull relational data from PfUser...
         //let activeSchool = PFUser.currentUser()!["activeSchool"]! as! School

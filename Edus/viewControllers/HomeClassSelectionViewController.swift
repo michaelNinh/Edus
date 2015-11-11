@@ -26,28 +26,30 @@ class HomeClassSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
+        
+        
         let query = PFQuery(className: "_User")
-        query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
         query.includeKey("enrolledClasses")
+        query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+        
+        
         query.findObjectsInBackgroundWithBlock { (userResult:[PFObject]?, error:NSError?) -> Void in
-            //print(result![0]["enrolledClasses"])
             
             let thisUser = userResult![0] as! PFUser
-            let classList = thisUser["enrolledClasses"] as! [Classroom]
-            print(classList)
-
+            self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
+            for classroom in self.enrolledClasses{
+                classroom.setClass()
+                print(classroom.classTitle)
+            }
             
-            
-           
-            
-            
-            
+            self.enrolledClassesTableView.reloadData()
         }
 
-        
-        
 
+
+        
+        
 
 
         // Do any additional setup after loading the view.
