@@ -56,7 +56,6 @@ extension AddClassViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedClass = classrooms[indexPath.row]
         self.selectedClass?.addIntoClass()
-        //enterClassSegue()
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

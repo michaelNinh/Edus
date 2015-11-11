@@ -11,6 +11,9 @@
 		911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */; };
 		911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24F91BF3C04300B5510D /* AddClassViewController.swift */; };
 		911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */; };
+		911B24FE1BF3C92700B5510D /* HomeClassSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24FD1BF3C92700B5510D /* HomeClassSelectionViewController.swift */; };
+		911B25001BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24FF1BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift */; };
+		911B25021BF3CD4200B5510D /* GetUserEnrolledClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B25011BF3CD4200B5510D /* GetUserEnrolledClasses.swift */; };
 		9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */; };
 		9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */; };
 		9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */; };
@@ -72,6 +75,9 @@
 		911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetAvailableClassesForSchool.swift; path = Queryers/GetAvailableClassesForSchool.swift; sourceTree = "<group>"; };
 		911B24F91BF3C04300B5510D /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClassViewController.swift; path = viewControllers/AddClassViewController.swift; sourceTree = "<group>"; };
 		911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClassTableViewCell.swift; path = Views/AddClassTableViewCell.swift; sourceTree = "<group>"; };
+		911B24FD1BF3C92700B5510D /* HomeClassSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeClassSelectionViewController.swift; path = viewControllers/HomeClassSelectionViewController.swift; sourceTree = "<group>"; };
+		911B24FF1BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnrolledClassesTableViewCell.swift; path = Views/EnrolledClassesTableViewCell.swift; sourceTree = "<group>"; };
+		911B25011BF3CD4200B5510D /* GetUserEnrolledClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetUserEnrolledClasses.swift; path = Queryers/GetUserEnrolledClasses.swift; sourceTree = "<group>"; };
 		912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewClassViewController.swift; path = viewControllers/CreateNewClassViewController.swift; sourceTree = "<group>"; };
 		9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListViewController.swift; path = viewControllers/SubjectListViewController.swift; sourceTree = "<group>"; };
 		9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListTableViewCell.swift; path = Views/SubjectListTableViewCell.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 				912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */,
 				9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */,
 				911B24F91BF3C04300B5510D /* AddClassViewController.swift */,
+				911B24FD1BF3C92700B5510D /* HomeClassSelectionViewController.swift */,
 			);
 			name = ClassLevelControllers;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 				91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */,
 				912099911BF3B28300078E74 /* SubjectListQuery.swift */,
 				911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */,
+				911B25011BF3CD4200B5510D /* GetUserEnrolledClasses.swift */,
 			);
 			name = Queryers;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 				91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */,
 				9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */,
 				911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */,
+				911B24FF1BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -505,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911B25001BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift in Sources */,
 				91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */,
 				911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */,
 				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
@@ -518,6 +528,8 @@
 				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
 				9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */,
 				911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */,
+				911B24FE1BF3C92700B5510D /* HomeClassSelectionViewController.swift in Sources */,
+				911B25021BF3CD4200B5510D /* GetUserEnrolledClasses.swift in Sources */,
 				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,
 				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
 				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,

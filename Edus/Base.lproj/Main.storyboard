@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Class Selection View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeClassSelectionViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +21,7 @@
                                 <rect key="frame" x="20" y="100" width="157" height="30"/>
                                 <state key="normal" title="+Add school/university"/>
                                 <connections>
+                                    <action selector="addSchool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wkp-SK-pU4"/>
                                     <segue destination="BRz-bA-eZS" kind="show" id="1yA-fm-xT1"/>
                                 </connections>
                             </button>
@@ -45,20 +46,41 @@
                                 <rect key="frame" x="0.0" y="167" width="600" height="433"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="maG-vY-7Pl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="enrolledClassCell" id="maG-vY-7Pl" customClass="EnrolledClassesTableViewCell" customModule="Edus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="maG-vY-7Pl" id="bxX-uN-LvD">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4g-Hq-bgT">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="enrolledOption" destination="S4g-Hq-bgT" id="bpD-Ku-56K"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vm6-cU-ccH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qe2-JA-d3I"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="07C-JB-oWA"/>
+                    <connections>
+                        <outlet property="addSchoolButton" destination="uVu-jY-z4W" id="ufx-7o-TM0"/>
+                        <outlet property="enrolledClassesTableView" destination="1vK-4F-QPH" id="CmS-ZN-jYU"/>
+                        <outlet property="logOut" destination="t54-yo-1Ut" id="MiB-au-iqd"/>
+                        <outlet property="userNameText" destination="VJ5-yv-IN8" id="3Uu-cE-ny1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
