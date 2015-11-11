@@ -11,23 +11,25 @@ import Parse
 
 class CreateNewClassViewController: UIViewController {
     
-    var passedBackSubject: String? = "lul"
+    var selectedSubject: SubjectList?
     
     @IBOutlet weak var classNameField: UITextField!
     @IBOutlet weak var professorLastNameField: UITextField!
     
+    @IBOutlet weak var subjectButtonText: UIButton!
     @IBAction func subjectButton(sender: AnyObject) {
     }
+    
     @IBOutlet weak var subjectText: UIButton!
     
     @IBOutlet weak var levelSegementControlButton: UISegmentedControl!
     
     
     @IBAction func addClassButton(sender: AnyObject) {
-        var classroom = Classroom()
+        let classroom = Classroom()
         classroom.classTitle = self.classNameField.text
         classroom.professorLastName = self.professorLastNameField.text
-        classroom.subject = self.passedBackSubject
+        classroom.subject = self.selectedSubject?.subjectName
         
         
         switch levelSegementControlButton.selectedSegmentIndex{
@@ -41,13 +43,18 @@ class CreateNewClassViewController: UIViewController {
         default:
             break;
         }
-        
-        
         classroom.enrollClass()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //this sets the button label to be selected subject
+        if selectedSubject != nil{
+            self.subjectButtonText.setTitle(self.selectedSubject?.subjectName, forState: .Normal)
+        }else{
+            self.subjectButtonText.setTitle("Select subject", forState: .Normal)
+        }
 
         // Do any additional setup after loading the view.
     }

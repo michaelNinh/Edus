@@ -104,9 +104,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIR-OS-bJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="928"/>
+            <point key="canvasLocation" x="2244" y="928"/>
         </scene>
-        <!--Create a class-->
+        <!--Create class-->
         <scene sceneID="SaX-8g-LN8">
             <objects>
                 <viewController id="u8H-VC-dE0" customClass="CreateNewClassViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,17 +152,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create a class" id="h7w-KR-iyZ">
-                        <barButtonItem key="rightBarButtonItem" title="Add class" id="M9Y-fg-tGK">
-                            <connections>
-                                <action selector="addClassButton:" destination="u8H-VC-dE0" id="7h3-20-e12"/>
-                            </connections>
+                    <navigationItem key="navigationItem" title="Create class" id="JgC-hJ-D9s">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jjo-6U-br7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7hu-8L-zSK">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enroll"/>
+                                <connections>
+                                    <action selector="addClassButton:" destination="u8H-VC-dE0" eventType="touchUpInside" id="vt5-uu-fTY"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="classNameField" destination="h1o-Ll-nIt" id="HfJ-93-1zt"/>
                         <outlet property="levelSegementControlButton" destination="tuQ-ld-Pwu" id="bjh-o8-ubA"/>
                         <outlet property="professorLastNameField" destination="Yjp-Tz-xpQ" id="8AB-x4-hG4"/>
+                        <outlet property="subjectButtonText" destination="ic4-c5-bS0" id="UZQ-nh-svj"/>
                         <outlet property="subjectText" destination="ic4-c5-bS0" id="kZm-YT-nie"/>
                     </connections>
                 </viewController>
@@ -190,7 +197,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOG-zF-LLz" id="sWO-Il-75K">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-qo-6EP">
@@ -217,11 +224,12 @@
                     <navigationItem key="navigationItem" title="Select subject" id="gqb-v3-vuk"/>
                     <connections>
                         <outlet property="subjectListTableView" destination="ilF-6M-ZcT" id="zzX-ne-QJy"/>
+                        <segue destination="u8H-VC-dE0" kind="show" identifier="SelectedSubjectSegue" id="il3-2c-d1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9h8-FT-Uh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3582" y="928"/>
+            <point key="canvasLocation" x="3821" y="808"/>
         </scene>
         <!--Select School-->
         <scene sceneID="3mL-zM-kmB">
@@ -357,4 +365,7 @@
             <point key="canvasLocation" x="885" y="1235"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="il3-2c-d1r"/>
+    </inferredMetricsTieBreakers>
 </document>

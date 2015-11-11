@@ -33,7 +33,18 @@ class SubjectListViewController: UIViewController {
         subjectListTableView.reloadData()
 
     }
+    
+    func passBackSegue(){
+        self.performSegueWithIdentifier("SelectedSubjectSegue", sender: self)
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "SelectedSubjectSegue") {
+            let createNewClassViewController = segue.destinationViewController as! CreateNewClassViewController
+            createNewClassViewController.selectedSubject = self.selectedSubject
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,6 +67,7 @@ class SubjectListViewController: UIViewController {
 extension SubjectListViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedSubject = subjectList[indexPath.row]
+        self.passBackSegue()
         //this should call a "prepare for segue" and pass back the selected subject
         }
         //confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
