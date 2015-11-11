@@ -21,17 +21,15 @@ class Classroom: PFObject, PFSubclassing{
     
     func enrollClass(){
         let classroom = PFObject(className: "Classroom")
-        classroom["professor"] = self.professorLastName
+        classroom["professorLastName"] = self.professorLastName
         classroom["classTitle"] = self.classTitle
         classroom["subject"] = self.subject
+        classroom["subjectLevel"] = self.subjectLevel
+        classroom["toSchoolName"] = PFUser.currentUser()!["activeSchoolName"] as! String
         
-        let currentUser = PFUser.currentUser()!
-        //create a query for class _User
-        //query where key "User" == currentUser
-        //query.includekey "activeSchool"
-        let activeSchool = PFUser.currentUser()!["activeSchool"]!.fetchIfNeededInBackground() as! School
-        
-        classroom["toSchool"] = PFUser.currentUser()!["activeSchool"] as! School
+        //in order for this to work, need to figure out how to pull relational data from PfUser...
+        //let activeSchool = PFUser.currentUser()!["activeSchool"]! as! School
+        //classroom["toSchool"] = PFUser.currentUser()!["activeSchool"] as! School
         
         classroom.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
         classroom.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in

@@ -10,6 +10,8 @@
 		2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE601640052A399FA99A441E /* Pods_Edus.framework */; };
 		912099881BF2E59900078E74 /* SelectClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099871BF2E59900078E74 /* SelectClassViewController.swift */; };
 		9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */; };
+		9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */; };
+		9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */; };
 		91374D421BF190D20052157B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D411BF190D20052157B /* AppDelegate.swift */; };
 		91374D441BF190D20052157B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D431BF190D20052157B /* ViewController.swift */; };
 		91374D471BF190D20052157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91374D451BF190D20052157B /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		54D13EF6F29ACC79A717BDE0 /* Pods-Edus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.debug.xcconfig"; sourceTree = "<group>"; };
 		912099871BF2E59900078E74 /* SelectClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectClassViewController.swift; path = viewControllers/SelectClassViewController.swift; sourceTree = "<group>"; };
 		912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewClassViewController.swift; path = viewControllers/CreateNewClassViewController.swift; sourceTree = "<group>"; };
+		9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListViewController.swift; path = viewControllers/SubjectListViewController.swift; sourceTree = "<group>"; };
+		9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListTableViewCell.swift; path = Views/SubjectListTableViewCell.swift; sourceTree = "<group>"; };
 		91374D3E1BF190D20052157B /* Edus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91374D411BF190D20052157B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91374D431BF190D20052157B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			children = (
 				912099871BF2E59900078E74 /* SelectClassViewController.swift */,
 				912099891BF2E5C500078E74 /* CreateNewClassViewController.swift */,
+				9120998B1BF31B8F00078E74 /* SubjectListViewController.swift */,
 			);
 			name = ClassLevelControllers;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */,
+				9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -492,8 +498,10 @@
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,
 				912099881BF2E59900078E74 /* SelectClassViewController.swift in Sources */,
 				91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */,
+				9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */,
 				91374DA11BF1CC7E0052157B /* SchoolModel.swift in Sources */,
 				91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */,
+				9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */,
 				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
 				9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */,
 				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,

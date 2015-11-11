@@ -173,7 +173,7 @@
         <!--Select subject-->
         <scene sceneID="7oR-VG-FAd">
             <objects>
-                <viewController id="Pjf-Wz-OUx" sceneMemberID="viewController">
+                <viewController id="Pjf-Wz-OUx" customClass="SubjectListViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5wN-2L-6cM"/>
                         <viewControllerLayoutGuide type="bottom" id="51w-pL-WNL"/>
@@ -186,20 +186,38 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tOG-zF-LLz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectCell" id="tOG-zF-LLz" customClass="SubjectListTableViewCell" customModule="Edus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOG-zF-LLz" id="sWO-Il-75K">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-qo-6EP">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subjectOption" destination="Vcd-qo-6EP" id="BO6-MR-gRt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pjf-Wz-OUx" id="TYL-pp-PJ8"/>
+                                    <outlet property="delegate" destination="Pjf-Wz-OUx" id="DLi-Bv-tan"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select subject" id="gqb-v3-vuk"/>
+                    <connections>
+                        <outlet property="subjectListTableView" destination="ilF-6M-ZcT" id="zzX-ne-QJy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9h8-FT-Uh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

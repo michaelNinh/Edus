@@ -29,6 +29,7 @@ class School: PFObject, PFSubclassing{
         
         let currentUser = PFUser.currentUser()!
         currentUser["activeSchool"] = school
+        currentUser["activeSchoolName"] = self.schoolName
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("User assigned school saved.")
         }

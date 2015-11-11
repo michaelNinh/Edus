@@ -1,5 +1,5 @@
 //
-//  SelectSchoolViewController.swift
+//  SubjectListViewController.swift
 //  Edus
 //
 //  Created by michael ninh on 11/10/15.
@@ -7,28 +7,18 @@
 //
 
 import UIKit
-import Parse
 
-class SelectSchoolViewController: UIViewController {
+class SubjectListViewController: UIViewController {
     
-    
-    var availableSchools: [School] = []
-    var selectedSchool: School?
+    var subjectList = ["Biology", "Organic Chemistry","Physics","Chemistry","Consulting","Finance","Accounting"]
 
-    @IBOutlet weak var schoolTableView: UITableView!
+    @IBOutlet weak var subjectListTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GetAvailableSchools.getClassesForUser { (result: [PFObject]?, error: NSError?) -> Void in
-            print("the returned result number is \(result?.count)")
-            self.availableSchools = result as? [School] ?? []
-            for school in self.availableSchools{
-                school.setSchoolName()
-                self.schoolTableView.reloadData()
-            }
-        }
-        self.schoolTableView.reloadData()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +39,8 @@ class SelectSchoolViewController: UIViewController {
 
 }
 
-extension SelectSchoolViewController: UITableViewDelegate{
+/*
+extension SubjectListViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedSchool = availableSchools[indexPath.row]
         let currentUser = PFUser.currentUser()!
@@ -64,7 +55,7 @@ extension SelectSchoolViewController: UITableViewDelegate{
     }
 }
 
-extension SelectSchoolViewController: UITableViewDataSource {
+extension SubjectListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return availableSchools.count
@@ -74,12 +65,11 @@ extension SelectSchoolViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("schoolCell") as! AvailableSchoolTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
         cell.schoolOption.text = availableSchools[indexPath.row].schoolName
-
+        
         return cell
     }
     
     
 }
-
-
+*/
 
