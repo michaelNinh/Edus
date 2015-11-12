@@ -243,22 +243,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpg-Eu-zOe">
-                                <rect key="frame" x="124" y="151" width="46" height="30"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BW3-jc-In0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="g1a-iq-jnC" customClass="ClassPostTableViewCell" customModule="Edus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g1a-iq-jnC" id="fYT-t3-aw3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <segue destination="K8b-VP-J8k" kind="show" identifier="makePostSegue" id="uXa-VN-jSU"/>
+                                    <outlet property="dataSource" destination="xzr-zA-Xae" id="Ppb-GC-PLv"/>
+                                    <outlet property="delegate" destination="xzr-zA-Xae" id="sHC-JC-3jA"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ClD-NH-ltD"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Posts" id="wL2-4e-33E"/>
+                    <navigationItem key="navigationItem" title="Posts" id="wL2-4e-33E">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="rsR-OC-iDI">
+                            <connections>
+                                <segue destination="K8b-VP-J8k" kind="show" identifier="makePostSegue" id="m9E-BE-cDg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="BW3-jc-In0" id="brt-cL-cEu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUH-Ua-N9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
