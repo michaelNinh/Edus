@@ -22,6 +22,8 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
 
     //TIMELINE IMPLEMENTATION
     func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
+        
+        
         /*
         PostParseQueryHelper.getPostForClassCode({ (result: [AnyObject]?, error: NSError?) -> Void in
             let posts = result as? [Post] ?? []
