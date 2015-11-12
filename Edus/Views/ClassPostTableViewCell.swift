@@ -9,6 +9,14 @@
 import UIKit
 
 class ClassPostTableViewCell: UITableViewCell {
+    
+    var post: Post?{
+        didSet{
+            if let post = post{
+                
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,12 +11,39 @@ import Parse
 import ConvenienceKit
 
 
-class ClassPostsViewController: UIViewController {
+class ClassPostsViewController: UIViewController, TimelineComponentTarget {
     
     var classroom: Classroom?
 
     @IBOutlet weak var tableView: UITableView!
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
+    var timelineComponent: TimelineComponent<Post, ClassPostsViewController>!
+
+    //TIMELINE IMPLEMENTATION
+    func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
+        /*
+        PostParseQueryHelper.getPostForClassCode({ (result: [AnyObject]?, error: NSError?) -> Void in
+            let posts = result as? [Post] ?? []
+            completionBlock(posts)
+            }, classCode: self.classroom!.classCode!, range: range)
+*/
+
+        
+        GetPostsForClass.getPostsForClass({ (result:[PFObject]?, error:NSError?) -> Void in
+            let posts = result as? [Post] ?? []
+            completionBlock(posts)
+            }, classroom: self.classroom!, range: range)
+        
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        timelineComponent.loadInitialIfRequired()
+
+        
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +53,10 @@ class ClassPostsViewController: UIViewController {
             let tabBarReference = self.tabBarController as! ClassTabBarViewController
             self.classroom = tabBarReference.classroom
         }
+        
+        timelineComponent = TimelineComponent(target: self)
+
+
 
         // Do any additional setup after loading the view.
     }
@@ -60,3 +91,26 @@ class ClassPostsViewController: UIViewController {
     */
 
 }
+
+extension ClassPostsViewController: UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timelineComponent.content.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as! ClassPostTableViewCell
+        
+        let post = timelineComponent.content[indexPath.row]
+        print(post)
+        //post.setPost()
+        
+        
+        
+        cell.post = post
+        //cell.delegate = self
+        return cell
+    }
+}
+
+
