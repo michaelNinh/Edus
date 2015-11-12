@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DateTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Edus.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AFEDA8059B169E4068B6DCC4D2F0B0E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BA0ED018954B2E035A694BF72506145C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3AA89FF8A13F70E964B4D8655C4EDB2</key>
+		<key>DBCE0F9046DA1D6D1A86F4F0E63F0ABE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -113,6 +113,7 @@ extension HomeClassSelectionViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("enrolledClassCell") as! EnrolledClassesTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
         cell.enrolledOption.text = enrolledClasses[indexPath.row].classTitle
+        
         return cell
     }
     

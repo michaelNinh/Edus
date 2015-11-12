@@ -5,6 +5,7 @@ target 'Edus' do
 use_frameworks!
 
 pod "ConvenienceKit"
+pod 'DateTools'
 
 end
 

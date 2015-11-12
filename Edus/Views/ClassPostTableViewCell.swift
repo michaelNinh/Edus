@@ -7,13 +7,40 @@
 //
 
 import UIKit
+import DateTools
 
 class ClassPostTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var postTitleText: UILabel!
+    @IBOutlet weak var postContentText: UILabel!
+    @IBOutlet weak var nameText: UILabel!
+    @IBOutlet weak var dateText: UILabel!
+    @IBOutlet weak var scoreText: UILabel!
+    
+    
+    @IBAction func upVote(sender: AnyObject) {
+    }
+    
+    
+    @IBAction func deletePost(sender: AnyObject) {
+    }
+    
+    
+    @IBAction func flagPost(sender: AnyObject) {
+    }
     
     var post: Post?{
         didSet{
             if let post = post{
+                dateText.text = post.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
+                postTitleText.text = post.title
+                postContentText.text = post.content
+                nameText.text = post.fromUser?.username
+                scoreText.text = String(post.toPostPoints.score)
                 
+                print("FUCK\(self.nameText)")
+            }else{
+                print("no post")
             }
         }
     }

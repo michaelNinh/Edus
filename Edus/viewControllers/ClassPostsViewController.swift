@@ -97,7 +97,9 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
 extension ClassPostsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("found this number of posts:\(timelineComponent.content.count)")
         return timelineComponent.content.count
+        //return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -105,9 +107,8 @@ extension ClassPostsViewController: UITableViewDataSource {
         
         let post = timelineComponent.content[indexPath.row]
         post.setPost()
+        print("why xcode why")
        
-        
-        
         cell.post = post
         //cell.delegate = self
         return cell

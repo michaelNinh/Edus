@@ -1,10 +1,13 @@
 PODS:
   - ConvenienceKit (0.4.0)
+  - DateTools (1.7.0)
 
 DEPENDENCIES:
   - ConvenienceKit
+  - DateTools
 
 SPEC CHECKSUMS:
   ConvenienceKit: ba1ad8797897dc0d011676e961a2f3e9b270c841
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
 
 COCOAPODS: 0.39.0

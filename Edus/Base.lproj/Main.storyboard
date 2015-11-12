@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bia-Cj-Mi2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -571,7 +572,7 @@
             </objects>
             <point key="canvasLocation" x="1545" y="2825"/>
         </scene>
-        <!--Title-->
+        <!--Class posts-->
         <scene sceneID="fJM-42-Wvy">
             <objects>
                 <viewController id="qgD-sI-5Ko" customClass="ClassPostsViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
@@ -583,32 +584,139 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klW-8J-hbl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klW-8J-hbl">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Oqp-lH-YHd" customClass="ClassPostTableViewCell" customModule="Edus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="200" id="Oqp-lH-YHd" customClass="ClassPostTableViewCell" customModule="Edus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oqp-lH-YHd" id="cnd-6q-l1h">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tr-cK-Hho">
+                                                    <rect key="frame" x="61" y="8" width="293" height="57"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="293" id="BVi-bw-02W"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtE-4g-Zol">
+                                                    <rect key="frame" x="15" y="29" width="30" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="up"/>
+                                                    <connections>
+                                                        <action selector="upVote:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="oV0-VD-huT"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-tn-CwO">
+                                                    <rect key="frame" x="18" y="67" width="24" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="aDn-jU-SO4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-VB-wxh">
+                                                    <rect key="frame" x="58" y="171" width="45" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="keh-Wk-BcU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-oo-Hbe">
+                                                    <rect key="frame" x="556" y="26" width="36" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYa-Ja-aa7">
+                                                    <rect key="frame" x="554" y="162" width="30" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="flag"/>
+                                                    <connections>
+                                                        <action selector="flagPost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="HZK-13-3Fy"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-04-1dc">
+                                                    <rect key="frame" x="494" y="162" width="45" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="deletePost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="xBA-Vf-bYx"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYh-DN-xYq">
+                                                    <rect key="frame" x="61" y="67" width="417" height="89"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="417" id="tJV-eD-big"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="aYh-DN-xYq" firstAttribute="top" secondItem="0Tr-cK-Hho" secondAttribute="bottom" constant="2" id="1Xz-0L-aiF"/>
+                                                <constraint firstItem="GtE-4g-Zol" firstAttribute="top" secondItem="cnd-6q-l1h" secondAttribute="topMargin" constant="21" id="AQM-y5-dju"/>
+                                                <constraint firstItem="aYa-Ja-aa7" firstAttribute="baseline" secondItem="Gik-04-1dc" secondAttribute="baseline" id="Bup-Hr-0L0"/>
+                                                <constraint firstItem="TO1-VB-wxh" firstAttribute="leading" secondItem="cnd-6q-l1h" secondAttribute="leadingMargin" constant="50" id="DJI-yS-aNK"/>
+                                                <constraint firstItem="6BQ-oo-Hbe" firstAttribute="trailing" secondItem="cnd-6q-l1h" secondAttribute="trailingMargin" id="DLi-4P-vyV"/>
+                                                <constraint firstItem="fHP-tn-CwO" firstAttribute="centerX" secondItem="GtE-4g-Zol" secondAttribute="centerX" id="IJV-8E-eZj"/>
+                                                <constraint firstItem="0Tr-cK-Hho" firstAttribute="top" secondItem="cnd-6q-l1h" secondAttribute="topMargin" id="Kp2-EB-3AB"/>
+                                                <constraint firstItem="6BQ-oo-Hbe" firstAttribute="centerY" secondItem="0Tr-cK-Hho" secondAttribute="centerY" id="NAj-yk-KnY"/>
+                                                <constraint firstItem="Gik-04-1dc" firstAttribute="bottom" secondItem="TO1-VB-wxh" secondAttribute="bottom" id="Vp0-uO-d8N"/>
+                                                <constraint firstItem="fHP-tn-CwO" firstAttribute="top" secondItem="GtE-4g-Zol" secondAttribute="bottom" constant="8" symbolic="YES" id="ZaQ-6r-Zia"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aYa-Ja-aa7" secondAttribute="trailing" constant="8" id="bpi-E1-XX0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TO1-VB-wxh" secondAttribute="bottom" constant="-0.5" id="cvI-VB-k5w"/>
+                                                <constraint firstItem="GtE-4g-Zol" firstAttribute="leading" secondItem="cnd-6q-l1h" secondAttribute="leadingMargin" constant="7" id="lCF-gQ-KYR"/>
+                                                <constraint firstItem="aYh-DN-xYq" firstAttribute="firstBaseline" secondItem="fHP-tn-CwO" secondAttribute="firstBaseline" id="laT-3A-bTM"/>
+                                                <constraint firstItem="aYh-DN-xYq" firstAttribute="leading" secondItem="0Tr-cK-Hho" secondAttribute="leading" id="nKP-xl-k1t"/>
+                                                <constraint firstItem="0Tr-cK-Hho" firstAttribute="leading" secondItem="GtE-4g-Zol" secondAttribute="trailing" constant="16" id="o0I-vu-gRq"/>
+                                                <constraint firstItem="aYa-Ja-aa7" firstAttribute="leading" secondItem="Gik-04-1dc" secondAttribute="trailing" constant="15" id="uEy-uo-fPI"/>
+                                                <constraint firstItem="6BQ-oo-Hbe" firstAttribute="top" secondItem="cnd-6q-l1h" secondAttribute="topMargin" constant="18" id="ucq-04-lHC"/>
+                                                <constraint firstItem="TO1-VB-wxh" firstAttribute="top" secondItem="aYh-DN-xYq" secondAttribute="bottom" constant="15" id="uqj-I2-aY6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="dateText" destination="6BQ-oo-Hbe" id="pvm-b7-85L"/>
+                                            <outlet property="nameText" destination="TO1-VB-wxh" id="wfQ-zx-JVK"/>
+                                            <outlet property="postContentText" destination="aYh-DN-xYq" id="jWf-KR-CS0"/>
+                                            <outlet property="postTitleText" destination="0Tr-cK-Hho" id="tdX-fP-7OP"/>
+                                            <outlet property="scoreText" destination="fHP-tn-CwO" id="AMJ-3P-XZa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="qgD-sI-5Ko" id="KGY-YP-Feo"/>
-                                    <outlet property="delegate" destination="qgD-sI-5Ko" id="X7c-Es-ljn"/>
+                                    <outlet property="dataSource" destination="qgD-sI-5Ko" id="CIL-BH-MlY"/>
+                                    <outlet property="delegate" destination="qgD-sI-5Ko" id="ng8-n2-XKN"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="klW-8J-hbl" firstAttribute="leading" secondItem="Dlb-Mg-yOi" secondAttribute="leading" id="ECC-Pr-PE3"/>
+                            <constraint firstItem="klW-8J-hbl" firstAttribute="top" secondItem="0XQ-nO-4Xb" secondAttribute="bottom" id="f5D-2Y-TM9"/>
+                            <constraint firstItem="klW-8J-hbl" firstAttribute="bottom" secondItem="sOd-0p-TcT" secondAttribute="top" id="jU1-I6-3Sh"/>
+                            <constraint firstAttribute="trailing" secondItem="klW-8J-hbl" secondAttribute="trailing" id="r61-O0-YjT"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Kpg-Yf-3QD">
+                    <navigationItem key="navigationItem" title="Class posts" id="Kpg-Yf-3QD">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="DGZ-9D-Mjr"/>
                         <barButtonItem key="rightBarButtonItem" title="Write" id="Htf-S3-nNQ">
                             <connections>
