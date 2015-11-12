@@ -18,7 +18,7 @@ class Post: PFObject, PFSubclassing{
     var anonymous: Bool = false
     var voterList: [String] = []
     
-    var toClass:Classroom?
+    var toClassroom:Classroom?
     var subject:String?
     var subjectLevel:String?
     
@@ -32,6 +32,7 @@ class Post: PFObject, PFSubclassing{
         query["fromUser"] = self.fromUser
         query["subject"] = self.subject
         query["subjectLevel"] = self.subjectLevel
+        query["toClassroom"] = self.toClassroom
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")

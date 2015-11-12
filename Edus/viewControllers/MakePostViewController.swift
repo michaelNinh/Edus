@@ -32,7 +32,7 @@ class MakePostViewController: UIViewController {
     @IBAction func submitPostButton(sender: AnyObject) {
         self.post.title = self.titleText.text
         self.post.content = self.contentText.text
-        self.post.toClass = self.classroom
+        self.post.toClassroom = self.classroom
         self.post.subject = self.classroom?.subject
         self.post.subjectLevel = self.classroom?.subjectLevel
         self.post.fromUser = PFUser.currentUser()
