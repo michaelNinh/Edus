@@ -55,6 +55,7 @@ class Classroom: PFObject, PFSubclassing{
                 //if the result can be assigned as a classroom
             }else if let classroom = result{
                 //add user Id into classroom's enrolled users
+                //this is being added as a string right now
                 classroom.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
                 classroom.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     print("added student to class.")

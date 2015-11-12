@@ -27,6 +27,7 @@ class HomeClassSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
@@ -35,6 +36,7 @@ class HomeClassSelectionViewController: UIViewController {
         query.findObjectsInBackgroundWithBlock { (userResult:[PFObject]?, error:NSError?) -> Void in
             
             let thisUser = userResult![0] as! PFUser
+            //add NIL CATCH HERE
             self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
             for classroom in self.enrolledClasses{
                 classroom.setClass()
