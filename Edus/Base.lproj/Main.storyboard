@@ -184,10 +184,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHw-tc-vUm">
-                                        <rect key="frame" x="488" y="30" width="51" height="31"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EME-4S-WCm">
+                                        <rect key="frame" x="8" y="32" width="153" height="30"/>
                                         <animations/>
-                                    </switch>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anonymous?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oht-04-5tV">
                                         <rect key="frame" x="372" y="35" width="99" height="21"/>
                                         <animations/>
@@ -195,12 +197,21 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EME-4S-WCm">
-                                        <rect key="frame" x="8" y="32" width="153" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4O-35-MPM">
+                                        <rect key="frame" x="8" y="214" width="46" height="30"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="submitPostButton:" destination="K8b-VP-J8k" eventType="touchUpInside" id="Rfb-O4-2hH"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHw-tc-vUm">
+                                        <rect key="frame" x="8" y="252" width="51" height="31"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="anonymousToggle:" destination="K8b-VP-J8k" eventType="valueChanged" id="hg9-I9-Ss3"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <animations/>
                             </scrollView>
@@ -208,9 +219,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Make post" id="1th-EP-tdg">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ShA-Y2-ZAm"/>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Make post" id="1th-EP-tdg"/>
+                    <connections>
+                        <outlet property="anonymousToggleButton" destination="HHw-tc-vUm" id="tvG-Pn-zMl"/>
+                        <outlet property="contentText" destination="Ca4-4z-eX9" id="lVz-D2-KqD"/>
+                        <outlet property="titleText" destination="EME-4S-WCm" id="vtN-ab-3P3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YO-QR-ChQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

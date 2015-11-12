@@ -12,7 +12,32 @@ import Parse
 class MakePostViewController: UIViewController {
     
     var classroom: Classroom?
+    var post = Post()
 
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var contentText: UITextView!
+    
+    @IBOutlet weak var anonymousToggleButton: UISwitch!
+    @IBAction func anonymousToggle(sender: AnyObject) {
+        
+        if anonymousToggleButton.on{
+            self.post.anonymous = true
+        } else{
+            self.post.anonymous = false
+        }
+        
+    }
+    
+    
+    @IBAction func submitPostButton(sender: AnyObject) {
+        self.post.title = self.titleText.text
+        self.post.content = self.contentText.text
+        self.post.toClass = self.classroom
+        self.post.subject = self.classroom?.subject
+        self.post.subjectLevel = self.classroom?.subjectLevel
+        self.post.fromUser = PFUser.currentUser()
+        self.post.uploadPost()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

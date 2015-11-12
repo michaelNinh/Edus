@@ -83,6 +83,8 @@ class Classroom: PFObject, PFSubclassing{
         self.professorLastName = self["professorLastName"] as? String
         self.classTitle = self["classTitle"] as? String
         self.toSchool = self["toSchool"] as? School
+        self.subject = self["subject"] as? String
+        self.subjectLevel = self["subjectLevel"] as? String
     }
     
     func deleteClass(classObjectId: String){
