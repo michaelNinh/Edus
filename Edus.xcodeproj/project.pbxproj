@@ -54,6 +54,7 @@
 		9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC681BF40E9B002FC5AB /* PostModel.swift */; settings = {ASSET_TAGS = (); }; };
+		9176BC6B1BF46E04002FC5AB /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostsViewController.swift; path = viewControllers/ClassPostsViewController.swift; sourceTree = "<group>"; };
 		9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostTableViewCell.swift; path = Views/ClassPostTableViewCell.swift; sourceTree = "<group>"; };
 		9176BC681BF40E9B002FC5AB /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostModel.swift; path = Models/PostModel.swift; sourceTree = "<group>"; };
+		9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakePostViewController.swift; path = viewControllers/MakePostViewController.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */,
+				9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */,
 			);
 			name = PostLevelControllers;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */,
 				9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */,
 				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
+				9176BC6B1BF46E04002FC5AB /* MakePostViewController.swift in Sources */,
 				9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */,
 				911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */,
 				911B24FE1BF3C92700B5510D /* HomeClassSelectionViewController.swift in Sources */,

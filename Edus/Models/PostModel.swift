@@ -14,9 +14,32 @@ class Post: PFObject, PFSubclassing{
     var title: String?
     var content: String?
     var fromUser: PFUser?
-    var points: Int?
+    var points: Int = 0
     var anonymous: Bool = false
     var voterList: [String] = []
+    
+    var toClass:Classroom?
+    var subject:String?
+    var subjectLevel:String?
+    
+    func uploadPost(){
+        let query = PFObject(className: "Post")
+        query["title"] = self.title
+        query["content"] = self.content
+        query["points"] = self.points
+        query["anonymous"] = self.anonymous
+        query["voterList"] = self.voterList
+        query["fromUser"] = self.fromUser
+        query["subject"] = self.subject
+        query["subjectLevel"] = self.subjectLevel
+        
+        query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("post uploaded")
+        }
+        
+
+        
+    }
     
     
     //start protocol code for PFSubclass
