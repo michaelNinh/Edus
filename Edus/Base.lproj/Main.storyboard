@@ -89,7 +89,7 @@
                         <outlet property="enrolledClassesTableView" destination="1vK-4F-QPH" id="CmS-ZN-jYU"/>
                         <outlet property="logOut" destination="t54-yo-1Ut" id="MiB-au-iqd"/>
                         <outlet property="userNameText" destination="VJ5-yv-IN8" id="3Uu-cE-ny1"/>
-                        <segue destination="jrm-au-xhf" kind="show" identifier="enterClassSegue" id="oMx-gK-gj2"/>
+                        <segue destination="jrm-au-xhf" kind="presentation" identifier="enterClassSegue" id="oMx-gK-gj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -249,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YO-QR-ChQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2926" y="2851"/>
+            <point key="canvasLocation" x="3003" y="2825"/>
         </scene>
         <!--Create class-->
         <scene sceneID="SaX-8g-LN8">
@@ -543,8 +543,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KGJ-NJ-MI4" kind="relationship" relationship="viewControllers" id="zj8-xd-NqM"/>
                         <segue destination="DYN-iO-qyd" kind="relationship" relationship="viewControllers" id="IIK-bn-Pzz"/>
+                        <segue destination="KGJ-NJ-MI4" kind="relationship" relationship="viewControllers" id="zj8-xd-NqM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyb-uF-c0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -586,12 +586,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ht6-Ux-19J">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="3SF-lf-2yE"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="PH3-cJ-bsc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Write" id="3SF-lf-2yE">
+                            <connections>
+                                <segue destination="K8b-VP-J8k" kind="show" identifier="makePostSegue" id="12e-2m-D7U"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDx-XK-dga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="2828"/>
+            <point key="canvasLocation" x="2269" y="2825"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
