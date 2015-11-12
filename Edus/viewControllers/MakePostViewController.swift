@@ -12,6 +12,7 @@ import Parse
 class MakePostViewController: UIViewController {
     
     var classroom: Classroom?
+    //create a post Object
     var post = Post()
 
     @IBOutlet weak var titleText: UITextField!
@@ -36,6 +37,7 @@ class MakePostViewController: UIViewController {
         self.post.subject = self.classroom?.subject
         self.post.subjectLevel = self.classroom?.subjectLevel
         self.post.fromUser = PFUser.currentUser()
+        
         self.post.uploadPost()
     }
     override func viewDidLoad() {

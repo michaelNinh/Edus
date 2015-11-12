@@ -16,6 +16,7 @@ class Post: PFObject, PFSubclassing{
     var fromUser: PFUser?
     var anonymous: Bool = false
     
+    //create a postPoint Object
     var toPostPoints = PostPoints()
     var toClassroom:Classroom?
     var subject:String?
@@ -34,10 +35,15 @@ class Post: PFObject, PFSubclassing{
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
+            self.toPostPoints.toPost = self
+            self.toPostPoints.createPoints()
         }
         
-        self.toPostPoints.toPost = self
-        self.toPostPoints.createPoints()
+        
+        
+        //these dont seem to have anything to do with creating the extra postPoints
+        //self.toPostPoints.toPost = self
+        //self.toPostPoints.createPoints()
     }
     
     func setPost(){
@@ -46,7 +52,10 @@ class Post: PFObject, PFSubclassing{
         self.fromUser = self["fromUser"] as? PFUser
         self.anonymous = (self["anonymous"] as? Bool)!
         self.toPostPoints = self["toPostPoints"] as! PostPoints
-        
+        self.toClassroom = self["toClassroom"] as? Classroom
+        self.subject = self["subject"] as? String
+        self.subjectLevel = self["subjectLevel"] as? String
+        self.toPostPoints.setPoints()
 
     }
     
