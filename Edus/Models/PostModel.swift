@@ -14,6 +14,7 @@ class Post: PFObject, PFSubclassing{
     var title: String?
     var content: String?
     var fromUser: PFUser?
+    var fromUserName: String?
     var anonymous: Bool = false
     
     //create a postPoint Object
@@ -28,6 +29,7 @@ class Post: PFObject, PFSubclassing{
         query["content"] = self.content
         query["anonymous"] = self.anonymous
         query["fromUser"] = self.fromUser
+        query["fromUserName"] = PFUser.currentUser()?.username!
         query["subject"] = self.subject
         query["subjectLevel"] = self.subjectLevel
         query["toClassroom"] = self.toClassroom
@@ -49,6 +51,7 @@ class Post: PFObject, PFSubclassing{
         self.title = self["title"] as? String
         self.content = self["content"] as? String
         self.fromUser = self["fromUser"] as? PFUser
+        self.fromUserName = self["fromUserName"] as? String
         self.anonymous = (self["anonymous"] as? Bool)!
         //self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toClassroom = self["toClassroom"] as? Classroom

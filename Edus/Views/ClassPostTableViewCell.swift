@@ -35,7 +35,7 @@ class ClassPostTableViewCell: UITableViewCell {
                 dateText.text = post.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
                 postTitleText.text = post.title
                 postContentText.text = post.content
-                nameText.text = post.fromUser?.username
+                nameText.text = post.fromUserName
                 scoreText.text = String(post.toPostPoints.score)
                 
                 print("FUCK\(self.nameText)")
