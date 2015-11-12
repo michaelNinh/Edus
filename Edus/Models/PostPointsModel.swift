@@ -12,35 +12,39 @@ import Parse
 class PostPoints: PFObject, PFSubclassing{
     
     var score: Int = 0
-    var toPost: Post?
+    //var toPost: Post?
     var voterList = [PFUser]()
     
     func createPoints(){
+        
         /*
         let query = PFObject(className: "PostPoints")
         query["score"] = self.score
         query["toPost"] = self.toPost
+        query["voterList"] = self.voterList
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("postPoint object saved")
         }
 */
+
         
         let query = PFQuery(className: "PostPoints")
         query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
             let postPoint = result as! PostPoints
-            postPoint["toPost"] = self.toPost
+            //postPoint["toPost"] = self.toPost
             postPoint["score"] = self.score
             postPoint["voterList"] = self.voterList
             postPoint.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 print("postPoint object saved")
             }
         }
+
         
     }
     
     func setPoints(){
         self.score = (self["points"] as? Int)!
-        self.toPost = self["toPost"] as? Post
+        //self.toPost = self["toPost"] as? Post
         self.voterList = self["voterList"] as! [PFUser]
     }
     

@@ -14,6 +14,7 @@ class MakePostViewController: UIViewController {
     var classroom: Classroom?
     //create a post Object
     var post = Post()
+    //var postPoints = PostPoints()
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var contentText: UITextView!
@@ -37,7 +38,11 @@ class MakePostViewController: UIViewController {
         self.post.subject = self.classroom?.subject
         self.post.subjectLevel = self.classroom?.subjectLevel
         self.post.fromUser = PFUser.currentUser()
+        //self.post.toPostPoints = self.postPoints
         
+        //self.postPoints.toPost = self.post
+        
+        //self.postPoints.createPoints()
         self.post.uploadPost()
     }
     override func viewDidLoad() {
