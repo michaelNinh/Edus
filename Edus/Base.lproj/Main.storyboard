@@ -571,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="1545" y="2825"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="fJM-42-Wvy">
             <objects>
-                <viewController id="qgD-sI-5Ko" sceneMemberID="viewController">
+                <viewController id="qgD-sI-5Ko" customClass="ClassPostsViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0XQ-nO-4Xb"/>
                         <viewControllerLayoutGuide type="bottom" id="sOd-0p-TcT"/>
@@ -582,17 +582,43 @@
                     <view key="view" contentMode="scaleToFill" id="Dlb-Mg-yOi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klW-8J-hbl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Oqp-lH-YHd" customClass="ClassPostTableViewCell" customModule="Edus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oqp-lH-YHd" id="cnd-6q-l1h">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qgD-sI-5Ko" id="KGY-YP-Feo"/>
+                                    <outlet property="delegate" destination="qgD-sI-5Ko" id="X7c-Es-ljn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ht6-Ux-19J">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="PH3-cJ-bsc"/>
-                        <barButtonItem key="rightBarButtonItem" title="Write" id="3SF-lf-2yE">
+                    <navigationItem key="navigationItem" title="Title" id="Kpg-Yf-3QD">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="DGZ-9D-Mjr"/>
+                        <barButtonItem key="rightBarButtonItem" title="Write" id="Htf-S3-nNQ">
                             <connections>
-                                <segue destination="K8b-VP-J8k" kind="show" identifier="makePostSegue" id="12e-2m-D7U"/>
+                                <segue destination="K8b-VP-J8k" kind="show" identifier="makePostSegue" id="b8c-PK-grc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="klW-8J-hbl" id="cVz-Pa-5ZN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDx-XK-dga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
