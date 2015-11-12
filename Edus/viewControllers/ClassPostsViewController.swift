@@ -104,9 +104,8 @@ extension ClassPostsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as! ClassPostTableViewCell
         
         let post = timelineComponent.content[indexPath.row]
-        print(post)
-        //post.setPost()
-        
+        post.setPost()
+       
         
         
         cell.post = post
