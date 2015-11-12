@@ -27,7 +27,7 @@ class HomeClassSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
+        //this query would be called getUserEnrolledClasses
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
@@ -44,6 +44,7 @@ class HomeClassSelectionViewController: UIViewController {
             }
             self.enrolledClassesTableView.reloadData()
         }
+        //end query
 
     }
     

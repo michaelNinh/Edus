@@ -15,6 +15,7 @@ class GetPostsForClass{
         
         let query = PFQuery(className: "Post")
         query.whereKey("toClassroom", equalTo: classroom)
+        query.includeKey("toPostPoints")
         query.orderByDescending("createdAt")
         
         query.skip = range.startIndex

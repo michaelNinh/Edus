@@ -13,6 +13,7 @@ class PostPoints: PFObject, PFSubclassing{
     
     var score: Int = 0
     var toPost: Post?
+    var voterList = [PFUser]()
     
     func createPoints(){
         let query = PFObject(className: "PostPoints")
@@ -23,7 +24,11 @@ class PostPoints: PFObject, PFSubclassing{
         }
     }
     
-    //func setPoints
+    func setPoints(){
+        self.score = self["points"] as? Int
+        self.toPost = self["toPost"] as? Post
+        self.voterList = self[voterList] as? [PFUser]
+    }
     
     //func incrementpoints
     
