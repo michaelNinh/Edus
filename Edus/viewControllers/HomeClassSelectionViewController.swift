@@ -12,6 +12,7 @@ import Parse
 class HomeClassSelectionViewController: UIViewController {
     
     var enrolledClasses: [Classroom] = []
+    var selectedClassroom: Classroom?
 
     @IBOutlet weak var addSchoolButton: UIButton!
     @IBAction func addSchool(sender: AnyObject) {
@@ -25,10 +26,7 @@ class HomeClassSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
+    
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
@@ -40,19 +38,23 @@ class HomeClassSelectionViewController: UIViewController {
             self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
             for classroom in self.enrolledClasses{
                 classroom.setClass()
-                print(classroom.classTitle)
+                self.enrolledClassesTableView.reloadData()
             }
-            
             self.enrolledClassesTableView.reloadData()
         }
 
-
-
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "enterClassSegue") {
+            let classTabBarViewController = segue.destinationViewController as! ClassTabBarViewController
+            classTabBarViewController.classroom = self.selectedClassroom
         
-        
-
-
-        // Do any additional setup after loading the view.
+        }
+    }
+    
+    func enterClassSegue(){
+        self.performSegueWithIdentifier("enterClassSegue", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,8 +77,8 @@ class HomeClassSelectionViewController: UIViewController {
 
 extension HomeClassSelectionViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //self.selectedClass = classrooms[indexPath.row]
-        //enterClassSegue()
+        self.selectedClassroom = enrolledClasses[indexPath.row]
+        enterClassSegue()
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

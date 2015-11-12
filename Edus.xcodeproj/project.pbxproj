@@ -50,6 +50,10 @@
 		91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */; };
 		91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */; };
 		91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */; };
+		9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC681BF40E9B002FC5AB /* PostModel.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,10 @@
 		91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableSchoolListQuery.swift; path = Queryers/AvailableSchoolListQuery.swift; sourceTree = "<group>"; };
 		91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSchoolViewController.swift; path = viewControllers/SelectSchoolViewController.swift; sourceTree = "<group>"; };
 		91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableSchoolTableViewCell.swift; path = Views/AvailableSchoolTableViewCell.swift; sourceTree = "<group>"; };
+		9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassTabBarViewController.swift; path = viewControllers/ClassTabBarViewController.swift; sourceTree = "<group>"; };
+		9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostsViewController.swift; path = viewControllers/ClassPostsViewController.swift; sourceTree = "<group>"; };
+		9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostTableViewCell.swift; path = Views/ClassPostTableViewCell.swift; sourceTree = "<group>"; };
+		9176BC681BF40E9B002FC5AB /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostModel.swift; path = Models/PostModel.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -281,6 +289,7 @@
 				91374DA01BF1CC7E0052157B /* SchoolModel.swift */,
 				91374DA21BF1CEE00052157B /* ClassroomModel.swift */,
 				9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */,
+				9176BC681BF40E9B002FC5AB /* PostModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -288,8 +297,10 @@
 		91374DA41BF1D3500052157B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9176BC621BF40AB5002FC5AB /* PostLevelControllers */,
 				912099841BF2E52500078E74 /* ClassLevelControllers */,
 				91374DB11BF2A4870052157B /* SchoolLevelControllers */,
+				9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 		91374DAE1BF2A3E60052157B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9176BC651BF40BBE002FC5AB /* PostLevelCells */,
 				91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */,
 				9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */,
 				911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */,
@@ -323,6 +335,22 @@
 				91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */,
 			);
 			name = SchoolLevelControllers;
+			sourceTree = "<group>";
+		};
+		9176BC621BF40AB5002FC5AB /* PostLevelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */,
+			);
+			name = PostLevelControllers;
+			sourceTree = "<group>";
+		};
+		9176BC651BF40BBE002FC5AB /* PostLevelCells */ = {
+			isa = PBXGroup;
+			children = (
+				9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */,
+			);
+			name = PostLevelCells;
 			sourceTree = "<group>";
 		};
 		C98ED44228804CA3031D602A /* Frameworks */ = {
@@ -517,7 +545,9 @@
 				911B25001BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift in Sources */,
 				91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */,
 				911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */,
+				9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */,
 				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
+				9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */,
 				912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,
 				91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */,
@@ -533,9 +563,11 @@
 				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,
 				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
 				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,
+				9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */,
 				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
 				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
+				9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
