@@ -46,6 +46,7 @@ class HomeClassSelectionViewController: UIViewController {
         }
         //end query
 
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
