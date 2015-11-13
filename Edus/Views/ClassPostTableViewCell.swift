@@ -9,6 +9,7 @@
 import UIKit
 import DateTools
 
+
 class ClassPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitleText: UILabel!
@@ -18,6 +19,7 @@ class ClassPostTableViewCell: UITableViewCell {
     @IBOutlet weak var scoreText: UILabel!
     
     
+    @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
         self.post?.toPostPoints.upVote()
     }
@@ -39,6 +41,16 @@ class ClassPostTableViewCell: UITableViewCell {
                 nameText.text = post.fromUserName
                 scoreText.text = String(post.toPostPoints.score)
                 //check voteList
+                self.post?.toPostPoints.checkVoterList({ (inList) -> Void in
+                    if inList == true{
+                        print("already voted")
+                        self.upVoteButton.enabled = false
+                    }else{
+                        print("did not vote")
+                        self.upVoteButton.enabled = true
+
+                    }
+                })
             }
         }
     }
@@ -53,5 +65,6 @@ class ClassPostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
 }

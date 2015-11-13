@@ -639,6 +639,7 @@
                                             <outlet property="postContentText" destination="aYh-DN-xYq" id="jWf-KR-CS0"/>
                                             <outlet property="postTitleText" destination="0Tr-cK-Hho" id="tdX-fP-7OP"/>
                                             <outlet property="scoreText" destination="fHP-tn-CwO" id="AMJ-3P-XZa"/>
+                                            <outlet property="upVoteButton" destination="GtE-4g-Zol" id="uMF-hX-rQb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

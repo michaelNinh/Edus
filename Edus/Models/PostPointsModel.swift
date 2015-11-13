@@ -13,7 +13,7 @@ class PostPoints: PFObject, PFSubclassing{
     
     var score: Int = 1
     //var toPost: Post?
-    var voterList = [PFUser]()
+    var voterList = [String]()
     
     func createPoints(){
         
@@ -47,6 +47,23 @@ class PostPoints: PFObject, PFSubclassing{
         }
         
     }
+    
+    func checkVoterList(completionBlock: ((inList: Bool) -> Void))  {
+        let query = PFQuery(className: "PostPoints")
+        query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
+            //let postPoint = result as! PostPoints
+            self.voterList = self["voterList"] as! [String]
+            if self.voterList.contains(PFUser.currentUser()!.objectId!){
+                //already voted
+                completionBlock(inList : true)
+            }else{
+                //did not vote
+                completionBlock(inList: false)
+            }
+        }
+    }
+    
+    
     
     func setPoints(){
         //self.score = self["score"] as! Int
