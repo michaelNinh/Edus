@@ -37,11 +37,17 @@ class HomeClassSelectionViewController: UIViewController {
             
             let thisUser = userResult![0] as! PFUser
             //add NIL CATCH HERE
+            if thisUser["enrolledClasses"] != nil{
             self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
             for classroom in self.enrolledClasses{
                 classroom.setClass()
                 self.enrolledClassesTableView.reloadData()
+                }
+            }else{
+                print("not enrolled in any classes yet")
             }
+            
+            
             self.enrolledClassesTableView.reloadData()
         }
         //end query

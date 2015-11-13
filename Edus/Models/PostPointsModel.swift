@@ -17,30 +17,20 @@ class PostPoints: PFObject, PFSubclassing{
     
     func createPoints(){
         
-        /*
-        let query = PFObject(className: "PostPoints")
-        query["score"] = self.score
-        query["toPost"] = self.toPost
-        query["voterList"] = self.voterList
-        query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("postPoint object saved")
-        }
-*/
-
-        
         let query = PFQuery(className: "PostPoints")
         query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
             let postPoint = result as! PostPoints
             //postPoint["toPost"] = self.toPost
             postPoint["score"] = self.score
             postPoint["voterList"] = self.voterList
+            postPoint.ACL?.setPublicWriteAccess(true)
             postPoint.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 print("postPoint object saved")
             }
         }
-
-        
     }
+    
+    
     
     func setPoints(){
         self.score = self["score"] as! Int

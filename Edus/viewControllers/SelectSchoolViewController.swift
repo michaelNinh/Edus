@@ -55,6 +55,7 @@ extension SelectSchoolViewController: UITableViewDelegate{
         let currentUser = PFUser.currentUser()!
         //this code adds a new colm into parse database -> transfer this over to adding new school as well
         currentUser["activeSchoolName"] = self.selectedSchool?.schoolName
+        currentUser["activeSchool"] = self.selectedSchool
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("User assigned school saved.")
         }

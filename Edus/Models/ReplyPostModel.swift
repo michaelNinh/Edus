@@ -30,6 +30,7 @@ class ReplyPost: PFObject, PFSubclassing{
         
         //THIS CREATES A POSTPOINT OBJECT
         query["toReplyPostPoints"] = self.toReplyPostPoints
+        query.ACL?.setPublicWriteAccess(true)
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")

@@ -37,7 +37,7 @@ class ExpandedQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         dateText.text = targetPost!.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
         postTitleText.text = targetPost!.title
         contentText.text = targetPost!.content
