@@ -9,40 +9,26 @@
 import Foundation
 import Parse
 
-class PostPoints: PFObject, PFSubclassing{
+class ReplyPostPoints: PFObject, PFSubclassing{
     
     var score: Int = 1
     //var toPost: Post?
     var voterList = [PFUser]()
     
-    func createPoints(){
+    func createReplyPoints(){
         
-        /*
-        let query = PFObject(className: "PostPoints")
-        query["score"] = self.score
-        query["toPost"] = self.toPost
-        query["voterList"] = self.voterList
-        query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("postPoint object saved")
-        }
-*/
-
-        
-        let query = PFQuery(className: "PostPoints")
+        let query = PFQuery(className: "ReplyPostPoints")
         query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
-            let postPoint = result as! PostPoints
-            //postPoint["toPost"] = self.toPost
-            postPoint["score"] = self.score
-            postPoint["voterList"] = self.voterList
-            postPoint.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                print("postPoint object saved")
+            let replyPostPoint = result as! ReplyPostPoints
+            replyPostPoint["score"] = self.score
+            replyPostPoint["voterList"] = self.voterList
+            replyPostPoint.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                print("replyPostPoint object saved")
             }
         }
-
-        
     }
     
-    func setPoints(){
+    func setReplyPoints(){
         self.score = self["score"] as! Int
         //self.toPost = self["toPost"] as? Post
         self.voterList = self["voterList"] as! [PFUser]
@@ -54,7 +40,7 @@ class PostPoints: PFObject, PFSubclassing{
     
     //start protocol code for PFSubclass
     static func parseClassName() -> String {
-        return "PostPoints"
+        return "ReplyPostPoints"
     }
     
     override class func initialize() {

@@ -37,10 +37,6 @@ class ClassPostTableViewCell: UITableViewCell {
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
                 scoreText.text = String(post.toPostPoints.score)
-                
-                print("FUCK\(self.nameText)")
-            }else{
-                print("no post")
             }
         }
     }

@@ -14,6 +14,7 @@ import ConvenienceKit
 class ClassPostsViewController: UIViewController, TimelineComponentTarget {
     
     var classroom: Classroom?
+    var selectedPost: Post?
 
     @IBOutlet weak var tableView: UITableView!
     let defaultRange = 0...4
@@ -22,15 +23,6 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
 
     //TIMELINE IMPLEMENTATION
     func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
-        
-        
-        /*
-        PostParseQueryHelper.getPostForClassCode({ (result: [AnyObject]?, error: NSError?) -> Void in
-            let posts = result as? [Post] ?? []
-            completionBlock(posts)
-            }, classCode: self.classroom!.classCode!, range: range)
-*/
-
         
         GetPostsForClass.getPostsForClass({ (result:[PFObject]?, error:NSError?) -> Void in
             let posts = result as? [Post] ?? []
@@ -68,13 +60,18 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func expandPostSegue(){
+        self.performSegueWithIdentifier("expandPostSegue", sender: self)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*
-        if (segue.identifier == "ExpandPost") {
+        
+        if (segue.identifier == "expandPostSegue") {
             let expandedPostViewController = segue.destinationViewController as! ExpandedPostViewController
             expandedPostViewController.post = selectedPost
         }
-*/
+
         if (segue.identifier == "makePostSegue") {
             let makePostViewController = segue.destinationViewController as! MakePostViewController
             makePostViewController.classroom = self.classroom
@@ -82,16 +79,15 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ClassPostsViewController: UITableViewDelegate{
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedPost = timelineComponent.content[indexPath.row]
+        expandPostSegue()
+       
     }
-    */
-
+    
 }
 
 extension ClassPostsViewController: UITableViewDataSource {

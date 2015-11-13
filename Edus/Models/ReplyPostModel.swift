@@ -9,62 +9,52 @@
 import Foundation
 import Parse
 
-class Post: PFObject, PFSubclassing{
+class ReplyPost: PFObject, PFSubclassing{
     
-    var title: String?
     var content: String?
     var fromUser: PFUser?
     var fromUserName: String?
     var anonymous: Bool = false
     
     //create a postPoint Object
-    var toPostPoints = PostPoints()
-    var toClassroom:Classroom?
-    var subject:String?
-    var subjectLevel:String?
+    var toReplyPostPoints = ReplyPostPoints()
+    var toPost:Post?
     
-    func uploadPost(){
-        let query = PFObject(className: "Post")
-        query["title"] = self.title
+    
+    func uploadReplyPost(){
+        let query = PFObject(className: "ReplyPost")
         query["content"] = self.content
         query["anonymous"] = self.anonymous
         query["fromUser"] = self.fromUser
         query["fromUserName"] = PFUser.currentUser()?.username!
-        query["subject"] = self.subject
-        query["subjectLevel"] = self.subjectLevel
-        query["toClassroom"] = self.toClassroom
+        query["toPost"] = self.toPost
         
         
         //THIS CREATES A POSTPOINT OBJECT
-        query["toPostPoints"] = self.toPostPoints
+        query["toPostPoints"] = self.toReplyPostPoints
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
-            self.toPostPoints.createPoints()
+            self.toReplyPostPoints.createReplyPoints()
         }
         
         
     }
     
-    func setPost(){
-        self.title = self["title"] as? String
+    func setReplyPost(){
         self.content = self["content"] as? String
         self.fromUser = self["fromUser"] as? PFUser
         self.fromUserName = self["fromUserName"] as? String
         self.anonymous = (self["anonymous"] as? Bool)!
         //self.toPostPoints = self["toPostPoints"] as! PostPoints
-        self.toClassroom = self["toClassroom"] as? Classroom
-        self.subject = self["subject"] as? String
-        self.subjectLevel = self["subjectLevel"] as? String
-        //no need to set points? data is already there???
-        //self.toPostPoints.setPoints()
-
+        self.toPost = self["toPost"] as? Post
+        
     }
     
     
     //start protocol code for PFSubclass
     static func parseClassName() -> String {
-        return "Post"
+        return "ReplyPost"
     }
     
     override class func initialize() {

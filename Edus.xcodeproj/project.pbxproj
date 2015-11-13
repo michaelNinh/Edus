@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE601640052A399FA99A441E /* Pods_Edus.framework */; };
+		9118A0B11BF54AFA00F3E122 /* ExpandedQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9118A0B01BF54AFA00F3E122 /* ExpandedQuestionViewController.swift */; };
+		9118A0B31BF54F0400F3E122 /* ExpandedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9118A0B21BF54F0400F3E122 /* ExpandedPostViewController.swift */; };
 		911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */; };
 		911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24F91BF3C04300B5510D /* AddClassViewController.swift */; };
 		911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */; };
@@ -50,13 +52,17 @@
 		91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */; };
 		91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */; };
 		91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */; };
-		9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC681BF40E9B002FC5AB /* PostModel.swift */; settings = {ASSET_TAGS = (); }; };
-		9176BC6B1BF46E04002FC5AB /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9176BC6D1BF47C8A002FC5AB /* GetPostsForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC6C1BF47C8A002FC5AB /* GetPostsForClass.swift */; settings = {ASSET_TAGS = (); }; };
-		9176BC711BF5035A002FC5AB /* PostPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC701BF5035A002FC5AB /* PostPointsModel.swift */; settings = {ASSET_TAGS = (); }; };
+		9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */; };
+		9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */; };
+		9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */; };
+		9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC681BF40E9B002FC5AB /* PostModel.swift */; };
+		9176BC6B1BF46E04002FC5AB /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */; };
+		9176BC6D1BF47C8A002FC5AB /* GetPostsForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC6C1BF47C8A002FC5AB /* GetPostsForClass.swift */; };
+		9176BC711BF5035A002FC5AB /* PostPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC701BF5035A002FC5AB /* PostPointsModel.swift */; };
+		917AB8A41BF5642D004F884D /* ReplyPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A31BF5642D004F884D /* ReplyPostModel.swift */; };
+		917AB8A61BF565DB004F884D /* ReplyPostPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */; };
+		917AB8A81BF65276004F884D /* ReplyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A71BF65276004F884D /* ReplyPostTableViewCell.swift */; };
+		917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,8 @@
 /* Begin PBXFileReference section */
 		4781B7331569D08A889F79F0 /* Pods-Edus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.release.xcconfig"; sourceTree = "<group>"; };
 		54D13EF6F29ACC79A717BDE0 /* Pods-Edus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Edus/Pods-Edus.debug.xcconfig"; sourceTree = "<group>"; };
+		9118A0B01BF54AFA00F3E122 /* ExpandedQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandedQuestionViewController.swift; path = viewControllers/ExpandedQuestionViewController.swift; sourceTree = "<group>"; };
+		9118A0B21BF54F0400F3E122 /* ExpandedPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandedPostViewController.swift; path = viewControllers/ExpandedPostViewController.swift; sourceTree = "<group>"; };
 		911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetAvailableClassesForSchool.swift; path = Queryers/GetAvailableClassesForSchool.swift; sourceTree = "<group>"; };
 		911B24F91BF3C04300B5510D /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClassViewController.swift; path = viewControllers/AddClassViewController.swift; sourceTree = "<group>"; };
 		911B24FB1BF3C1A100B5510D /* AddClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClassTableViewCell.swift; path = Views/AddClassTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +142,10 @@
 		9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakePostViewController.swift; path = viewControllers/MakePostViewController.swift; sourceTree = "<group>"; };
 		9176BC6C1BF47C8A002FC5AB /* GetPostsForClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPostsForClass.swift; path = Queryers/GetPostsForClass.swift; sourceTree = "<group>"; };
 		9176BC701BF5035A002FC5AB /* PostPointsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostPointsModel.swift; path = Models/PostPointsModel.swift; sourceTree = "<group>"; };
+		917AB8A31BF5642D004F884D /* ReplyPostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostModel.swift; path = Models/ReplyPostModel.swift; sourceTree = "<group>"; };
+		917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostPointModel.swift; path = Models/ReplyPostPointModel.swift; sourceTree = "<group>"; };
+		917AB8A71BF65276004F884D /* ReplyPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostTableViewCell.swift; path = Views/ReplyPostTableViewCell.swift; sourceTree = "<group>"; };
+		917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetReplyPostsForPost.swift; path = Queryers/GetReplyPostsForPost.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +197,15 @@
 				4781B7331569D08A889F79F0 /* Pods-Edus.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9118A0AF1BF54A9900F3E122 /* ExpandedPostLevel */ = {
+			isa = PBXGroup;
+			children = (
+				9118A0B01BF54AFA00F3E122 /* ExpandedQuestionViewController.swift */,
+				9118A0B21BF54F0400F3E122 /* ExpandedPostViewController.swift */,
+			);
+			name = ExpandedPostLevel;
 			sourceTree = "<group>";
 		};
 		912099841BF2E52500078E74 /* ClassLevelControllers */ = {
@@ -297,6 +318,8 @@
 				9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */,
 				9176BC681BF40E9B002FC5AB /* PostModel.swift */,
 				9176BC701BF5035A002FC5AB /* PostPointsModel.swift */,
+				917AB8A31BF5642D004F884D /* ReplyPostModel.swift */,
+				917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -320,6 +343,7 @@
 				911B24F71BF3BF4500B5510D /* GetAvailableClassesForSchool.swift */,
 				911B25011BF3CD4200B5510D /* GetUserEnrolledClasses.swift */,
 				9176BC6C1BF47C8A002FC5AB /* GetPostsForClass.swift */,
+				917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */,
 			);
 			name = Queryers;
 			sourceTree = "<group>";
@@ -350,6 +374,7 @@
 			children = (
 				9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */,
 				9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */,
+				9118A0AF1BF54A9900F3E122 /* ExpandedPostLevel */,
 			);
 			name = PostLevelControllers;
 			sourceTree = "<group>";
@@ -358,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */,
+				917AB8A71BF65276004F884D /* ReplyPostTableViewCell.swift */,
 			);
 			name = PostLevelCells;
 			sourceTree = "<group>";
@@ -558,15 +584,20 @@
 				9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */,
 				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
 				9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */,
+				9118A0B11BF54AFA00F3E122 /* ExpandedQuestionViewController.swift in Sources */,
+				917AB8A81BF65276004F884D /* ReplyPostTableViewCell.swift in Sources */,
+				917AB8A61BF565DB004F884D /* ReplyPostPointModel.swift in Sources */,
 				912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,
 				91374DA61BF1D37B0052157B /* AddNewSchoolViewController.swift in Sources */,
 				9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */,
 				91374DA11BF1CC7E0052157B /* SchoolModel.swift in Sources */,
+				9118A0B31BF54F0400F3E122 /* ExpandedPostViewController.swift in Sources */,
 				9176BC6D1BF47C8A002FC5AB /* GetPostsForClass.swift in Sources */,
 				91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */,
 				9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */,
 				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
+				917AB8A41BF5642D004F884D /* ReplyPostModel.swift in Sources */,
 				9176BC6B1BF46E04002FC5AB /* MakePostViewController.swift in Sources */,
 				9120998A1BF2E5C500078E74 /* CreateNewClassViewController.swift in Sources */,
 				911B24FC1BF3C1A100B5510D /* AddClassTableViewCell.swift in Sources */,
@@ -576,6 +607,7 @@
 				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
 				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,
 				9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */,
+				917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */,
 				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
 				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
