@@ -30,12 +30,28 @@ class PostPoints: PFObject, PFSubclassing{
         }
     }
     
-    
+    func upVote(){
+        
+        let query = PFQuery(className: "PostPoints")
+        //crashes due to nil here
+        query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
+            let postPoint = result as! PostPoints
+            self.score = self["score"] as! Int
+            //or postPoints["score"] as! Int ???
+            self.score += 1
+            postPoint["score"] = self.score
+            postPoint.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                print("postPoint upvoted")
+            }
+        }
+        
+    }
     
     func setPoints(){
-        self.score = self["score"] as! Int
+        //self.score = self["score"] as! Int
         //self.toPost = self["toPost"] as? Post
-        self.voterList = self["voterList"] as! [PFUser]
+        //self.voterList = self["voterList"] as! [PFUser]
+        self.objectId = self["objectId"] as? String
     }
     
     //func incrementpoints

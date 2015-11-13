@@ -56,6 +56,7 @@ class Post: PFObject, PFSubclassing{
         self.toClassroom = self["toClassroom"] as? Classroom
         self.subject = self["subject"] as? String
         self.subjectLevel = self["subjectLevel"] as? String
+        self.toPostPoints = self["toPostPoints"] as! PostPoints
         //no need to set points? data is already there???
         //self.toPostPoints.setPoints()
 

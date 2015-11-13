@@ -19,6 +19,7 @@ class ClassPostTableViewCell: UITableViewCell {
     
     
     @IBAction func upVote(sender: AnyObject) {
+        self.post?.toPostPoints.upVote()
     }
     
     
