@@ -765,6 +765,7 @@
                                                     <outlet property="nameText" destination="nEa-D2-akH" id="ONw-o9-mXl"/>
                                                     <outlet property="postContentText" destination="9KI-wE-7sT" id="B32-Hc-T1d"/>
                                                     <outlet property="scoreText" destination="dcy-BR-Zsf" id="5hb-Hy-aaK"/>
+                                                    <outlet property="upVoteButton" destination="FvG-FH-HKE" id="0ID-OR-lX9"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -859,6 +860,7 @@
                         <outlet property="nameText" destination="d98-76-BVr" id="gCR-83-Kdb"/>
                         <outlet property="postTitleText" destination="xgF-rx-prA" id="0E8-pq-wJg"/>
                         <outlet property="scoreText" destination="gr0-6o-pip" id="WVj-8L-9qZ"/>
+                        <outlet property="upVoteButton" destination="CxK-cE-kAi" id="JYW-Be-Rc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMd-Q3-HtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -919,7 +921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USx-Zp-JVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072" y="3898"/>
+            <point key="canvasLocation" x="3072" y="3936"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

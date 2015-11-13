@@ -13,7 +13,7 @@ class ReplyPostPoints: PFObject, PFSubclassing{
     
     var score: Int = 1
     //var toPost: Post?
-    var voterList = [PFUser]()
+    var voterList = [String]()
     
     func createReplyPoints(){
         
@@ -28,10 +28,37 @@ class ReplyPostPoints: PFObject, PFSubclassing{
         }
     }
     
+    func upVote(){
+        
+        let query = PFQuery(className: "ReplyPostPoints")
+        //crashes due to nil here
+        query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
+            let replyPostPoints = result as! ReplyPostPoints
+            self.score = self["score"] as! Int
+            //or postPoints["score"] as! Int ???
+            self.score += 1
+            replyPostPoints["score"] = self.score
+            replyPostPoints.addObject(PFUser.currentUser()!.objectId!, forKey: "voterList")
+            replyPostPoints.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                print("replyPostPoint upvoted")
+            }
+        }
+        
+    }
+    
+    func checkVoterList() -> Bool{
+        if self.voterList.contains(PFUser.currentUser()!.objectId!){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    
     func setReplyPoints(){
         self.score = self["score"] as! Int
         //self.toPost = self["toPost"] as? Post
-        self.voterList = self["voterList"] as! [PFUser]
+        self.voterList = self["voterList"] as! [String]
     }
     
     //func incrementpoints

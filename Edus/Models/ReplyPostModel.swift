@@ -46,6 +46,8 @@ class ReplyPost: PFObject, PFSubclassing{
         self.fromUserName = self["fromUserName"] as? String
         //self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toPost = self["toPost"] as? Post
+        self.toReplyPostPoints = self["toReplyPostPoints"] as! ReplyPostPoints
+        self.toReplyPostPoints.setReplyPoints()
         
     }
     

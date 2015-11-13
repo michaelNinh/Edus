@@ -23,7 +23,9 @@ class ReplyPostTableViewCell: UITableViewCell {
     @IBAction func flagPost(sender: AnyObject) {
     }
     
+    @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
+        self.replyPost?.toReplyPostPoints.upVote()
     }
     
     var replyPost: ReplyPost?{
@@ -33,6 +35,12 @@ class ReplyPostTableViewCell: UITableViewCell {
                 postContentText.text = replyPost.content
                 nameText.text = replyPost.fromUserName
                 scoreText.text = String(replyPost.toReplyPostPoints.score)
+                
+                if self.replyPost?.toReplyPostPoints.checkVoterList() == true{
+                    self.upVoteButton.enabled = false
+                }else{
+                    self.upVoteButton.enabled = true
+                }
             }
         }
     }
