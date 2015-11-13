@@ -103,7 +103,7 @@ extension ClassPostsViewController: UITableViewDataSource {
         
         let post = timelineComponent.content[indexPath.row]
         post.setPost()
-       
+        print("OUTER the objectId is \(post)")
         cell.post = post
         //cell.delegate = self
         return cell

@@ -33,8 +33,7 @@ class Post: PFObject, PFSubclassing{
         query["subject"] = self.subject
         query["subjectLevel"] = self.subjectLevel
         query["toClassroom"] = self.toClassroom
-        
-        
+        query.ACL?.setPublicWriteAccess(true)
         //THIS CREATES A POSTPOINT OBJECT
         query["toPostPoints"] = self.toPostPoints
         
@@ -56,6 +55,9 @@ class Post: PFObject, PFSubclassing{
         self.toClassroom = self["toClassroom"] as? Classroom
         self.subject = self["subject"] as? String
         self.subjectLevel = self["subjectLevel"] as? String
+        
+        self.objectId = self["objectId"] as? String
+        
         self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toPostPoints.setPoints()
         //no need to set points? data is already there???

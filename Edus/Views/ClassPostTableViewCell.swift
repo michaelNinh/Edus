@@ -21,6 +21,7 @@ class ClassPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
+        print(self.post?.objectId)
         self.post?.toPostPoints.upVote()
     }
     
@@ -43,6 +44,8 @@ class ClassPostTableViewCell: UITableViewCell {
                 //check voteList
                 
                 print("the list is \(self.post?.toPostPoints.voterList)")
+                print("the objectId is \(self.post?.objectId)")
+
                 
                 if self.post?.toPostPoints.checkVoterList() == true{
                     self.upVoteButton.enabled = false

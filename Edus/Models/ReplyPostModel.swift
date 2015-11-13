@@ -17,6 +17,7 @@ class ReplyPost: PFObject, PFSubclassing{
     
     //create a postPoint Object
     var toReplyPostPoints = ReplyPostPoints()
+    
     var toPost:Post?
     
     
@@ -25,6 +26,10 @@ class ReplyPost: PFObject, PFSubclassing{
         query["content"] = self.content
         query["fromUser"] = PFUser.currentUser()
         query["fromUserName"] = PFUser.currentUser()?.username!
+        query.ACL?.setPublicWriteAccess(true)
+
+        
+        //this line is creating an extra postPoints object
         query["toPost"] = self.toPost
         
         
