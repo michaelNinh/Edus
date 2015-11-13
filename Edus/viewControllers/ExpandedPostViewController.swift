@@ -54,6 +54,11 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
             expandedQuestionViewController.targetPost = self.post
         }
         
+        if (segue.identifier == "writeReplyPostSegue") {
+            let writePostReplyViewController = segue.destinationViewController as! WriteReplyPostViewController
+            writePostReplyViewController.post = self.post
+        }
+        
     }
 
 }

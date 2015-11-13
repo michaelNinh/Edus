@@ -14,7 +14,6 @@ class ReplyPost: PFObject, PFSubclassing{
     var content: String?
     var fromUser: PFUser?
     var fromUserName: String?
-    var anonymous: Bool = false
     
     //create a postPoint Object
     var toReplyPostPoints = ReplyPostPoints()
@@ -24,14 +23,13 @@ class ReplyPost: PFObject, PFSubclassing{
     func uploadReplyPost(){
         let query = PFObject(className: "ReplyPost")
         query["content"] = self.content
-        query["anonymous"] = self.anonymous
-        query["fromUser"] = self.fromUser
+        query["fromUser"] = PFUser.currentUser()
         query["fromUserName"] = PFUser.currentUser()?.username!
         query["toPost"] = self.toPost
         
         
         //THIS CREATES A POSTPOINT OBJECT
-        query["toPostPoints"] = self.toReplyPostPoints
+        query["toReplyPostPoints"] = self.toReplyPostPoints
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
@@ -45,7 +43,6 @@ class ReplyPost: PFObject, PFSubclassing{
         self.content = self["content"] as? String
         self.fromUser = self["fromUser"] as? PFUser
         self.fromUserName = self["fromUserName"] as? String
-        self.anonymous = (self["anonymous"] as? Bool)!
         //self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toPost = self["toPost"] as? Post
         

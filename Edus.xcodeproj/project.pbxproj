@@ -63,6 +63,7 @@
 		917AB8A61BF565DB004F884D /* ReplyPostPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */; };
 		917AB8A81BF65276004F884D /* ReplyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A71BF65276004F884D /* ReplyPostTableViewCell.swift */; };
 		917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */; };
+		917AB8AC1BF65EB6004F884D /* WriteReplyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8AB1BF65EB6004F884D /* WriteReplyPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostPointModel.swift; path = Models/ReplyPostPointModel.swift; sourceTree = "<group>"; };
 		917AB8A71BF65276004F884D /* ReplyPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostTableViewCell.swift; path = Views/ReplyPostTableViewCell.swift; sourceTree = "<group>"; };
 		917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetReplyPostsForPost.swift; path = Queryers/GetReplyPostsForPost.swift; sourceTree = "<group>"; };
+		917AB8AB1BF65EB6004F884D /* WriteReplyPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteReplyPostViewController.swift; path = viewControllers/WriteReplyPostViewController.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 			children = (
 				9118A0B01BF54AFA00F3E122 /* ExpandedQuestionViewController.swift */,
 				9118A0B21BF54F0400F3E122 /* ExpandedPostViewController.swift */,
+				917AB8AB1BF65EB6004F884D /* WriteReplyPostViewController.swift */,
 			);
 			name = ExpandedPostLevel;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */,
 				9118A0B11BF54AFA00F3E122 /* ExpandedQuestionViewController.swift in Sources */,
 				917AB8A81BF65276004F884D /* ReplyPostTableViewCell.swift in Sources */,
+				917AB8AC1BF65EB6004F884D /* WriteReplyPostViewController.swift in Sources */,
 				917AB8A61BF565DB004F884D /* ReplyPostPointModel.swift in Sources */,
 				912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,

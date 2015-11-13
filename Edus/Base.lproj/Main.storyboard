@@ -698,7 +698,7 @@
                                         <rect key="frame" x="275" y="203" width="51" height="30"/>
                                         <state key="normal" title="Answer"/>
                                         <connections>
-                                            <segue destination="ONY-sw-GjG" kind="show" id="gUo-KX-khF"/>
+                                            <segue destination="ONY-sw-GjG" kind="show" identifier="writeReplyPostSegue" id="gUo-KX-khF"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U8u-GD-kAf" customClass="reply">
@@ -867,7 +867,7 @@
         <!--Title-->
         <scene sceneID="2wr-4Z-8uJ">
             <objects>
-                <viewController id="ONY-sw-GjG" sceneMemberID="viewController">
+                <viewController id="ONY-sw-GjG" customClass="WriteReplyPostViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vkr-Gj-TzS"/>
                         <viewControllerLayoutGuide type="bottom" id="Uad-fK-Yub"/>
@@ -904,12 +904,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Foz-fE-iBt">
-                        <barButtonItem key="rightBarButtonItem" title="Reply" id="F8r-cx-ITF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="F8r-cx-ITF">
+                            <connections>
+                                <action selector="uploadReplyPost:" destination="ONY-sw-GjG" id="dqQ-K9-x7c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="postContentText" destination="3aQ-ie-nfL" id="AyO-Si-qoe"/>
+                        <outlet property="postQuestionText" destination="kAT-eP-wVS" id="tPb-AM-fzg"/>
+                        <outlet property="replyPostContentText" destination="PZ7-RO-a7J" id="Exi-Y4-42E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USx-Zp-JVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072" y="3870"/>
+            <point key="canvasLocation" x="3072" y="3898"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
