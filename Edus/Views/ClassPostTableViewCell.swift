@@ -41,16 +41,14 @@ class ClassPostTableViewCell: UITableViewCell {
                 nameText.text = post.fromUserName
                 scoreText.text = String(post.toPostPoints.score)
                 //check voteList
-                self.post?.toPostPoints.checkVoterList({ (inList) -> Void in
-                    if inList == true{
-                        print("already voted")
-                        self.upVoteButton.enabled = false
-                    }else{
-                        print("did not vote")
-                        self.upVoteButton.enabled = true
-
-                    }
-                })
+                
+                print("the list is \(self.post?.toPostPoints.voterList)")
+                
+                if self.post?.toPostPoints.checkVoterList() == true{
+                    self.upVoteButton.enabled = false
+                }else{
+                    self.upVoteButton.enabled = true
+                }
             }
         }
     }

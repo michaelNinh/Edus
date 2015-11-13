@@ -48,6 +48,7 @@ class PostPoints: PFObject, PFSubclassing{
         
     }
     
+    /*
     func checkVoterList(completionBlock: ((inList: Bool) -> Void))  {
         let query = PFQuery(className: "PostPoints")
         query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
@@ -62,13 +63,21 @@ class PostPoints: PFObject, PFSubclassing{
             }
         }
     }
-    
+*/
+  
+    func checkVoterList() -> Bool{
+        if self.voterList.contains(PFUser.currentUser()!.objectId!){
+            return true
+        }else{
+            return false
+        }
+    }
     
     
     func setPoints(){
-        //self.score = self["score"] as! Int
+        self.score = self["score"] as! Int
         //self.toPost = self["toPost"] as? Post
-        //self.voterList = self["voterList"] as! [PFUser]
+        self.voterList = self["voterList"] as! [String]
         self.objectId = self["objectId"] as? String
     }
     
