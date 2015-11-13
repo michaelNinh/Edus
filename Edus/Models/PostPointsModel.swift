@@ -40,6 +40,7 @@ class PostPoints: PFObject, PFSubclassing{
             //or postPoints["score"] as! Int ???
             self.score += 1
             postPoint["score"] = self.score
+            postPoint.addObject(PFUser.currentUser()!.objectId!, forKey: "voterList")
             postPoint.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 print("postPoint upvoted")
             }
