@@ -103,8 +103,6 @@ extension ClassPostsViewController: UITableViewDataSource {
         
         let post = timelineComponent.content[indexPath.row]
         post.setPost()
-        //post.toPostPoints.setPoints()
-        print("the postPosts objID is\(post.toPostPoints.objectId)")
        
         cell.post = post
         //cell.delegate = self
