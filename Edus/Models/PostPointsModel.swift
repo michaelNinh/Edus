@@ -64,9 +64,8 @@ class PostPoints: PFObject, PFSubclassing{
     
     func setPoints(){
         self.score = self["score"] as! Int
-        //self.toPost = self["toPost"] as? Post
+        self.toPost = self["toPost"] as? Post
         self.voterList = self["voterList"] as! [String]
-        self.objectId = self["objectId"] as? String
     }
     
     //func incrementpoints

@@ -106,6 +106,7 @@ extension ClassPostsViewController: UITableViewDataSource {
         post.setPost()
         cell.post = post
         //cell.delegate = self
+        
         return cell
     }
 }

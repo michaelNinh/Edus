@@ -21,8 +21,6 @@ class ClassPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
-        print(self.post?.objectId)
-        //self.post?.toPostPoints.upVote()
     }
     
     
@@ -40,11 +38,7 @@ class ClassPostTableViewCell: UITableViewCell {
                 postTitleText.text = post.title
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
-                //scoreText.text = String(post.toPostPoints.score)
-                //check voteList
                 
-                //print("the list is \(self.post?.toPostPoints.voterList)")
-                print("the objectId is \(self.post?.objectId)")
 
                 /*
                 if self.post?.toPostPoints.checkVoterList() == true{
@@ -56,6 +50,8 @@ class ClassPostTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

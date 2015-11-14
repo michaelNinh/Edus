@@ -9,9 +9,31 @@
 import UIKit
 import ConvenienceKit
 import Parse
+import DateTools
 
 class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
-
+    
+    
+    @IBOutlet weak var questionTitleText: UILabel!
+    @IBOutlet weak var questionContentText: UILabel!
+    @IBOutlet weak var questionFromUserNameText: UILabel!
+    @IBOutlet weak var questionDate: UILabel!
+    @IBOutlet weak var questionScoreText: UILabel!
+    
+    @IBOutlet weak var questionUpvoteButton: UIButton!
+    @IBAction func questionUpvote(sender: AnyObject) {
+    }
+    
+    @IBAction func questionFlag(sender: AnyObject) {
+    }
+    @IBOutlet weak var questionDeleteButton: UIButton!
+    @IBAction func questionDelete(sender: AnyObject) {
+    }
+    
+    
+    
+    
+    //TIMELINE IMPLEMENTATION
     @IBOutlet weak var tableView: UITableView!
     let defaultRange = 0...4
     let additionalRangeSize = 5

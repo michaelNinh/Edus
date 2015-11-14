@@ -15,8 +15,6 @@ class ReplyPost: PFObject, PFSubclassing{
     var fromUser: PFUser?
     var fromUserName: String?
     
-    //create a postPoint Object
-    var toReplyPostPoints = ReplyPostPoints()
     
     var toPost:Post?
     
@@ -34,12 +32,9 @@ class ReplyPost: PFObject, PFSubclassing{
         
         
         //THIS CREATES A POSTPOINT OBJECT
-        query["toReplyPostPoints"] = self.toReplyPostPoints
-        query.ACL?.setPublicWriteAccess(true)
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
-            self.toReplyPostPoints.createReplyPoints()
         }
         
         
@@ -51,8 +46,6 @@ class ReplyPost: PFObject, PFSubclassing{
         self.fromUserName = self["fromUserName"] as? String
         //self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toPost = self["toPost"] as? Post
-        self.toReplyPostPoints = self["toReplyPostPoints"] as! ReplyPostPoints
-        self.toReplyPostPoints.setReplyPoints()
         
     }
     

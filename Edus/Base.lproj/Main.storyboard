@@ -713,7 +713,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="600" height="145"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8h-2D-zKd" id="LQa-EE-d1n">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="144.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="145"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-BR-Zsf">
@@ -909,7 +909,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USx-Zp-JVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072" y="3936"/>
+            <point key="canvasLocation" x="3093" y="3830"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
