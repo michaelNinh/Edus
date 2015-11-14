@@ -12,8 +12,8 @@ import Parse
 class PostPoints: PFObject, PFSubclassing{
     
     var score: Int = 2
-    var toPost: Post?
     var voterList = [String]()
+    var toPost: Post?
     
     func upVote(){
         let postPointQuery = PFQuery(className: "PostPoints")
@@ -50,9 +50,7 @@ class PostPoints: PFObject, PFSubclassing{
         }
     }
     
-    
-    
-   
+
     func checkVoterList() -> Bool{
         if self.voterList.contains(PFUser.currentUser()!.objectId!){
             return true
@@ -64,7 +62,6 @@ class PostPoints: PFObject, PFSubclassing{
     
     func setPoints(){
         self.score = self["score"] as! Int
-        self.toPost = self["toPost"] as? Post
         self.voterList = self["voterList"] as! [String]
     }
     
@@ -121,6 +118,41 @@ print("postPoint upvoted")
 }
 }
 
+}
+
+func upVote(){
+let postPointQuery = PFQuery(className: "PostPoints")
+postPointQuery.whereKey("toPost", equalTo: self.toPost!)
+postPointQuery.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in
+//get results and insert into this list
+let resultList = result as! [PostPoints]
+
+//if the list is empty, means no point object exists so we create one
+if resultList == []{
+let query = PFObject(className: "PostPoints")
+query["toPost"] = self.toPost
+query["score"] = self.score
+query.addObject(PFUser.currentUser()!.objectId!, forKey: "voterList")
+query.ACL?.setPublicWriteAccess(true)
+query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+print("postPoint created and saved")
+}
+//if list is populated, points already exists so we update it
+}else{
+let targetPointObject = resultList[0] as PostPoints
+self.score = targetPointObject["score"] as! Int
+self.score += 1
+targetPointObject["score"] = self.score
+targetPointObject.addObject(PFUser.currentUser()!.objectId!, forKey: "voterList")
+targetPointObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+print("postPoint upvoted")
+}
+
+
+}
+
+
+}
 }
 
 */

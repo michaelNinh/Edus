@@ -8,6 +8,7 @@
 
 import UIKit
 import DateTools
+import Parse
 
 
 class ClassPostTableViewCell: UITableViewCell {
@@ -21,6 +22,9 @@ class ClassPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
+        postPoints.toPost = self.post
+        postPoints.upVote()
+        self.upVoteButton.enabled = false
     }
     
     
@@ -31,6 +35,9 @@ class ClassPostTableViewCell: UITableViewCell {
     @IBAction func flagPost(sender: AnyObject) {
     }
     
+    var voterList = [String]()
+    var postPoints = PostPoints()
+    
     var post: Post?{
         didSet{
             if let post = post{
@@ -38,15 +45,6 @@ class ClassPostTableViewCell: UITableViewCell {
                 postTitleText.text = post.title
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
-                
-
-                /*
-                if self.post?.toPostPoints.checkVoterList() == true{
-                    self.upVoteButton.enabled = false
-                }else{
-                    self.upVoteButton.enabled = true
-                }
-*/
             }
         }
     }

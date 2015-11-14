@@ -15,6 +15,7 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
     
     var classroom: Classroom?
     var selectedPost: Post?
+    var selectedPostPostPoints: PostPoints?
 
     @IBOutlet weak var tableView: UITableView!
     let defaultRange = 0...4
@@ -71,6 +72,7 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
         if (segue.identifier == "expandPostSegue") {
             let expandedPostViewController = segue.destinationViewController as! ExpandedPostViewController
             expandedPostViewController.post = selectedPost
+            expandedPostViewController.targetPostPoints = self.selectedPostPostPoints
         }
 
         if (segue.identifier == "makePostSegue") {
@@ -106,6 +108,25 @@ extension ClassPostsViewController: UITableViewDataSource {
         post.setPost()
         cell.post = post
         //cell.delegate = self
+        
+        GetPointsForPost.getPointsForPost({ (result: [PFObject]?, error: NSError?) -> Void in
+            if result!.count != 0{
+                let targetPointObj = result![0] as! PostPoints
+                self.selectedPostPostPoints = targetPointObj
+                targetPointObj.setPoints()
+                cell.scoreText.text = String(targetPointObj.score)
+                
+                if targetPointObj.voterList.contains(PFUser.currentUser()!.objectId!){
+                    print("already voted")
+                    cell.upVoteButton.enabled = false
+                }else{
+                    cell.upVoteButton.enabled = true
+                }
+            
+            }else{
+                print("no votes")
+            }
+            }, post: post)
         
         return cell
     }

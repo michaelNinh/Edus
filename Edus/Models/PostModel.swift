@@ -16,10 +16,8 @@ class Post: PFObject, PFSubclassing{
     var fromUser: PFUser?
     var fromUserName: String?
     var anonymous: Bool = false
-    
-    //create a postPoint Object
-    //var toPostPoints = PostPoints()
-    
+   
+    var toPostPoints = PostPoints()
     
     var toClassroom:Classroom?
     var subject:String?
@@ -36,14 +34,9 @@ class Post: PFObject, PFSubclassing{
         query["subjectLevel"] = self.subjectLevel
         query["toClassroom"] = self.toClassroom
         query.ACL?.setPublicWriteAccess(true)
-        
-        
-        //THIS CREATES A POSTPOINT OBJECT
-        //query["toPostPoints"] = self.toPostPoints
-        
+    
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
-            //self.toPostPoints.createPoints()
         }
         
         
@@ -56,20 +49,9 @@ class Post: PFObject, PFSubclassing{
         self.fromUser = self["fromUser"] as? PFUser
         self.fromUserName = self["fromUserName"] as? String
         self.anonymous = (self["anonymous"] as? Bool)!
-        //self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toClassroom = self["toClassroom"] as? Classroom
         self.subject = self["subject"] as? String
         self.subjectLevel = self["subjectLevel"] as? String
-        
-        self.objectId = self["objectId"] as? String
-        print(self.objectId)
-        
-        //self.toPostPoints = self["toPostPoints"] as! PostPoints
-        //self.toPostPoints.setPoints()
-        
-        //no need to set points? data is already there???
-        //self.toPostPoints.setPoints()
-
     }
     
     
