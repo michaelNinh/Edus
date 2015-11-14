@@ -227,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YO-QR-ChQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3003" y="2825"/>
+            <point key="canvasLocation" x="2999" y="2825"/>
         </scene>
         <!--Create class-->
         <scene sceneID="SaX-8g-LN8">
@@ -320,7 +320,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOG-zF-LLz" id="sWO-Il-75K">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-qo-6EP">
@@ -536,7 +536,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klW-8J-hbl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klW-8J-hbl">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -651,10 +651,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="klW-8J-hbl" firstAttribute="leading" secondItem="Dlb-Mg-yOi" secondAttribute="leading" id="Gwh-F0-FFv"/>
-                            <constraint firstAttribute="trailing" secondItem="klW-8J-hbl" secondAttribute="trailing" id="JPI-yf-nvK"/>
-                            <constraint firstItem="klW-8J-hbl" firstAttribute="top" secondItem="0XQ-nO-4Xb" secondAttribute="bottom" id="NTJ-PG-8qf"/>
-                            <constraint firstItem="klW-8J-hbl" firstAttribute="bottom" secondItem="sOd-0p-TcT" secondAttribute="top" id="PF9-TD-Eeh"/>
+                            <constraint firstItem="klW-8J-hbl" firstAttribute="top" secondItem="0XQ-nO-4Xb" secondAttribute="bottom" id="GwZ-ze-QQt"/>
+                            <constraint firstItem="klW-8J-hbl" firstAttribute="bottom" secondItem="sOd-0p-TcT" secondAttribute="top" id="eAn-ZC-58c"/>
+                            <constraint firstAttribute="trailing" secondItem="klW-8J-hbl" secondAttribute="trailing" id="lH6-Qh-9Jy"/>
+                            <constraint firstItem="klW-8J-hbl" firstAttribute="leading" secondItem="Dlb-Mg-yOi" secondAttribute="leading" id="nfE-GC-xzU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Class posts" id="Kpg-Yf-3QD">
@@ -865,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMd-Q3-HtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072" y="3392"/>
+            <point key="canvasLocation" x="3072" y="3388.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="2wr-4Z-8uJ">

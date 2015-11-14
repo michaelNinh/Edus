@@ -26,6 +26,7 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
         
         GetPostsForClass.getPostsForClass({ (result:[PFObject]?, error:NSError?) -> Void in
             let posts = result as? [Post] ?? []
+            print(posts)
             completionBlock(posts)
             }, classroom: self.classroom!, range: range)
         
@@ -103,7 +104,6 @@ extension ClassPostsViewController: UITableViewDataSource {
         
         let post = timelineComponent.content[indexPath.row]
         post.setPost()
-        print("OUTER the objectId is \(post)")
         cell.post = post
         //cell.delegate = self
         return cell
