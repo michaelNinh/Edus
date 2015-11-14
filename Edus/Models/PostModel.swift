@@ -18,9 +18,7 @@ class Post: PFObject, PFSubclassing{
     var anonymous: Bool = false
     
     //create a postPoint Object
-    
-    
-    var toPostPoints = PostPoints()
+    //var toPostPoints = PostPoints()
     
     
     var toClassroom:Classroom?
@@ -45,7 +43,7 @@ class Post: PFObject, PFSubclassing{
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
-            self.toPostPoints.createPoints()
+            //self.toPostPoints.createPoints()
         }
         
         

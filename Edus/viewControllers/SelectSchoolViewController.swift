@@ -37,16 +37,26 @@ class SelectSchoolViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addedSchoolSegue(){
+        performSegueWithIdentifier("clickAddSchoolSegue", sender: self)
     }
-    */
 
+    
+    //ALERT STUFF
+    func confirmSchoolAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            self.addedSchoolSegue()
+        }
+        
+        
+        alertController.addAction(yes)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+    
 }
 
 extension SelectSchoolViewController: UITableViewDelegate{
@@ -59,7 +69,8 @@ extension SelectSchoolViewController: UITableViewDelegate{
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("User assigned school saved.")
         }
-        //confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
+        
+        confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
         //let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         //mixpanel.track("school added")
     }

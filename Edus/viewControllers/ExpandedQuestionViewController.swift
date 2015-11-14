@@ -22,7 +22,7 @@ class ExpandedQuestionViewController: UIViewController {
     
     @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
-        self.targetPost?.toPostPoints.upVote()
+        //self.targetPost?.toPostPoints.upVote()
     }
     
     
@@ -44,13 +44,15 @@ class ExpandedQuestionViewController: UIViewController {
         postTitleText.text = targetPost!.title
         contentText.text = targetPost!.content
         nameText.text = targetPost!.fromUserName
-        scoreText.text = String(targetPost!.toPostPoints.score)
+        //scoreText.text = String(targetPost!.toPostPoints.score)
         
+        /*
         if self.targetPost?.toPostPoints.checkVoterList() == true{
             self.upVoteButton.enabled = false
         }else{
             self.upVoteButton.enabled = true
         }
+*/
         
     }
 

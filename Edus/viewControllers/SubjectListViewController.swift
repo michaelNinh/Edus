@@ -35,11 +35,11 @@ class SubjectListViewController: UIViewController {
     }
     
     func passBackSegue(){
-        self.performSegueWithIdentifier("SelectedSubjectSegue", sender: self)
+        self.performSegueWithIdentifier("selectedSubjectSegue", sender: self)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "SelectedSubjectSegue") {
+        if (segue.identifier == "selectedSubjectSegue") {
             let createNewClassViewController = segue.destinationViewController as! CreateNewClassViewController
             createNewClassViewController.selectedSubject = self.selectedSubject
         }

@@ -22,7 +22,7 @@ class AddNewSchoolViewController: UIViewController {
         //newSchool.enrolledUsers.append(PFUser.currentUser()!)
         newSchool.createNewSchool()
         print("button pressed")
-        
+        addedSchoolSegue()
     }
     
     
@@ -38,14 +38,8 @@ class AddNewSchoolViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addedSchoolSegue(){
+        performSegueWithIdentifier("addedSchoolSegue", sender: self)
     }
-    */
 
 }

@@ -28,6 +28,7 @@ class CreateNewClassViewController: UIViewController {
     @IBAction func addClassButton(sender: AnyObject) {
         let classroom = Classroom()
         classroom.subject = self.selectedSubject?.subjectName
+        createdClassSegue()
         
         
         switch levelSegementControlButton.selectedSegmentIndex{
@@ -46,6 +47,10 @@ class CreateNewClassViewController: UIViewController {
         classroom.professorLastName = self.professorLastNameField.text
         
         classroom.enrollClass()
+    }
+    
+    func createdClassSegue(){
+        self.performSegueWithIdentifier("createdClassSegue", sender: self)
     }
     
     override func viewDidLoad() {

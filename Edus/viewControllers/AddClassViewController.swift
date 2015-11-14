@@ -39,23 +39,34 @@ class AddClassViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addedClassSegue(){
+        performSegueWithIdentifier("clickAddClassSegue", sender: self)
     }
-    */
-
+    
+    //ALERT STUFF
+    func confirmClassAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            self.addedClassSegue()
+        }
+        
+        
+        alertController.addAction(yes)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+    
+    
 }
 
 extension AddClassViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedClass = classrooms[indexPath.row]
         self.selectedClass?.addIntoClass()
+        confirmClassAlert("You have added \(self.selectedClass!.classTitle!)", message: "")
+
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
