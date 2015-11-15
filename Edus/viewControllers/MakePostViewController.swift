@@ -41,7 +41,8 @@ class MakePostViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        anonymousToggleButton.on = false
         // Do any additional setup after loading the view.
     }
 

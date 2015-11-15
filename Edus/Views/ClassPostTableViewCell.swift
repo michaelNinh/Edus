@@ -25,6 +25,7 @@ class ClassPostTableViewCell: UITableViewCell {
         postPoints.toPost = self.post
         postPoints.upVote()
         self.upVoteButton.enabled = false
+        scoreText.text = String(Int(scoreText.text!)!+1)
     }
     
     
@@ -45,6 +46,7 @@ class ClassPostTableViewCell: UITableViewCell {
                 postTitleText.text = post.title
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
+                print("the current text value of the score is \(self.scoreText.text)")
             }
         }
     }
