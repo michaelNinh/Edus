@@ -188,7 +188,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
         let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
             (actionCancel) -> () in
             print("do the flag")
-            callbackViewCell.flagContentAction()
+            callbackViewCell.deleteContentAction()
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){

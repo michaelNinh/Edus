@@ -63,4 +63,22 @@ class ReplyPost: PFObject, PFSubclassing{
         }
     }
     //end
+    
+    func deleteReplyPost(){
+        print(self.objectId!)
+        let query = PFQuery(className: "ReplyPost")
+        query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
+            if error != nil{
+                print(error)
+            }else{
+                result?.deleteInBackgroundWithBlock({ (succes: Bool, error: NSError?) -> Void in
+                    print("replyPost deleted")
+                    let deleterPostPoints = ReplyPostPoints()
+                    deleterPostPoints.toReplyPost = self
+                    deleterPostPoints.deleteReplyPostPoints()
+                })
+            }
+        }
+    }
+    
 }

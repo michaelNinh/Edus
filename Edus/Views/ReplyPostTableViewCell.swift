@@ -24,6 +24,7 @@ class ReplyPostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateText: UILabel!
     
     @IBAction func deletePost(sender: AnyObject) {
+        delegate?.showDeleteAlert("", message: "Delete post?", callbackViewCell: self)
     }
     
     @IBAction func flagPost(sender: AnyObject) {
@@ -72,7 +73,7 @@ class ReplyPostTableViewCell: UITableViewCell {
     }
     
     func deleteContentAction(){
-        //post delete function here
+        self.replyPost!.deleteReplyPost()
     }
 
 }

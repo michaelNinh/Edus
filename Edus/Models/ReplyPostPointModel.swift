@@ -49,8 +49,6 @@ class ReplyPostPoints: PFObject, PFSubclassing{
         }
     }
     
-    
-    
     func checkVoterList() -> Bool{
         if self.voterList.contains(PFUser.currentUser()!.objectId!){
             return true
@@ -65,6 +63,22 @@ class ReplyPostPoints: PFObject, PFSubclassing{
         //self.toPost = self["toPost"] as? Post
         self.voterList = self["voterList"] as! [String]
     }
+    
+    func deleteReplyPostPoints(){
+        let query = PFQuery(className: "ReplyPostPoints")
+        query.whereKey("toReplyPost", equalTo: self.toReplyPost!)
+        query.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in
+            if error != nil{
+                print(error)
+            }else{
+                let targetPointObj = result![0] as? ReplyPostPoints
+                targetPointObj?.deleteInBackgroundWithBlock({ (succcess: Bool, error: NSError?) -> Void in
+                    print("associated replyPostPoints deleted")
+                })
+            }
+        }
+    }
+    
     
     //start protocol code for PFSubclass
     static func parseClassName() -> String {
