@@ -66,6 +66,9 @@ class Post: PFObject, PFSubclassing{
             }else{
                 result?.deleteInBackgroundWithBlock({ (succes: Bool, error: NSError?) -> Void in
                     print("post deleted")
+                    let deleterPostPoints = PostPoints()
+                    deleterPostPoints.toPost = self
+                    deleterPostPoints.deletePostPoints()
                 })
             }
         }

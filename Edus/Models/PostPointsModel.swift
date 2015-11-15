@@ -50,7 +50,6 @@ class PostPoints: PFObject, PFSubclassing{
         }
     }
     
-
     func checkVoterList() -> Bool{
         if self.voterList.contains(PFUser.currentUser()!.objectId!){
             return true
@@ -65,9 +64,20 @@ class PostPoints: PFObject, PFSubclassing{
         self.voterList = self["voterList"] as! [String]
     }
     
-    //func incrementpoints
-    
-    //funcAddVoters
+    func deletePostPoints(){
+        let query = PFQuery(className: "PostPoints")
+        query.whereKey("toPost", equalTo: self.toPost!)
+        query.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in
+            if error != nil{
+                print(error)
+            }else{
+                let targetPointObj = result![0] as? PostPoints
+                targetPointObj?.deleteInBackgroundWithBlock({ (succcess: Bool, error: NSError?) -> Void in
+                    print("associated postPoints deleted")
+                })
+            }
+        }
+    }
     
     //start protocol code for PFSubclass
     static func parseClassName() -> String {

@@ -126,6 +126,8 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
             (actionCancel) -> () in
             print("delete the post")
             callbackViewCell.deleteContentAction()
+            self.tableView.reloadData()
+            //DELETING DOES NOT UPDATE THE TABLEVIEW...minor issue
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
