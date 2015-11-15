@@ -24,7 +24,7 @@ class ReplyPost: PFObject, PFSubclassing{
         query["content"] = self.content
         query["fromUser"] = PFUser.currentUser()
         query["fromUserName"] = PFUser.currentUser()?.username!
-        query.ACL?.setPublicWriteAccess(true)
+        //query.ACL?.setPublicWriteAccess(true)
 
         
         //this line is creating an extra postPoints object

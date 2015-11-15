@@ -33,7 +33,6 @@ class Post: PFObject, PFSubclassing{
         query["subject"] = self.subject
         query["subjectLevel"] = self.subjectLevel
         query["toClassroom"] = self.toClassroom
-        query.ACL?.setPublicWriteAccess(true)
     
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")

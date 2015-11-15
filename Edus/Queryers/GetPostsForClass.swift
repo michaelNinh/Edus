@@ -14,6 +14,7 @@ class GetPostsForClass{
     static func getPostsForClass(completionBlock: PFQueryArrayResultBlock, classroom: Classroom, range: Range<Int>){
         
         let query = PFQuery(className: "Post")
+        //this is where I would modify to create different post category results
         query.whereKey("toClassroom", equalTo: classroom)
         query.includeKey("toPostPoints")
         query.orderByDescending("createdAt")

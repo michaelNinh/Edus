@@ -22,6 +22,10 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
     
     @IBOutlet weak var questionUpvoteButton: UIButton!
     @IBAction func questionUpvote(sender: AnyObject) {
+        targetPostPoints!.toPost = self.post
+        targetPostPoints!.upVote()
+        self.questionUpvoteButton.enabled = false
+        questionScoreText.text = String(Int(questionScoreText.text!)!+1)
         
     }
     
