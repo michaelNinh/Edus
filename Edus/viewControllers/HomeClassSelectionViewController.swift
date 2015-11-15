@@ -124,16 +124,17 @@ extension HomeClassSelectionViewController: UITableViewDelegate{
         return true
     }
     
-    /*
+    
     //this is for deleting a class
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            self.selectedClass = classrooms[indexPath.row]
-            self.selectedClass?.deleteClass(self.selectedClass!.objectId!)
-            self.classListTable.reloadData()
+            self.selectedClassroom = enrolledClasses[indexPath.row]
+            self.selectedClassroom?.deleteClass(self.selectedClassroom!)
+            self.enrolledClasses.removeAtIndex(indexPath.row)
+            self.enrolledClassesTableView.reloadData()
         }
     }
-*/
+
     
     
 }

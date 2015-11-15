@@ -79,6 +79,13 @@ class Classroom: PFObject, PFSubclassing{
         
     }
     
+    func deleteClass(classroom: Classroom){
+        PFUser.currentUser()?.removeObject(classroom, forKey: "enrolledClasses")
+        PFUser.currentUser()!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("deleted Class?")
+        }
+    }
+    
     
     
     func setClass(){
@@ -88,7 +95,7 @@ class Classroom: PFObject, PFSubclassing{
         self.subject = self["subject"] as? String
         self.subjectLevel = self["subjectLevel"] as? String
     }
-    
+    /*
     func deleteClass(classObjectId: String){
         let query = PFQuery(className: "Classroom")
         query.getObjectInBackgroundWithId(classObjectId){
@@ -102,6 +109,7 @@ class Classroom: PFObject, PFSubclassing{
             }
         }
     }
+*/
     
     
     //start protocol code for PFSubclass
