@@ -30,6 +30,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
     }
     
     @IBAction func questionFlag(sender: AnyObject) {
+        showFlagAlert("", message: "Flag for inappropriate content?")
     }
     @IBOutlet weak var questionDeleteButton: UIButton!
     @IBAction func questionDelete(sender: AnyObject) {
@@ -107,6 +108,54 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
     
     @IBAction func unwindToExpandedPost(segue: UIStoryboardSegue) {
     }
+    
+    //ALERT STUFF
+    func showFlagAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            print("do the flag")
+            let postFlagger = PostFlag()
+            postFlagger.toPost = self.post
+            postFlagger.fromUser = PFUser.currentUser()
+            postFlagger.toUser = self.post?.fromUser
+            postFlagger.flagContent()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+            (actionCancel) -> () in
+            print("action canceled")
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(cancel)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+    
+    //DELETE STUFF
+    /*
+    func showDeleteAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            print("deleting post")
+            self.deletePostAction()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+            (actionCancel) -> () in
+            print("action canceled")
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(cancel)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+*/
 
 }
 

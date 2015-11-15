@@ -14,11 +14,13 @@ class PostFlag{
     
     var fromUser: PFUser?
     var toPost: Post?
+    var toUser: PFUser?
     
     func flagContent(){
         let query = PFObject(className: "FlaggedPost")
         query["fromUser"] = PFUser.currentUser()
         query["toPostId"] = self.toPost
+        query["toUser"] = self.toUser
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post flagged")
         }    }

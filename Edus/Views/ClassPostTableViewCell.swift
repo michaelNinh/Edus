@@ -78,6 +78,7 @@ class ClassPostTableViewCell: UITableViewCell {
         let postFlagger = PostFlag()
         postFlagger.toPost = self.post
         postFlagger.fromUser = PFUser.currentUser()
+        postFlagger.toUser = self.post?.fromUser
         postFlagger.flagContent()
     }
     
