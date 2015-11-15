@@ -67,6 +67,7 @@
 		917AB8AE1BF7CAB2004F884D /* GetPointsForPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8AD1BF7CAB2004F884D /* GetPointsForPost.swift */; };
 		917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */; };
 		917AB8B61BF8744E004F884D /* PostFlagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B51BF8744E004F884D /* PostFlagModel.swift */; };
+		917AB8B81BF8FD97004F884D /* ReplyPostFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		917AB8AD1BF7CAB2004F884D /* GetPointsForPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPointsForPost.swift; path = Queryers/GetPointsForPost.swift; sourceTree = "<group>"; };
 		917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetReplyPointsForReplyPost.swift; path = Queryers/GetReplyPointsForReplyPost.swift; sourceTree = "<group>"; };
 		917AB8B51BF8744E004F884D /* PostFlagModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostFlagModel.swift; path = Models/PostFlagModel.swift; sourceTree = "<group>"; };
+		917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostFlag.swift; path = Models/ReplyPostFlag.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -330,6 +332,7 @@
 				917AB8A31BF5642D004F884D /* ReplyPostModel.swift */,
 				917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */,
 				917AB8B51BF8744E004F884D /* PostFlagModel.swift */,
+				917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				9118A0B11BF54AFA00F3E122 /* ExpandedQuestionViewController.swift in Sources */,
 				917AB8A81BF65276004F884D /* ReplyPostTableViewCell.swift in Sources */,
 				917AB8AC1BF65EB6004F884D /* WriteReplyPostViewController.swift in Sources */,
+				917AB8B81BF8FD97004F884D /* ReplyPostFlag.swift in Sources */,
 				917AB8A61BF565DB004F884D /* ReplyPostPointModel.swift in Sources */,
 				912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */,
 				91374D441BF190D20052157B /* ViewController.swift in Sources */,

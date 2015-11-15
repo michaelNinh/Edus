@@ -8,6 +8,12 @@
 
 import UIKit
 import DateTools
+import Parse
+
+protocol ShowFlagAlertForReplyPost{
+    func showFlagAlert(title: String, message: String, callbackViewCell: ReplyPostTableViewCell)
+    func showDeleteAlert(title: String, message: String, callbackViewCell: ReplyPostTableViewCell)
+}
 
 class ReplyPostTableViewCell: UITableViewCell {
     
@@ -21,6 +27,8 @@ class ReplyPostTableViewCell: UITableViewCell {
     }
     
     @IBAction func flagPost(sender: AnyObject) {
+        delegate?.showFlagAlert("", message: "Flag for inappropriate content?", callbackViewCell: self)
+        
     }
     
     @IBOutlet weak var upVoteButton: UIButton!
@@ -31,6 +39,7 @@ class ReplyPostTableViewCell: UITableViewCell {
         scoreText.text = String(Int(scoreText.text!)!+1)
     }
     
+    var delegate: ShowFlagAlertForReplyPost?
     var replyPostsPoints = ReplyPostPoints()
     
     var replyPost: ReplyPost?{
@@ -39,8 +48,6 @@ class ReplyPostTableViewCell: UITableViewCell {
                 dateText.text = replyPost.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
                 postContentText.text = replyPost.content
                 nameText.text = replyPost.fromUserName
-                
-                
             }
         }
     }
@@ -54,6 +61,18 @@ class ReplyPostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func flagContentAction(){
+        let postFlagger = ReplyPostFlag()
+        postFlagger.toReplyPost = self.replyPost
+        postFlagger.fromUser = PFUser.currentUser()
+        postFlagger.toUser = self.replyPost?.fromUser
+        postFlagger.flagContent()
+    }
+    
+    func deleteContentAction(){
+        //post delete function here
     }
 
 }

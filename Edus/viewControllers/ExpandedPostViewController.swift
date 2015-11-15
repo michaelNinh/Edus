@@ -11,7 +11,7 @@ import ConvenienceKit
 import Parse
 import DateTools
 
-class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
+class ExpandedPostViewController: UIViewController, TimelineComponentTarget, ShowFlagAlertForReplyPost {
     
     
     @IBOutlet weak var questionTitleText: UILabel!
@@ -156,8 +156,54 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
         presentViewController(alertController, animated: true, completion: nil);
     }
 */
+    
+    //ALERT FOR REPLYTABLECELLS
+    func showFlagAlert(title: String, message: String, callbackViewCell: ReplyPostTableViewCell){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            print("do the flag")
+            callbackViewCell.flagContentAction()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+            (actionCancel) -> () in
+            print("action canceled")
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(cancel)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+    
+    
+    
+    
+    func showDeleteAlert(title: String, message: String, callbackViewCell: ReplyPostTableViewCell){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            print("do the flag")
+            callbackViewCell.flagContentAction()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+            (actionCancel) -> () in
+            print("action canceled")
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(cancel)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
 
 }
+
+
 
 extension ExpandedPostViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -182,6 +228,8 @@ extension ExpandedPostViewController: UITableViewDataSource {
         let replyPost = timelineComponent.content[indexPath.row]
         replyPost.setReplyPost()
         cell.replyPost = replyPost
+        
+        cell.delegate = self
         
         GetPointsForReplyPost.getPointsForReplyPost({ (result: [PFObject]?, error: NSError?) -> Void in
             if result!.count != 0{
