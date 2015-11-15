@@ -23,6 +23,7 @@ class ReplyPostTableViewCell: UITableViewCell {
     @IBOutlet weak var scoreText: UILabel!
     @IBOutlet weak var dateText: UILabel!
     
+    @IBOutlet weak var deletePostButton: UIButton!
     @IBAction func deletePost(sender: AnyObject) {
         delegate?.showDeleteAlert("", message: "Delete post?", callbackViewCell: self)
     }

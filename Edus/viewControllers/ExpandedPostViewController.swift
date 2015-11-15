@@ -241,6 +241,7 @@ extension ExpandedPostViewController: UITableViewDataSource {
         
         cell.delegate = self
         
+        //get the points for replyPost
         GetPointsForReplyPost.getPointsForReplyPost({ (result: [PFObject]?, error: NSError?) -> Void in
             if result!.count != 0{
                 let targetPointObj = result![0] as! ReplyPostPoints
@@ -259,6 +260,17 @@ extension ExpandedPostViewController: UITableViewDataSource {
                 print("no votes")
             }
             }, replyPost: replyPost)
+        
+        //determine if delete button on replyPostCell visibility
+        if replyPost.fromUserName == PFUser.currentUser()?.username{
+            print("del enabled")
+            cell.deletePostButton.hidden = false
+            cell.deletePostButton.enabled = true
+        }else{
+            print("del dis")
+            cell.deletePostButton.hidden = true
+            cell.deletePostButton.enabled = false
+        }
         
         
         return cell

@@ -898,6 +898,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="dateText" destination="AqE-Sl-afh" id="hCx-dW-YTM"/>
+                                                    <outlet property="deletePostButton" destination="cbX-vl-56P" id="zBX-bd-pvD"/>
                                                     <outlet property="nameText" destination="nEa-D2-akH" id="ONw-o9-mXl"/>
                                                     <outlet property="postContentText" destination="9KI-wE-7sT" id="B32-Hc-T1d"/>
                                                     <outlet property="scoreText" destination="dcy-BR-Zsf" id="5hb-Hy-aaK"/>
