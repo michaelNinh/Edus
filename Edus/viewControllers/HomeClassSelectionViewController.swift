@@ -9,16 +9,36 @@
 import UIKit
 import Parse
 
+protocol loggingOut{
+    func loggerOuter()
+}
+
 class HomeClassSelectionViewController: UIViewController {
     
+
     var enrolledClasses: [Classroom] = []
     var selectedClassroom: Classroom?
+    static var delegate: loggingOut!
 
     @IBOutlet weak var addSchoolButton: UIButton!
     @IBAction func addSchool(sender: AnyObject) {
     }
     @IBOutlet weak var logOut: UIButton!
     @IBAction func logOut(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
+            //if error == nil {
+            //we need to set the delegate! gooknna look my code haha
+            
+            if PFUser.currentUser() == nil {
+
+                print("log out worked")
+                HomeClassSelectionViewController.delegate.loggerOuter()
+            } else {
+                print("log out did not work")
+                //SCLAlertView().showInfo("Log out", subTitle: "Log out did not work. Check your Internet connection and try again")
+            }
+        }
         
     }
     
@@ -29,7 +49,9 @@ class HomeClassSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        checkActiveSchoolButtonText()
+        
         //this query would be called getUserEnrolledClasses
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
@@ -75,16 +97,16 @@ class HomeClassSelectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //FUNCTION TO CHANGE ADD COLLEGE BUTTON TEXT
+    func checkActiveSchoolButtonText(){
+        if PFUser.currentUser()!["activeSchoolName"] == nil{
+            addSchoolButton.setTitle("+ Set your school here", forState: .Normal)
+        }else{
+            let schoolName = PFUser.currentUser()!["activeSchoolName"]
+            addSchoolButton.setTitle(schoolName as? String, forState: .Normal)
+        }
     }
-    */
+    
 
 }
 

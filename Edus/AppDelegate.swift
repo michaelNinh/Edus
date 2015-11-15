@@ -13,39 +13,12 @@ import ParseUI
 import FBSDKCoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
 
     var window: UIWindow?
     var parseLoginHelper: ParseLoginHelper!
     
-
-    override init() {
-        super.init()
-        
-        parseLoginHelper = ParseLoginHelper {[unowned self] user, error in
-            // Initialize the ParseLoginHelper with a callback
-            if let error = error {
-                // 1
-                ErrorHandling.defaultErrorHandler(error)
-            } else  if let user = user {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                //creation
-                let classNavEntry = storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry")
-                //presentation
-                self.window?.rootViewController!.presentViewController(classNavEntry, animated:true, completion:nil)
-            }
-        }
-    }
-
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
-            clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
-        
-        
+    func loggerOuter() {
         //LOG IN STUFF
         let user = PFUser.currentUser()
         
@@ -79,6 +52,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = startViewController
         self.window?.makeKeyAndVisible()
+    }
+    
+    override init() {
+        super.init()
+        HomeClassSelectionViewController.delegate = self // I have the power over HomeClassSelectionViewController! :)
+        parseLoginHelper = ParseLoginHelper {[unowned self] user, error in
+            // Initialize the ParseLoginHelper with a callback
+            if let error = error {
+                // 1
+                ErrorHandling.defaultErrorHandler(error)
+            } else  if let user = user {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                //creation
+                let classNavEntry = storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry")
+                //presentation
+                self.window?.rootViewController!.presentViewController(classNavEntry, animated:true, completion:nil)
+            }
+        }
+    }
+
+
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
+            clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
+        
+        
+       loggerOuter()
         
         
         //PFUser.logInWithUsername("test", password: "test")
