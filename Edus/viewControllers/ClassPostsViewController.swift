@@ -186,6 +186,17 @@ extension ClassPostsViewController: UITableViewDataSource {
             }
             }, post: post)
         
+        
+        if post.fromUserName == PFUser.currentUser()?.username{
+            print("del enabled")
+            cell.deleteButton.hidden = false
+            cell.deleteButton.enabled = true
+        }else{
+            print("del dis")
+            cell.deleteButton.hidden = true
+            cell.deleteButton.enabled = false
+        }
+        
         return cell
     }
 }

@@ -34,6 +34,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
     }
     @IBOutlet weak var questionDeleteButton: UIButton!
     @IBAction func questionDelete(sender: AnyObject) {
+        showDeleteAlert("", message: "Delete post?")
     }
     
     
@@ -80,6 +81,16 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
             }else{
                 questionUpvoteButton.enabled = true
             }
+        }
+        
+        if self.post!.fromUserName == PFUser.currentUser()?.username{
+            print("del enabled")
+            questionDeleteButton.hidden = false
+            questionDeleteButton.enabled = true
+        }else{
+            print("del dis")
+            questionDeleteButton.hidden = true
+            questionDeleteButton.enabled = false
         }
         
         
@@ -135,7 +146,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
     }
     
     //DELETE STUFF
-    /*
+    
     func showDeleteAlert(title: String, message: String){
         let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
         
@@ -143,7 +154,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
         let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
             (actionCancel) -> () in
             print("deleting post")
-            self.deletePostAction()
+            self.post?.deletePost()
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
@@ -155,7 +166,6 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
         alertController.addAction(cancel)
         presentViewController(alertController, animated: true, completion: nil);
     }
-*/
     
     //ALERT FOR REPLYTABLECELLS
     func showFlagAlert(title: String, message: String, callbackViewCell: ReplyPostTableViewCell){

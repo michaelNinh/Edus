@@ -34,6 +34,7 @@ class ClassPostTableViewCell: UITableViewCell {
     }
     
     
+    @IBOutlet weak var deleteButton: UIButton!
     @IBAction func deletePost(sender: AnyObject) {
         delegate?.showDeleteAlert("", message: "Delete post?", callbackViewCell: self)
         

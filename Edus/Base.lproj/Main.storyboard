@@ -675,6 +675,15 @@
                                                         <action selector="upVote:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="oV0-VD-huT"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-tn-CwO">
+                                                    <rect key="frame" x="26" y="67" width="8" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="aDn-jU-SO4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-VB-wxh">
                                                     <rect key="frame" x="58" y="171" width="45" height="21"/>
                                                     <constraints>
@@ -697,13 +706,6 @@
                                                         <action selector="flagPost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="HZK-13-3Fy"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-04-1dc">
-                                                    <rect key="frame" x="494" y="162" width="45" height="30"/>
-                                                    <state key="normal" title="Delete"/>
-                                                    <connections>
-                                                        <action selector="deletePost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="xBA-Vf-bYx"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tr-cK-Hho">
                                                     <rect key="frame" x="61" y="8" width="293" height="57"/>
                                                     <constraints>
@@ -713,15 +715,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-tn-CwO">
-                                                    <rect key="frame" x="26" y="67" width="8" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="aDn-jU-SO4"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-04-1dc">
+                                                    <rect key="frame" x="494" y="162" width="45" height="30"/>
+                                                    <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="deletePost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="xBA-Vf-bYx"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="aYh-DN-xYq" firstAttribute="top" secondItem="0Tr-cK-Hho" secondAttribute="bottom" constant="2" id="1Xz-0L-aiF"/>
@@ -747,6 +747,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateText" destination="6BQ-oo-Hbe" id="pvm-b7-85L"/>
+                                            <outlet property="deleteButton" destination="Gik-04-1dc" id="Ug5-fD-5Gs"/>
                                             <outlet property="nameText" destination="TO1-VB-wxh" id="wfQ-zx-JVK"/>
                                             <outlet property="postContentText" destination="aYh-DN-xYq" id="jWf-KR-CS0"/>
                                             <outlet property="postTitleText" destination="0Tr-cK-Hho" id="tdX-fP-7OP"/>

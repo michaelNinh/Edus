@@ -75,5 +75,5 @@ class ReplyPostTableViewCell: UITableViewCell {
     func deleteContentAction(){
         self.replyPost!.deleteReplyPost()
     }
-
+    
 }
