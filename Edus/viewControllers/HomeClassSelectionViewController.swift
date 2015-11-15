@@ -47,12 +47,9 @@ class HomeClassSelectionViewController: UIViewController {
     @IBOutlet weak var enrolledClassesTableView: UITableView!
     
 
-    override func viewDidLoad() {
+    override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
-        
-        checkActiveSchoolButtonText()
-        userNameText.text = PFUser.currentUser()?.username!
-        
+        print("appeared")
         //this query would be called getUserEnrolledClasses
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
@@ -64,10 +61,10 @@ class HomeClassSelectionViewController: UIViewController {
             let thisUser = userResult![0] as! PFUser
             //add NIL CATCH HERE
             if thisUser["enrolledClasses"] != nil{
-            self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
-            for classroom in self.enrolledClasses{
-                classroom.setClass()
-                self.enrolledClassesTableView.reloadData()
+                self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
+                for classroom in self.enrolledClasses{
+                    classroom.setClass()
+                    self.enrolledClassesTableView.reloadData()
                 }
             }else{
                 print("not enrolled in any classes yet")
@@ -77,8 +74,14 @@ class HomeClassSelectionViewController: UIViewController {
             self.enrolledClassesTableView.reloadData()
         }
         //end query
-
-
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        checkActiveSchoolButtonText()
+        userNameText.text = PFUser.currentUser()?.username!
+    
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
