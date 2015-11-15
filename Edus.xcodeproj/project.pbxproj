@@ -72,6 +72,10 @@
 		917AB8C01BF92A01004F884D /* GetPostsFromUserForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */; };
 		917AB8C21BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8C11BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift */; };
 		917AB8C51BF9315B004F884D /* MyPostsExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8C41BF9315B004F884D /* MyPostsExpandedViewController.swift */; };
+		917AB8CA1BF938E7004F884D /* Gravity-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C61BF938E7004F884D /* Gravity-Book.ttf */; };
+		917AB8CB1BF938E7004F884D /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C71BF938E7004F884D /* Gravity-Light.ttf */; };
+		917AB8CC1BF938E7004F884D /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */; };
+		917AB8CD1BF938E7004F884D /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +168,10 @@
 		917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPostsFromUserForClass.swift; path = Queryers/GetPostsFromUserForClass.swift; sourceTree = "<group>"; };
 		917AB8C11BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostsFromUserTableViewCell.swift; path = Views/ClassPostsFromUserTableViewCell.swift; sourceTree = "<group>"; };
 		917AB8C41BF9315B004F884D /* MyPostsExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPostsExpandedViewController.swift; path = viewControllers/MyPostsExpandedViewController.swift; sourceTree = "<group>"; };
+		917AB8C61BF938E7004F884D /* Gravity-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Book.ttf"; sourceTree = "<group>"; };
+		917AB8C71BF938E7004F884D /* Gravity-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Light.ttf"; sourceTree = "<group>"; };
+		917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
+		917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -263,6 +271,10 @@
 		91374D401BF190D20052157B /* Edus */ = {
 			isa = PBXGroup;
 			children = (
+				917AB8C61BF938E7004F884D /* Gravity-Book.ttf */,
+				917AB8C71BF938E7004F884D /* Gravity-Light.ttf */,
+				917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */,
+				917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */,
 				91374DAE1BF2A3E60052157B /* Views */,
 				91374DA71BF29DDD0052157B /* Queryers */,
 				91374DA41BF1D3500052157B /* ViewControllers */,
@@ -539,6 +551,10 @@
 			files = (
 				91374D4C1BF190D20052157B /* LaunchScreen.storyboard in Resources */,
 				91374D491BF190D20052157B /* Assets.xcassets in Resources */,
+				917AB8CD1BF938E7004F884D /* ProximaNova-Bold.otf in Resources */,
+				917AB8CC1BF938E7004F884D /* ProximaNova-Black.otf in Resources */,
+				917AB8CB1BF938E7004F884D /* Gravity-Light.ttf in Resources */,
+				917AB8CA1BF938E7004F884D /* Gravity-Book.ttf in Resources */,
 				91374D471BF190D20052157B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,9 +46,6 @@ class MyPostsViewController: UIViewController, TimelineComponentTarget, ShowFlag
         
         timelineComponent.loadInitialIfRequired()
         //timelineComponent = TimelineComponent(target: self)
-        
-        
-        
     }
     
     
@@ -63,7 +60,7 @@ class MyPostsViewController: UIViewController, TimelineComponentTarget, ShowFlag
         }
         
         timelineComponent = TimelineComponent(target: self)
-        
+
         
         
         // Do any additional setup after loading the view.
