@@ -64,14 +64,19 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
         self.questionTitleText.text = self.post?.title
         self.questionFromUserNameText.text = self.post?.fromUserName
         self.questionDate.text = self.post!.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
-        self.questionScoreText.text = String(self.targetPostPoints!.score)
+        self.questionScoreText.text = String(self.targetPostPoints?.score)
         
-        if targetPostPoints!.voterList.contains(PFUser.currentUser()!.objectId!){
-            print("already voted")
-            questionUpvoteButton.enabled = false
+        if targetPostPoints?.voterList != nil{
+            if targetPostPoints!.voterList.contains(PFUser.currentUser()!.objectId!){
+                print("already voted")
+                questionUpvoteButton.enabled = false
+            }else{
+                questionUpvoteButton.enabled = true
+            }
         }else{
-            questionUpvoteButton.enabled = true
+            print("no votes yet lol double if statement all the way")
         }
+        
 
 
 
