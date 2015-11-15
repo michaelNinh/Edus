@@ -34,6 +34,10 @@ class ClassPostTableViewCell: UITableViewCell {
     
     
     @IBAction func flagPost(sender: AnyObject) {
+        let postFlagger = PostFlag()
+        postFlagger.toPost = self.post
+        postFlagger.fromUser = PFUser.currentUser()
+        postFlagger.flagContent()
     }
     
     var voterList = [String]()
