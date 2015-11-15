@@ -68,6 +68,8 @@
 		917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */; };
 		917AB8B61BF8744E004F884D /* PostFlagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B51BF8744E004F884D /* PostFlagModel.swift */; };
 		917AB8B81BF8FD97004F884D /* ReplyPostFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */; };
+		917AB8BC1BF9291D004F884D /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8BB1BF9291D004F884D /* MyPostsViewController.swift */; };
+		917AB8C01BF92A01004F884D /* GetPostsFromUserForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,8 @@
 		917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetReplyPointsForReplyPost.swift; path = Queryers/GetReplyPointsForReplyPost.swift; sourceTree = "<group>"; };
 		917AB8B51BF8744E004F884D /* PostFlagModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostFlagModel.swift; path = Models/PostFlagModel.swift; sourceTree = "<group>"; };
 		917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostFlag.swift; path = Models/ReplyPostFlag.swift; sourceTree = "<group>"; };
+		917AB8BB1BF9291D004F884D /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPostsViewController.swift; path = viewControllers/MyPostsViewController.swift; sourceTree = "<group>"; };
+		917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPostsFromUserForClass.swift; path = Queryers/GetPostsFromUserForClass.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -359,6 +363,7 @@
 				917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */,
 				917AB8AD1BF7CAB2004F884D /* GetPointsForPost.swift */,
 				917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */,
+				917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */,
 			);
 			name = Queryers;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */,
 				9176BC6A1BF46E04002FC5AB /* MakePostViewController.swift */,
 				9118A0AF1BF54A9900F3E122 /* ExpandedPostLevel */,
+				917AB8BB1BF9291D004F884D /* MyPostsViewController.swift */,
 			);
 			name = PostLevelControllers;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 			files = (
 				911B25001BF3CA5600B5510D /* EnrolledClassesTableViewCell.swift in Sources */,
 				9176BC711BF5035A002FC5AB /* PostPointsModel.swift in Sources */,
+				917AB8C01BF92A01004F884D /* GetPostsFromUserForClass.swift in Sources */,
 				91374DA31BF1CEE00052157B /* ClassroomModel.swift in Sources */,
 				911B24FA1BF3C04300B5510D /* AddClassViewController.swift in Sources */,
 				9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */,
@@ -629,6 +636,7 @@
 				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
 				917AB8B61BF8744E004F884D /* PostFlagModel.swift in Sources */,
 				917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */,
+				917AB8BC1BF9291D004F884D /* MyPostsViewController.swift in Sources */,
 				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
 				9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */,
