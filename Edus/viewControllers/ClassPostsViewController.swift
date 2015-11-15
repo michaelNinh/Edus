@@ -53,6 +53,7 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //this is how I pass the class data from the tabBar into this controller
         if self.tabBarController != nil{
             let tabBarReference = self.tabBarController as! ClassTabBarViewController
