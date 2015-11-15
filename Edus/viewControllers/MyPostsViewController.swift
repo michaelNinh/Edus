@@ -86,7 +86,7 @@ class MyPostsViewController: UIViewController, TimelineComponentTarget, ShowFlag
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.identifier == "expandPostSegue") {
-            let expandedPostViewController = segue.destinationViewController as! ExpandedPostViewController
+            let expandedPostViewController = segue.destinationViewController as! MyPostsExpandedPostViewController
             expandedPostViewController.post = selectedPost
             expandedPostViewController.targetPostPoints = self.selectedPostPostPoints
         }

@@ -333,6 +333,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="BIv-ZF-3t9">
                             <connections>
                                 <action selector="backToHomeSegue:" destination="KGJ-NJ-MI4" id="Nqf-9v-KDg"/>
+                                <segue destination="Bia-Cj-Mi2" kind="show" identifier="backToHomeSegue" id="VG9-aV-Ivg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -345,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCm-9B-fGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3044" y="2075"/>
+            <point key="canvasLocation" x="3054" y="2075"/>
         </scene>
         <!--Make post-->
         <scene sceneID="fHW-WN-iS1">
@@ -1234,7 +1235,7 @@
         <!--Post-->
         <scene sceneID="ig2-4A-J65">
             <objects>
-                <viewController id="ZC1-9q-o4v" customClass="ExpandedPostViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZC1-9q-o4v" customClass="MyPostsExpandedPostViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="The-gn-Obh"/>
                         <viewControllerLayoutGuide type="bottom" id="emn-14-G5l"/>
@@ -1522,7 +1523,7 @@
                                 <state key="normal" title="Reply"/>
                                 <connections>
                                     <action selector="submitReplyPost:" destination="nBk-V0-2Di" eventType="touchUpInside" id="5qJ-yj-rGg"/>
-                                    <segue destination="bJ6-Bq-dmJ" kind="unwind" unwindAction="unwindToExpandedPost:" id="8YG-ku-1qf"/>
+                                    <segue destination="bJ6-Bq-dmJ" kind="unwind" unwindAction="unwindToMyExpandedPost:" id="9MF-0H-t0W"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1562,7 +1563,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
+        <segue reference="VG9-aV-Ivg"/>
         <segue reference="rGF-OB-eOe"/>
-        <segue reference="Rph-SL-AI1"/>
     </inferredMetricsTieBreakers>
 </document>
