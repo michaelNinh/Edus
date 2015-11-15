@@ -279,14 +279,6 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4O-35-MPM">
-                                        <rect key="frame" x="8" y="243" width="49" height="30"/>
-                                        <state key="normal" title="Submit"/>
-                                        <connections>
-                                            <action selector="submitPostButton:" destination="K8b-VP-J8k" eventType="touchUpInside" id="Rfb-O4-2hH"/>
-                                            <segue destination="qgD-sI-5Ko" kind="show" identifier="submitPostSegue" id="rGF-OB-eOe"/>
-                                        </connections>
-                                    </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHw-tc-vUm">
                                         <rect key="frame" x="8" y="290" width="51" height="31"/>
                                         <connections>
@@ -299,7 +291,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Make post" id="1th-EP-tdg"/>
+                    <navigationItem key="navigationItem" title="Make post" id="1th-EP-tdg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bRq-PQ-Ysm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H4O-35-MPM">
+                                <rect key="frame" x="531" y="7" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitPostButton:" destination="K8b-VP-J8k" eventType="touchUpInside" id="Rfb-O4-2hH"/>
+                                    <segue destination="qgD-sI-5Ko" kind="show" identifier="submitPostSegue" id="rGF-OB-eOe"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="anonymousToggleButton" destination="HHw-tc-vUm" id="tvG-Pn-zMl"/>
@@ -821,12 +825,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="145"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-BR-Zsf">
-                                                            <rect key="frame" x="8" y="62" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEa-D2-akH">
                                                             <rect key="frame" x="77" y="24" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -840,8 +838,8 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvG-FH-HKE">
-                                                            <rect key="frame" x="6" y="24" width="46" height="30"/>
-                                                            <state key="normal" title="Button"/>
+                                                            <rect key="frame" x="14" y="24" width="30" height="30"/>
+                                                            <state key="normal" title="up"/>
                                                             <connections>
                                                                 <action selector="upVote:" destination="L8h-2D-zKd" eventType="touchUpInside" id="zlp-4l-ggQ"/>
                                                             </connections>
@@ -866,6 +864,12 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-BR-Zsf">
+                                                            <rect key="frame" x="25" y="62" width="8" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -882,12 +886,6 @@
                                             <outlet property="delegate" destination="G7D-hx-vvG" id="8WG-ZR-CSb"/>
                                         </connections>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2C-c3-lPW">
-                                        <rect key="frame" x="8" y="88" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN1-c8-aqc">
                                         <rect key="frame" x="84" y="67" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -913,8 +911,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amS-5e-Wda">
-                                        <rect key="frame" x="8" y="50" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="16" y="50" width="30" height="30"/>
+                                        <state key="normal" title="up"/>
                                         <connections>
                                             <action selector="questionUpvote:" destination="G7D-hx-vvG" eventType="touchUpInside" id="W04-Gt-iE2"/>
                                         </connections>
@@ -935,6 +933,12 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUP-BD-hNU">
                                         <rect key="frame" x="84" y="26" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2C-c3-lPW">
+                                        <rect key="frame" x="27" y="88" width="8" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -960,7 +964,7 @@
             </objects>
             <point key="canvasLocation" x="2269" y="3555"/>
         </scene>
-        <!--Title-->
+        <!--Your answer-->
         <scene sceneID="2wr-4Z-8uJ">
             <objects>
                 <viewController id="ONY-sw-GjG" customClass="WriteReplyPostViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
@@ -999,13 +1003,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Foz-fE-iBt">
-                        <barButtonItem key="rightBarButtonItem" title="Reply" id="F8r-cx-ITF">
-                            <connections>
-                                <action selector="uploadReplyPost:" destination="ONY-sw-GjG" id="dqQ-K9-x7c"/>
-                            </connections>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Your answer" id="Foz-fE-iBt">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="K3t-n2-oDi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zed-iD-381">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reply"/>
+                                <connections>
+                                    <action selector="submitReplyPost:" destination="ONY-sw-GjG" eventType="touchUpInside" id="OfE-u6-duF"/>
+                                    <segue destination="OHP-E0-El3" kind="unwind" unwindAction="unwindToExpandedPost:" id="OKJ-DV-Aay"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="postContentText" destination="3aQ-ie-nfL" id="AyO-Si-qoe"/>
                         <outlet property="postQuestionText" destination="kAT-eP-wVS" id="tPb-AM-fzg"/>
@@ -1013,6 +1026,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USx-Zp-JVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OHP-E0-El3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3093" y="3830"/>
         </scene>

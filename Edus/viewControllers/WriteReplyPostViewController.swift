@@ -15,12 +15,11 @@ class WriteReplyPostViewController: UIViewController {
     @IBOutlet weak var postContentText: UILabel!
     @IBOutlet weak var replyPostContentText: UITextView!
     
-    @IBAction func uploadReplyPost(sender: AnyObject) {
-        
+    @IBAction func submitReplyPost(sender: AnyObject) {
+        print("what")
         self.replyPost.content = self.replyPostContentText.text
         self.replyPost.toPost = self.post
         self.replyPost.uploadReplyPost()
-        
     }
     
     var post: Post?
@@ -28,6 +27,9 @@ class WriteReplyPostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.postQuestionText.text = self.post?.title
+        self.postContentText.text = self.post?.content
         
 
         // Do any additional setup after loading the view.

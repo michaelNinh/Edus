@@ -22,6 +22,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
     
     @IBOutlet weak var questionUpvoteButton: UIButton!
     @IBAction func questionUpvote(sender: AnyObject) {
+        
     }
     
     @IBAction func questionFlag(sender: AnyObject) {
@@ -54,6 +55,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
     
     override func viewDidAppear(animated: Bool) {
         
+        timelineComponent = TimelineComponent(target: self)
         timelineComponent.loadInitialIfRequired()
 
     }
@@ -76,10 +78,6 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
         }
         
         
-        
-
-
-
         timelineComponent = TimelineComponent(target: self)
 
     }
@@ -101,6 +99,9 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
             writePostReplyViewController.post = self.post
         }
         
+    }
+    
+    @IBAction func unwindToExpandedPost(segue: UIStoryboardSegue) {
     }
 
 }

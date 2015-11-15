@@ -27,6 +27,8 @@ class ReplyPostTableViewCell: UITableViewCell {
     @IBAction func upVote(sender: AnyObject) {
         replyPostsPoints.toReplyPost = self.replyPost
         replyPostsPoints.upVote()
+        self.upVoteButton.enabled = false
+        scoreText.text = String(Int(scoreText.text!)!+1)
     }
     
     var replyPostsPoints = ReplyPostPoints()
