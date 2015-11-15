@@ -70,6 +70,7 @@
 		917AB8B81BF8FD97004F884D /* ReplyPostFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */; };
 		917AB8BC1BF9291D004F884D /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8BB1BF9291D004F884D /* MyPostsViewController.swift */; };
 		917AB8C01BF92A01004F884D /* GetPostsFromUserForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */; };
+		917AB8C21BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8C11BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyPostFlag.swift; path = Models/ReplyPostFlag.swift; sourceTree = "<group>"; };
 		917AB8BB1BF9291D004F884D /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPostsViewController.swift; path = viewControllers/MyPostsViewController.swift; sourceTree = "<group>"; };
 		917AB8BF1BF92A01004F884D /* GetPostsFromUserForClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPostsFromUserForClass.swift; path = Queryers/GetPostsFromUserForClass.swift; sourceTree = "<group>"; };
+		917AB8C11BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostsFromUserTableViewCell.swift; path = Views/ClassPostsFromUserTableViewCell.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -405,6 +407,7 @@
 			children = (
 				9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */,
 				917AB8A71BF65276004F884D /* ReplyPostTableViewCell.swift */,
+				917AB8C11BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift */,
 			);
 			name = PostLevelCells;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */,
 				917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */,
 				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
+				917AB8C21BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift in Sources */,
 				917AB8B61BF8744E004F884D /* PostFlagModel.swift in Sources */,
 				917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */,
 				917AB8BC1BF9291D004F884D /* MyPostsViewController.swift in Sources */,
