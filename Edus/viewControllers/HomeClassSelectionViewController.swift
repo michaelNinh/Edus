@@ -18,6 +18,9 @@ class HomeClassSelectionViewController: UIViewController {
     @IBAction func addSchool(sender: AnyObject) {
     }
     @IBOutlet weak var logOut: UIButton!
+    @IBAction func logOut(sender: AnyObject) {
+        
+    }
     
     @IBOutlet weak var userNameText: UILabel!
     

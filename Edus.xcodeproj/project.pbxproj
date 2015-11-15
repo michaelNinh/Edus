@@ -65,6 +65,7 @@
 		917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */; };
 		917AB8AC1BF65EB6004F884D /* WriteReplyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8AB1BF65EB6004F884D /* WriteReplyPostViewController.swift */; };
 		917AB8AE1BF7CAB2004F884D /* GetPointsForPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8AD1BF7CAB2004F884D /* GetPointsForPost.swift */; };
+		917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetReplyPostsForPost.swift; path = Queryers/GetReplyPostsForPost.swift; sourceTree = "<group>"; };
 		917AB8AB1BF65EB6004F884D /* WriteReplyPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteReplyPostViewController.swift; path = viewControllers/WriteReplyPostViewController.swift; sourceTree = "<group>"; };
 		917AB8AD1BF7CAB2004F884D /* GetPointsForPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPointsForPost.swift; path = Queryers/GetPointsForPost.swift; sourceTree = "<group>"; };
+		917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetReplyPointsForReplyPost.swift; path = Queryers/GetReplyPointsForReplyPost.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -350,6 +352,7 @@
 				9176BC6C1BF47C8A002FC5AB /* GetPostsForClass.swift */,
 				917AB8A91BF65526004F884D /* GetReplyPostsForPost.swift */,
 				917AB8AD1BF7CAB2004F884D /* GetPointsForPost.swift */,
+				917AB8B31BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift */,
 			);
 			name = Queryers;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */,
 				917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */,
 				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
+				917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */,
 				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
 				91374D421BF190D20052157B /* AppDelegate.swift in Sources */,
 				9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */,

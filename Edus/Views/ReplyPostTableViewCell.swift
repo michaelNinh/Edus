@@ -25,8 +25,11 @@ class ReplyPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
-        //self.replyPost?.toReplyPostPoints.upVote()
+        replyPostsPoints.toReplyPost = self.replyPost
+        replyPostsPoints.upVote()
     }
+    
+    var replyPostsPoints = ReplyPostPoints()
     
     var replyPost: ReplyPost?{
         didSet{
@@ -35,14 +38,7 @@ class ReplyPostTableViewCell: UITableViewCell {
                 postContentText.text = replyPost.content
                 nameText.text = replyPost.fromUserName
                 
-                //scoreText.text = String(replyPost.toReplyPostPoints.score)
-                /*
-                if self.replyPost?.toReplyPostPoints.checkVoterList() == true{
-                    self.upVoteButton.enabled = false
-                }else{
-                    self.upVoteButton.enabled = true
-                }
-*/
+                
             }
         }
     }

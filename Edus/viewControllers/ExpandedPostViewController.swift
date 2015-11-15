@@ -64,7 +64,7 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget {
         self.questionTitleText.text = self.post?.title
         self.questionFromUserNameText.text = self.post?.fromUserName
         self.questionDate.text = self.post!.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
-        self.questionScoreText.text = String(self.targetPostPoints?.score)
+        self.questionScoreText.text = String(self.targetPostPoints!.score)
         
         if targetPostPoints!.voterList.contains(PFUser.currentUser()!.objectId!){
             print("already voted")
@@ -122,8 +122,28 @@ extension ExpandedPostViewController: UITableViewDataSource {
         
         let replyPost = timelineComponent.content[indexPath.row]
         replyPost.setReplyPost()
-        
         cell.replyPost = replyPost
+        
+        GetPointsForReplyPost.getPointsForReplyPost({ (result: [PFObject]?, error: NSError?) -> Void in
+            if result!.count != 0{
+                let targetPointObj = result![0] as! ReplyPostPoints
+                targetPointObj.setReplyPoints()
+                
+                cell.scoreText.text = String(targetPointObj.score)
+                
+                if targetPointObj.voterList.contains(PFUser.currentUser()!.objectId!){
+                    print("already voted")
+                    cell.upVoteButton.enabled = false
+                }else{
+                    cell.upVoteButton.enabled = true
+                }
+                
+            }else{
+                print("no votes")
+            }
+            }, replyPost: replyPost)
+        
+        
         return cell
     }
 }

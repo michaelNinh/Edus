@@ -17,7 +17,7 @@ class Post: PFObject, PFSubclassing{
     var fromUserName: String?
     var anonymous: Bool = false
    
-    var toPostPoints = PostPoints()
+    //var toPostPoints = PostPoints()
     
     var toClassroom:Classroom?
     var subject:String?
