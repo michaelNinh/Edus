@@ -51,6 +51,7 @@ class HomeClassSelectionViewController: UIViewController {
         super.viewDidLoad()
         
         checkActiveSchoolButtonText()
+        userNameText.text = PFUser.currentUser()?.username!
         
         //this query would be called getUserEnrolledClasses
         let query = PFQuery(className: "_User")
