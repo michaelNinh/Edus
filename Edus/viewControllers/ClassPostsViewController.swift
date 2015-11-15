@@ -124,8 +124,8 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
         
         let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
             (actionCancel) -> () in
-            print("do the flag")
-            callbackViewCell.flagContentAction()
+            print("delete the post")
+            callbackViewCell.deleteContentAction()
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){

@@ -55,7 +55,22 @@ class Post: PFObject, PFSubclassing{
         }else{
             self.fromUserName = self["fromUserName"] as? String
         }
-
+    }
+    
+    func deletePost(){
+        print(self.objectId!)
+        let query = PFQuery(className: "Post")
+        query.getObjectInBackgroundWithId(self.objectId!) { (result: PFObject?, error: NSError?) -> Void in
+            if error != nil{
+                print(error)
+            }else{
+                result?.deleteInBackgroundWithBlock({ (succes: Bool, error: NSError?) -> Void in
+                    print("post deleted")
+                })
+            }
+        }
+        
+        
     }
     
     

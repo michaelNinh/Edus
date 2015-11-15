@@ -83,7 +83,7 @@ class ClassPostTableViewCell: UITableViewCell {
     }
     
     func deleteContentAction(){
-        //post delete function here
+        self.post?.deletePost()
     }
     
 }
