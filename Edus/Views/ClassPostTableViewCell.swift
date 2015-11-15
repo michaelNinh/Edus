@@ -10,6 +10,11 @@ import UIKit
 import DateTools
 import Parse
 
+protocol ShowFlagAlert{
+    func showFlagAlert(title: String, message: String, callbackViewCell: ClassPostTableViewCell)
+    func showDeleteAlert(title: String, message: String, callbackViewCell: ClassPostTableViewCell)
+}
+
 
 class ClassPostTableViewCell: UITableViewCell {
     
@@ -30,18 +35,19 @@ class ClassPostTableViewCell: UITableViewCell {
     
     
     @IBAction func deletePost(sender: AnyObject) {
+        delegate?.showDeleteAlert("", message: "Delete post?", callbackViewCell: self)
+        
     }
     
     
     @IBAction func flagPost(sender: AnyObject) {
-        let postFlagger = PostFlag()
-        postFlagger.toPost = self.post
-        postFlagger.fromUser = PFUser.currentUser()
-        postFlagger.flagContent()
+        delegate?.showFlagAlert("", message: "Flag for inappropriate content?", callbackViewCell: self)
+        
     }
     
     var voterList = [String]()
     var postPoints = PostPoints()
+    var delegate: ShowFlagAlert?
     
     var post: Post?{
         didSet{
@@ -68,5 +74,15 @@ class ClassPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func flagContentAction(){
+        let postFlagger = PostFlag()
+        postFlagger.toPost = self.post
+        postFlagger.fromUser = PFUser.currentUser()
+        postFlagger.flagContent()
+    }
+    
+    func deleteContentAction(){
+        //post delete function here
+    }
     
 }

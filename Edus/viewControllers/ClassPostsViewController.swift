@@ -11,7 +11,7 @@ import Parse
 import ConvenienceKit
 
 
-class ClassPostsViewController: UIViewController, TimelineComponentTarget {
+class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowFlagAlert {
     
     var classroom: Classroom?
     var selectedPost: Post?
@@ -94,6 +94,49 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
         }
     }
     
+    //ALERT STUFF
+    func showFlagAlert(title: String, message: String, callbackViewCell: ClassPostTableViewCell){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            print("do the flag")
+            callbackViewCell.flagContentAction()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+            (actionCancel) -> () in
+            print("action canceled")
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(cancel)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+    
+    
+    
+    
+    func showDeleteAlert(title: String, message: String, callbackViewCell: ClassPostTableViewCell){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            print("do the flag")
+            callbackViewCell.flagContentAction()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+            (actionCancel) -> () in
+            print("action canceled")
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(cancel)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
 
 }
 
@@ -120,7 +163,7 @@ extension ClassPostsViewController: UITableViewDataSource {
         let post = timelineComponent.content[indexPath.row]
         post.setPost()
         cell.post = post
-        //cell.delegate = self
+        cell.delegate = self
         
         GetPointsForPost.getPointsForPost({ (result: [PFObject]?, error: NSError?) -> Void in
             if result!.count != 0{
