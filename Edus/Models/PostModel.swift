@@ -47,11 +47,16 @@ class Post: PFObject, PFSubclassing{
         self.title = self["title"] as? String
         self.content = self["content"] as? String
         self.fromUser = self["fromUser"] as? PFUser
-        self.fromUserName = self["fromUserName"] as? String
         self.anonymous = (self["anonymous"] as? Bool)!
         self.toClassroom = self["toClassroom"] as? Classroom
         self.subject = self["subject"] as? String
         self.subjectLevel = self["subjectLevel"] as? String
+        if self.anonymous == true{
+            self.fromUserName = "Anon Y. Moose"
+        }else{
+            self.fromUserName = self["fromUserName"] as? String
+        }
+
     }
     
     

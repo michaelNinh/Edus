@@ -235,35 +235,36 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ca4-4z-eX9">
-                                        <rect key="frame" x="8" y="85" width="592" height="376"/>
+                                        <rect key="frame" x="8" y="103" width="592" height="376"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EME-4S-WCm">
-                                        <rect key="frame" x="8" y="32" width="153" height="30"/>
+                                        <rect key="frame" x="8" y="47" width="153" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anonymous?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oht-04-5tV">
-                                        <rect key="frame" x="372" y="35" width="99" height="21"/>
+                                        <rect key="frame" x="370" y="51" width="99" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4O-35-MPM">
-                                        <rect key="frame" x="8" y="214" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="submitPostButton:" destination="K8b-VP-J8k" eventType="touchUpInside" id="Rfb-O4-2hH"/>
-                                        </connections>
-                                    </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHw-tc-vUm">
-                                        <rect key="frame" x="8" y="252" width="51" height="31"/>
+                                        <rect key="frame" x="498" y="47" width="51" height="31"/>
                                         <connections>
                                             <action selector="anonymousToggle:" destination="K8b-VP-J8k" eventType="valueChanged" id="hg9-I9-Ss3"/>
                                         </connections>
                                     </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4O-35-MPM">
+                                        <rect key="frame" x="8" y="243" width="49" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitPostButton:" destination="K8b-VP-J8k" eventType="touchUpInside" id="Rfb-O4-2hH"/>
+                                            <segue destination="qgD-sI-5Ko" kind="show" identifier="submitPostSegue" id="rGF-OB-eOe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -271,6 +272,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Make post" id="1th-EP-tdg"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="anonymousToggleButton" destination="HHw-tc-vUm" id="tvG-Pn-zMl"/>
                         <outlet property="contentText" destination="Ca4-4z-eX9" id="lVz-D2-KqD"/>
@@ -279,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YO-QR-ChQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999" y="2825"/>
+            <point key="canvasLocation" x="3087" y="2755"/>
         </scene>
         <!--Create class-->
         <scene sceneID="SaX-8g-LN8">
@@ -619,7 +621,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="200" id="Oqp-lH-YHd" customClass="ClassPostTableViewCell" customModule="Edus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oqp-lH-YHd" id="cnd-6q-l1h">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -736,13 +738,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Class posts" id="Kpg-Yf-3QD">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="DGZ-9D-Mjr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="DGZ-9D-Mjr">
+                            <connections>
+                                <action selector="backToHomeSegue:" destination="qgD-sI-5Ko" id="jlo-AX-QSQ"/>
+                                <segue destination="Bia-Cj-Mi2" kind="presentation" identifier="backToHomeSegue" id="Rph-SL-AI1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Write" id="Htf-S3-nNQ">
                             <connections>
                                 <segue destination="K8b-VP-J8k" kind="show" identifier="makePostSegue" id="b8c-PK-grc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="klW-8J-hbl" id="cVz-Pa-5ZN"/>
                         <segue destination="G7D-hx-vvG" kind="show" identifier="expandPostSegue" id="6Tv-mN-2Wv"/>
@@ -750,7 +758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDx-XK-dga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269" y="2825"/>
+            <point key="canvasLocation" x="2229" y="2825"/>
         </scene>
         <!--Post-->
         <scene sceneID="e4I-0r-ZMK">
@@ -983,6 +991,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
-        <segue reference="Tou-fL-XJj"/>
+        <segue reference="rGF-OB-eOe"/>
+        <segue reference="Rph-SL-AI1"/>
     </inferredMetricsTieBreakers>
 </document>

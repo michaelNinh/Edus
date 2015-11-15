@@ -29,7 +29,6 @@ class MakePostViewController: UIViewController {
         
     }
     
-    
     @IBAction func submitPostButton(sender: AnyObject) {
         self.post.title = self.titleText.text
         self.post.content = self.contentText.text
@@ -52,14 +51,5 @@ class MakePostViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

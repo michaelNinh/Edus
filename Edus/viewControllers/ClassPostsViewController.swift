@@ -17,6 +17,13 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
     var selectedPost: Post?
     var selectedPostPostPoints: PostPoints?
 
+    
+    
+    @IBAction func backToHomeSegue(sender: AnyObject) {
+        self.backToHomeSegue()
+    }
+    
+    
     @IBOutlet weak var tableView: UITableView!
     let defaultRange = 0...4
     let additionalRangeSize = 5
@@ -65,6 +72,10 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget {
     
     func expandPostSegue(){
         self.performSegueWithIdentifier("expandPostSegue", sender: self)
+    }
+    
+    func backToHomeSegue(){
+        self.performSegueWithIdentifier("backToHomeSegue", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
