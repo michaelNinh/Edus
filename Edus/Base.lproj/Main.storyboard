@@ -894,6 +894,74 @@
             </objects>
             <point key="canvasLocation" x="885" y="1235"/>
         </scene>
+        <!--Feedback-->
+        <scene sceneID="Ffw-Nh-Zm8">
+            <objects>
+                <viewController id="eJK-bs-B1c" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jt8-ZK-pIO"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Vd-D9-e6D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zwX-tF-Ty9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-Af-LUt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WF6-v4-N1I">
+                                        <rect key="frame" x="8" y="85" width="584" height="221"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="221" id="WPS-6O-e1J"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZa-Jo-TBv">
+                                        <rect key="frame" x="546" y="314" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52t-h4-AZd">
+                                        <rect key="frame" x="8" y="46" width="76" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="YfP-hD-Y8f"/>
+                                            <constraint firstAttribute="width" constant="76" id="wff-40-L1q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VZa-Jo-TBv" firstAttribute="top" secondItem="WF6-v4-N1I" secondAttribute="bottom" constant="8" symbolic="YES" id="IFl-wG-wcm"/>
+                                    <constraint firstItem="VZa-Jo-TBv" firstAttribute="trailing" secondItem="fwA-Af-LUt" secondAttribute="trailingMargin" id="Ted-C7-GZE"/>
+                                    <constraint firstAttribute="bottom" secondItem="VZa-Jo-TBv" secondAttribute="bottom" constant="256" id="WpV-bC-EZh"/>
+                                    <constraint firstItem="WF6-v4-N1I" firstAttribute="top" secondItem="52t-h4-AZd" secondAttribute="bottom" constant="18" id="ZJj-eS-TGz"/>
+                                    <constraint firstItem="WF6-v4-N1I" firstAttribute="trailing" secondItem="VZa-Jo-TBv" secondAttribute="trailing" id="dQe-Ij-jNA"/>
+                                    <constraint firstItem="52t-h4-AZd" firstAttribute="leading" secondItem="WF6-v4-N1I" secondAttribute="leading" id="f0r-WJ-SS1"/>
+                                    <constraint firstItem="52t-h4-AZd" firstAttribute="top" secondItem="fwA-Af-LUt" secondAttribute="top" constant="46" id="n6j-aR-42m"/>
+                                    <constraint firstItem="WF6-v4-N1I" firstAttribute="leading" secondItem="fwA-Af-LUt" secondAttribute="leadingMargin" id="q4j-5P-3xi"/>
+                                    <constraint firstItem="WF6-v4-N1I" firstAttribute="centerX" secondItem="fwA-Af-LUt" secondAttribute="centerX" id="z64-il-V17"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fwA-Af-LUt" secondAttribute="bottom" id="LbD-BQ-5eg"/>
+                            <constraint firstAttribute="trailing" secondItem="fwA-Af-LUt" secondAttribute="trailing" id="OXt-29-64y"/>
+                            <constraint firstItem="fwA-Af-LUt" firstAttribute="leading" secondItem="zwX-tF-Ty9" secondAttribute="leading" id="cDs-W4-JWs"/>
+                            <constraint firstItem="fwA-Af-LUt" firstAttribute="top" secondItem="zwX-tF-Ty9" secondAttribute="top" id="rSa-Nf-vFd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Feedback" image="Feedback" id="1wL-Pc-j8e"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cww-Ls-9VP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="2075"/>
+        </scene>
         <!--Class Tab Bar View Controller-->
         <scene sceneID="khN-8T-q9Q">
             <objects>
@@ -904,10 +972,16 @@
                         <color key="tintColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="0.90120882601351349" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="DYN-iO-qyd" kind="relationship" relationship="viewControllers" id="IIK-bn-Pzz"/>
                         <segue destination="fza-of-XD7" kind="relationship" relationship="viewControllers" id="JLm-GG-XLE"/>
+                        <segue destination="eJK-bs-B1c" kind="relationship" relationship="viewControllers" id="Wsh-zI-SRV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyb-uF-c0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2182,6 +2256,7 @@
     </scenes>
     <resources>
         <image name="BackArrow" width="24" height="24"/>
+        <image name="Feedback" width="30" height="30"/>
         <image name="Flag" width="24" height="24"/>
         <image name="Image" width="25" height="22"/>
         <image name="Trash" width="18" height="18"/>
