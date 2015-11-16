@@ -19,6 +19,8 @@
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
         </mutableArray>
         <mutableArray key="Gravity-Light.ttf">
             <string>Gravity-Light</string>
@@ -1136,8 +1138,8 @@
                                                         <constraint firstAttribute="height" constant="80" id="pqg-LS-4Gd"/>
                                                         <constraint firstAttribute="width" constant="200" id="tJV-eD-big"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -1179,16 +1181,16 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-oo-Hbe">
                                                     <rect key="frame" x="542" y="0.0" width="36" height="21"/>
                                                     <fontDescription key="fontDescription" name="Gravity-Light" family="Gravity" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-VB-wxh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-VB-wxh">
                                                     <rect key="frame" x="58" y="221" width="45" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="keh-Wk-BcU"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tr-cK-Hho">
@@ -1201,7 +1203,7 @@
                                                         <constraint firstAttribute="height" constant="88" id="dzf-bB-bAY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -2263,6 +2265,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
-        <segue reference="VG9-aV-Ivg"/>
+        <segue reference="Rph-SL-AI1"/>
     </inferredMetricsTieBreakers>
 </document>
