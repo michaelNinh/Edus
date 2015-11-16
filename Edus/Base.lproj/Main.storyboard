@@ -761,7 +761,7 @@
                                     <segue destination="Tdc-VT-Fv8" kind="show" id="L5c-pE-6zG"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7m3-7n-wHG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7m3-7n-wHG">
                                 <rect key="frame" x="0.0" y="90" width="600" height="452"/>
                                 <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -830,7 +830,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your school name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-RR-5Uk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your school name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-RR-5Uk">
                                 <rect key="frame" x="20" y="114" width="176" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="kYz-Pp-Zvm"/>
@@ -901,8 +901,9 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="KKP-7D-NF4">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="DYN-iO-qyd" kind="relationship" relationship="viewControllers" id="IIK-bn-Pzz"/>
@@ -913,11 +914,11 @@
             </objects>
             <point key="canvasLocation" x="1545" y="2075"/>
         </scene>
-        <!--Item-->
+        <!--Posts-->
         <scene sceneID="hFE-Wi-dN2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DYN-iO-qyd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Sm2-dL-7nv"/>
+                    <tabBarItem key="tabBarItem" title="Posts" image="postUnselected" selectedImage="postUnselected" id="Sm2-dL-7nv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgS-75-kbn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2020,11 +2021,11 @@
             </objects>
             <point key="canvasLocation" x="4540" y="2075"/>
         </scene>
-        <!--Item-->
+        <!--My posts-->
         <scene sceneID="cTo-Ih-xdC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fza-of-XD7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Qqr-TW-rdF"/>
+                    <tabBarItem key="tabBarItem" title="My posts" image="Image" id="Qqr-TW-rdF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iMN-bG-UMQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2182,13 +2183,15 @@
     <resources>
         <image name="BackArrow" width="24" height="24"/>
         <image name="Flag" width="24" height="24"/>
+        <image name="Image" width="25" height="22"/>
         <image name="Trash" width="18" height="18"/>
         <image name="UpArrow" width="51" height="29"/>
         <image name="WritePost" width="24" height="24"/>
+        <image name="postUnselected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
         <segue reference="VG9-aV-Ivg"/>
-        <segue reference="ut1-1W-dlv"/>
+        <segue reference="M7v-vt-RP5"/>
     </inferredMetricsTieBreakers>
 </document>
