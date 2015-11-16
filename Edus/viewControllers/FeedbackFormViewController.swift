@@ -23,7 +23,7 @@ class FeedbackFormViewController: UIViewController, UITextFieldDelegate, UITextV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageBox.text = "SHOW ME WHAT YOU GOT."
+        messageBox.text = "Feature requests, bug reports, improvements, thanks etc.."
         messageBox.delegate = self
         messageBox.textColor = UIColor.lightGrayColor()
         
@@ -60,7 +60,7 @@ class FeedbackFormViewController: UIViewController, UITextFieldDelegate, UITextV
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "SHOW ME WHAT YOU GOT."
+            textView.text = "Feature requests, bug reports, improvements, thanks etc.."
             textView.textColor = UIColor.lightGrayColor()
         }
     }
