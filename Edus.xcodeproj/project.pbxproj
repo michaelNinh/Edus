@@ -21,6 +21,8 @@
 		9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */; };
 		912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */; };
 		912099921BF3B28300078E74 /* SubjectListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912099911BF3B28300078E74 /* SubjectListQuery.swift */; };
+		9130A7F21BFA8956001E2FE2 /* FeedbackFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130A7F11BFA8956001E2FE2 /* FeedbackFormModel.swift */; };
+		9130A7F61BFA8D68001E2FE2 /* FeedbackFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130A7F51BFA8D68001E2FE2 /* FeedbackFormViewController.swift */; };
 		91374D421BF190D20052157B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D411BF190D20052157B /* AppDelegate.swift */; };
 		91374D441BF190D20052157B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D431BF190D20052157B /* ViewController.swift */; };
 		91374D471BF190D20052157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91374D451BF190D20052157B /* Main.storyboard */; };
@@ -112,6 +114,8 @@
 		9120998D1BF31CB100078E74 /* SubjectListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListTableViewCell.swift; path = Views/SubjectListTableViewCell.swift; sourceTree = "<group>"; };
 		9120998F1BF3B1FD00078E74 /* SubjectListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListModel.swift; path = Models/SubjectListModel.swift; sourceTree = "<group>"; };
 		912099911BF3B28300078E74 /* SubjectListQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectListQuery.swift; path = Queryers/SubjectListQuery.swift; sourceTree = "<group>"; };
+		9130A7F11BFA8956001E2FE2 /* FeedbackFormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedbackFormModel.swift; path = Models/FeedbackFormModel.swift; sourceTree = "<group>"; };
+		9130A7F51BFA8D68001E2FE2 /* FeedbackFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedbackFormViewController.swift; path = viewControllers/FeedbackFormViewController.swift; sourceTree = "<group>"; };
 		91374D3E1BF190D20052157B /* Edus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91374D411BF190D20052157B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91374D431BF190D20052157B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				917AB8A51BF565DB004F884D /* ReplyPostPointModel.swift */,
 				917AB8B51BF8744E004F884D /* PostFlagModel.swift */,
 				917AB8B71BF8FD97004F884D /* ReplyPostFlag.swift */,
+				9130A7F11BFA8956001E2FE2 /* FeedbackFormModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				912099841BF2E52500078E74 /* ClassLevelControllers */,
 				91374DB11BF2A4870052157B /* SchoolLevelControllers */,
 				9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */,
+				9130A7F51BFA8D68001E2FE2 /* FeedbackFormViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */,
 				91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */,
 				9176BC691BF40E9B002FC5AB /* PostModel.swift in Sources */,
+				9130A7F21BFA8956001E2FE2 /* FeedbackFormModel.swift in Sources */,
 				9118A0B11BF54AFA00F3E122 /* ExpandedQuestionViewController.swift in Sources */,
 				917AB8A81BF65276004F884D /* ReplyPostTableViewCell.swift in Sources */,
 				917AB8AC1BF65EB6004F884D /* WriteReplyPostViewController.swift in Sources */,
@@ -653,6 +660,7 @@
 				9118A0B31BF54F0400F3E122 /* ExpandedPostViewController.swift in Sources */,
 				916904211BFA62FA007ADDAB /* MyPostsWriteReplyViewController.swift in Sources */,
 				9176BC6D1BF47C8A002FC5AB /* GetPostsForClass.swift in Sources */,
+				9130A7F61BFA8D68001E2FE2 /* FeedbackFormViewController.swift in Sources */,
 				91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */,
 				9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */,
 				91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */,
