@@ -371,14 +371,14 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Lb-DW-Yil">
                                                     <rect key="frame" x="451" y="256" width="71" height="22"/>
-                                                    <state key="normal" title="Delete" image="Trash"/>
+                                                    <state key="normal" image="Trash"/>
                                                     <connections>
                                                         <action selector="deletePost:" destination="IZi-7g-wZ4" eventType="touchUpInside" id="Y9B-CS-VIA"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X56-8B-qcR">
                                                     <rect key="frame" x="520" y="255" width="55" height="24"/>
-                                                    <state key="normal" title="flag" image="Flag"/>
+                                                    <state key="normal" image="Flag"/>
                                                     <connections>
                                                         <action selector="flagPost:" destination="IZi-7g-wZ4" eventType="touchUpInside" id="L8P-Is-Uaa"/>
                                                     </connections>
@@ -992,8 +992,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYa-Ja-aa7">
-                                                    <rect key="frame" x="536" y="215" width="55" height="24"/>
-                                                    <state key="normal" title="flag" image="Flag"/>
+                                                    <rect key="frame" x="552" y="215" width="24" height="24"/>
+                                                    <state key="normal" image="Flag"/>
                                                     <connections>
                                                         <action selector="flagPost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="HZK-13-3Fy"/>
                                                     </connections>
@@ -1018,8 +1018,8 @@
                                                     </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-04-1dc">
-                                                    <rect key="frame" x="475" y="216" width="71" height="22"/>
-                                                    <state key="normal" title="Delete" image="Trash"/>
+                                                    <rect key="frame" x="502" y="216" width="18" height="22"/>
+                                                    <state key="normal" image="Trash"/>
                                                     <connections>
                                                         <action selector="deletePost:" destination="Oqp-lH-YHd" eventType="touchUpInside" id="xBA-Vf-bYx"/>
                                                     </connections>
@@ -1215,15 +1215,15 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIr-uG-By8">
-                                <rect key="frame" x="521" y="272" width="59" height="24"/>
-                                <state key="normal" title="Flag" image="Flag"/>
+                                <rect key="frame" x="539" y="272" width="24" height="24"/>
+                                <state key="normal" image="Flag"/>
                                 <connections>
                                     <action selector="questionFlag:" destination="G7D-hx-vvG" eventType="touchUpInside" id="ueB-TU-VF4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz4-tp-1Od">
-                                <rect key="frame" x="460" y="273" width="45" height="22"/>
-                                <state key="normal" title="Del" image="Trash"/>
+                                <rect key="frame" x="474" y="273" width="18" height="22"/>
+                                <state key="normal" image="Trash"/>
                                 <connections>
                                     <action selector="questionDelete:" destination="G7D-hx-vvG" eventType="touchUpInside" id="uFz-KT-UMS"/>
                                 </connections>
@@ -1334,13 +1334,13 @@
                                                     </variation>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbX-vl-56P">
-                                                    <rect key="frame" x="242" y="216" width="45" height="22"/>
+                                                    <rect key="frame" x="256" y="216" width="18" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="BWD-QN-yuF"/>
                                                         <constraint firstAttribute="height" constant="30" id="BlJ-3l-EIJ"/>
                                                         <constraint firstAttribute="width" constant="30" id="V18-7H-6Mc"/>
                                                     </constraints>
-                                                    <state key="normal" title="Del" image="Trash"/>
+                                                    <state key="normal" image="Trash"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="BWD-QN-yuF"/>
@@ -1353,12 +1353,12 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-XV-Lou">
-                                                    <rect key="frame" x="280" y="215" width="59" height="24"/>
+                                                    <rect key="frame" x="298" y="215" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="cU1-eA-MEa"/>
                                                         <constraint firstAttribute="width" constant="30" id="nrM-Vy-biW"/>
                                                     </constraints>
-                                                    <state key="normal" title="Flag" image="Flag"/>
+                                                    <state key="normal" image="Flag"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="cU1-eA-MEa"/>
@@ -1760,8 +1760,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6je-EZ-DLv">
-                                        <rect key="frame" x="528" y="261" width="53" height="22"/>
-                                        <state key="normal" title="Flag" image="Trash"/>
+                                        <rect key="frame" x="546" y="261" width="18" height="22"/>
+                                        <state key="normal" image="Trash"/>
                                         <connections>
                                             <action selector="questionFlag:" destination="ZC1-9q-o4v" eventType="touchUpInside" id="YUn-Rl-q5v"/>
                                         </connections>
@@ -1773,8 +1773,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6l-Ad-usP">
-                                        <rect key="frame" x="471" y="261" width="45" height="22"/>
-                                        <state key="normal" title="Del" image="Trash"/>
+                                        <rect key="frame" x="485" y="261" width="18" height="22"/>
+                                        <state key="normal" image="Trash"/>
                                         <connections>
                                             <action selector="questionDelete:" destination="ZC1-9q-o4v" eventType="touchUpInside" id="uNK-sK-eHP"/>
                                         </connections>
