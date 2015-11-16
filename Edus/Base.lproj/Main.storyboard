@@ -37,6 +37,7 @@
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
+            <string>ProximaNova-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -460,6 +461,7 @@
                                             <outlet property="dateText" destination="py6-md-6z1" id="A6d-uX-pnK"/>
                                             <outlet property="deleteButton" destination="8Lb-DW-Yil" id="Ohe-fq-Uon"/>
                                             <outlet property="nameText" destination="vFJ-xl-WCI" id="SWR-Jz-lQR"/>
+                                            <outlet property="postContentText" destination="kjD-aq-eSH" id="tDA-6i-g7o"/>
                                             <outlet property="postTitleText" destination="YIV-hw-jpj" id="iW4-hR-ep8"/>
                                             <outlet property="scoreText" destination="YDv-j5-rzI" id="Hz9-is-FW6"/>
                                             <outlet property="upVoteButton" destination="41v-nT-ASA" id="0YF-R9-Gu3"/>
@@ -505,74 +507,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCm-9B-fGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3054" y="2075"/>
-        </scene>
-        <!--Make post-->
-        <scene sceneID="fHW-WN-iS1">
-            <objects>
-                <viewController id="K8b-VP-J8k" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dWH-Nf-lny"/>
-                        <viewControllerLayoutGuide type="bottom" id="czj-4k-H8p"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nQe-ez-mfQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-DV-m8Z">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5as-cd-AIw">
-                                        <rect key="frame" x="531" y="87" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="anonymousToggle:" destination="K8b-VP-J8k" eventType="valueChanged" id="L0W-XK-xKs"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZO-et-s3q">
-                                        <rect key="frame" x="454" y="92" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-Ee-hso">
-                                        <rect key="frame" x="20" y="41" width="97" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uk2-XM-y4b">
-                                        <rect key="frame" x="20" y="126" width="573" height="278"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Make post" id="1th-EP-tdg">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="bRq-PQ-Ysm">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H4O-35-MPM">
-                                <rect key="frame" x="531" y="7" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitPostButton:" destination="K8b-VP-J8k" eventType="touchUpInside" id="Rfb-O4-2hH"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="anonymousToggleButton" destination="5as-cd-AIw" id="Pj5-mV-Qqe"/>
-                        <outlet property="contentText" destination="uk2-XM-y4b" id="bfY-vt-9Vr"/>
-                        <outlet property="titleText" destination="YYh-Ee-hso" id="vLS-Oa-y4O"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4YO-QR-ChQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3852" y="2746"/>
         </scene>
         <!--Create class-->
         <scene sceneID="SaX-8g-LN8">
@@ -950,6 +884,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgS-75-kbn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="0.0"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1155,12 +1095,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Class posts" id="Kpg-Yf-3QD">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="DGZ-9D-Mjr">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backToHomeSegue:" destination="qgD-sI-5Ko" id="jlo-AX-QSQ"/>
                                 <segue destination="Bia-Cj-Mi2" kind="presentation" identifier="backToHomeSegue" id="Rph-SL-AI1"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Write" id="Htf-S3-nNQ">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="ISp-zN-OIw" kind="show" identifier="makePostSegue" id="G74-l4-grJ"/>
                             </connections>
@@ -1923,10 +1865,13 @@
                     <tabBarItem key="tabBarItem" title="MakePost" id="Mtc-gk-kjR"/>
                     <navigationItem key="navigationItem" title="Make post" id="f6N-49-Ylf">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="PgN-33-Kxz">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rKk-Dv-zDj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rKk-Dv-zDj">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="15"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="submitPostButton:" destination="ISp-zN-OIw" eventType="touchUpInside" id="HY0-AI-BqX"/>
                                     <segue destination="qgD-sI-5Ko" kind="show" identifier="submitPostSegue" id="ut1-1W-dlv"/>
@@ -1943,7 +1888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0x-rw-bJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3208" y="3082"/>
+            <point key="canvasLocation" x="3206" y="2882"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
