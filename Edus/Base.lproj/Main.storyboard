@@ -23,6 +23,8 @@
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
         </mutableArray>
         <mutableArray key="Gravity-Light.ttf">
             <string>Gravity-Light</string>
@@ -32,8 +34,11 @@
             <string>Gravity-Light</string>
             <string>Gravity-Light</string>
             <string>Gravity-Light</string>
+            <string>Gravity-Light</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
+            <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
@@ -397,7 +402,7 @@
                                                     <rect key="frame" x="42" y="68" width="550" height="164"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -428,6 +433,7 @@
                                                 <constraint firstItem="vFJ-xl-WCI" firstAttribute="centerY" secondItem="X56-8B-qcR" secondAttribute="centerY" id="dvx-l0-Ma1"/>
                                                 <constraint firstItem="SDY-w1-SwB" firstAttribute="leading" secondItem="YIV-hw-jpj" secondAttribute="leading" id="fLR-ma-grQ"/>
                                                 <constraint firstItem="YIV-hw-jpj" firstAttribute="top" secondItem="VtZ-mj-Qcx" secondAttribute="topMargin" id="fic-sA-FYG"/>
+                                                <constraint firstItem="YDv-j5-rzI" firstAttribute="centerX" secondItem="41v-nT-ASA" secondAttribute="centerX" id="hXg-3w-c4C"/>
                                                 <constraint firstItem="SDY-w1-SwB" firstAttribute="top" secondItem="py6-md-6z1" secondAttribute="bottom" constant="47" id="iPg-Vk-7a0"/>
                                                 <constraint firstItem="X56-8B-qcR" firstAttribute="baseline" secondItem="8Lb-DW-Yil" secondAttribute="baseline" id="ido-jd-eqm"/>
                                                 <constraint firstItem="X56-8B-qcR" firstAttribute="top" secondItem="SDY-w1-SwB" secondAttribute="bottom" constant="20" id="jcQ-g8-23L"/>
@@ -731,9 +737,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create class" id="JgC-hJ-D9s">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jjo-6U-br7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7hu-8L-zSK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7hu-8L-zSK">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="15"/>
                                 <state key="normal" title="Enroll"/>
                                 <connections>
                                     <action selector="addClassButton:" destination="u8H-VC-dE0" eventType="touchUpInside" id="vt5-uu-fTY"/>
@@ -1355,13 +1362,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEa-D2-akH">
-                                                    <rect key="frame" x="77" y="8" width="42" height="21"/>
+                                                    <rect key="frame" x="77" y="8" width="80" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="97o-4t-X2K"/>
                                                         <constraint firstAttribute="height" constant="21" id="ABy-0L-VoP"/>
-                                                        <constraint firstAttribute="width" constant="42" id="kcW-h2-dbk"/>
+                                                        <constraint firstAttribute="width" constant="80" id="kcW-h2-dbk"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Gravity-Light" family="Gravity" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1381,7 +1388,7 @@
                                                         <action selector="upVote:" destination="L8h-2D-zKd" eventType="touchUpInside" id="zlp-4l-ggQ"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-BR-Zsf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-BR-Zsf">
                                                     <rect key="frame" x="25" y="62" width="8" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="DMb-Vq-rFB"/>
@@ -1461,7 +1468,7 @@
                                                         <action selector="flagPost:" destination="L8h-2D-zKd" eventType="touchUpInside" id="feP-u0-bjp"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqE-Sl-afh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqE-Sl-afh">
                                                     <rect key="frame" x="530" y="8" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="4dJ-ZG-bS1"/>
@@ -1878,14 +1885,14 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT8-26-OpR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT8-26-OpR">
                                         <rect key="frame" x="516" y="26" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="DWB-6r-VJW"/>
                                             <constraint firstAttribute="width" constant="42" id="tFg-yL-lJ3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H0-Z8-ShX">
@@ -1904,7 +1911,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGl-eZ-If0">
                                         <rect key="frame" x="84" y="26" width="413" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2132,6 +2139,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="NUy-Js-K6r"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="questionContentText" destination="NPM-mC-lrO" id="WOh-N0-oyC"/>
                         <outlet property="questionDate" destination="qT8-26-OpR" id="rDA-Pr-gCq"/>

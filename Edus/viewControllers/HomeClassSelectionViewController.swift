@@ -31,7 +31,6 @@ class HomeClassSelectionViewController: UIViewController {
         
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             //if error == nil {
-            //we need to set the delegate! gooknna look my code haha
             
             if PFUser.currentUser() == nil {
 
