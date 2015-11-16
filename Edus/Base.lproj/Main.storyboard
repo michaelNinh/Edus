@@ -42,6 +42,8 @@
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
+            <string>ProximaNova-Bold</string>
+            <string>ProximaNova-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1365,8 +1367,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-kw-yop">
-                                <rect key="frame" x="275" y="269" width="51" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-kw-yop">
+                                <rect key="frame" x="266" y="268" width="69" height="32"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                 <state key="normal" title="Answer"/>
                                 <connections>
                                     <segue destination="ONY-sw-GjG" kind="show" identifier="writeReplyPostSegue" id="gUo-KX-khF"/>
@@ -1854,9 +1857,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Your answer" id="Foz-fE-iBt">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="K3t-n2-oDi">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zed-iD-381">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zed-iD-381">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="15"/>
                                 <state key="normal" title="Reply"/>
                                 <connections>
                                     <action selector="submitReplyPost:" destination="ONY-sw-GjG" eventType="touchUpInside" id="OfE-u6-duF"/>

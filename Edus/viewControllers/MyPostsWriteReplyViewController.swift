@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate {
+class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
     @IBOutlet weak var postQuestionText: UILabel!
@@ -28,7 +28,10 @@ class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.post)
+        self.replyPostContentText.delegate = self
+        self.replyPostContentText.text = "What's your reply?"
+        self.replyPostContentText.textColor = UIColor.lightGrayColor()
+        
         self.postQuestionText.text = self.post?.title
         self.postContentText.text = self.post?.content
         
@@ -42,6 +45,21 @@ class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate
     }
     
     
+    
+    //text placeHolderstuff
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "What's your reply?"
+            textView.textColor = UIColor.lightGrayColor()
+        }
+    }
     
     //MARK: Close keyboard
     
