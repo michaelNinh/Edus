@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteReplyPostViewController: UIViewController {
+class WriteReplyPostViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var postQuestionText: UILabel!
@@ -41,14 +41,23 @@ class WriteReplyPostViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    
+    //MARK: Close keyboard
+    
+    /**
+    * Called when 'return' key pressed. return NO to ignore.
     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        self.view.endEditing(true)
+    }
 
 }

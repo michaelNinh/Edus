@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class AddNewSchoolViewController: UIViewController {
+class AddNewSchoolViewController: UIViewController, UITextFieldDelegate {
     
     
 
@@ -42,4 +42,21 @@ class AddNewSchoolViewController: UIViewController {
         performSegueWithIdentifier("addedSchoolSegue", sender: self)
     }
 
+    //MARK: Close keyboard
+    
+    /**
+    * Called when 'return' key pressed. return NO to ignore.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        self.view.endEditing(true)
+    }
 }

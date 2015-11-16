@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class CreateNewClassViewController: UIViewController {
+class CreateNewClassViewController: UIViewController, UITextFieldDelegate {
     
     var selectedSubject: SubjectList?
     
@@ -81,5 +81,23 @@ class CreateNewClassViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: Close keyboard
+    
+    /**
+    * Called when 'return' key pressed. return NO to ignore.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        self.view.endEditing(true)
+    }
 
 }

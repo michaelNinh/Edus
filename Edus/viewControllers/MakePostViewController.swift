@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MakePostViewController: UIViewController {
+class MakePostViewController: UIViewController, UITextFieldDelegate {
     
     var classroom: Classroom?
     //create a post Object
@@ -51,6 +51,22 @@ class MakePostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //MARK: Close keyboard
+    
+    /**
+    * Called when 'return' key pressed. return NO to ignore.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        self.view.endEditing(true)
+    }
     
 }

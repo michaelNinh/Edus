@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
         
         Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
             clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
-        
+       UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         
        loggerOuter()
         
