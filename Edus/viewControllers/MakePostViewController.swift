@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MakePostViewController: UIViewController, UITextFieldDelegate {
+class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var classroom: Classroom?
     //create a post Object
@@ -31,7 +31,14 @@ class MakePostViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitPostButton(sender: AnyObject) {
         self.post.title = self.titleText.text
-        self.post.content = self.contentText.text
+        
+        if self.contentText.text == "What do you want to ask?"{
+            self.post.content = ""
+        }else{
+            self.post.content = self.contentText.text
+        }
+        
+        
         self.post.toClassroom = self.classroom
         self.post.subject = self.classroom?.subject
         self.post.subjectLevel = self.classroom?.subjectLevel
@@ -42,6 +49,10 @@ class MakePostViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.contentText.delegate = self
+        self.contentText.text = "What do you want to ask?"
+        self.contentText.textColor = UIColor.lightGrayColor()
+        
         anonymousToggleButton.on = false
         // Do any additional setup after loading the view.
     }
@@ -49,6 +60,21 @@ class MakePostViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //text placeHolderstuff
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "What do you want to ask?"
+            textView.textColor = UIColor.lightGrayColor()
+        }
     }
     
     //MARK: Close keyboard
