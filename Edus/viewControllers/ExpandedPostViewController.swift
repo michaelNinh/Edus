@@ -15,7 +15,10 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
     
     
     @IBOutlet weak var questionTitleText: UILabel!
-    @IBOutlet weak var questionContentText: UILabel!
+    
+    @IBOutlet weak var questionContentText: UITextView!
+    
+    
     @IBOutlet weak var questionFromUserNameText: UILabel!
     @IBOutlet weak var questionDate: UILabel!
     @IBOutlet weak var questionScoreText: UILabel!

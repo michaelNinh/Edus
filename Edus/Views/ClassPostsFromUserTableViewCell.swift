@@ -19,7 +19,7 @@ protocol ShowFlagAlertFromUserPost{
 class ClassPostFromUserTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitleText: UILabel!
-    @IBOutlet weak var postContentText: UILabel!
+    @IBOutlet weak var postContentText: UITextView!
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var scoreText: UILabel!

@@ -19,7 +19,8 @@ class ReplyPostTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var nameText: UILabel!
-    @IBOutlet weak var postContentText: UILabel!
+    
+    @IBOutlet weak var postContentText: UITextView!
     @IBOutlet weak var scoreText: UILabel!
     @IBOutlet weak var dateText: UILabel!
     
