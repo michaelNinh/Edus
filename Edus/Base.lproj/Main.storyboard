@@ -85,7 +85,7 @@
                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="17"/>
                                 <state key="normal" title="+Add class"/>
                                 <connections>
-                                    <segue destination="GQF-3m-gz8" kind="show" identifier="addClassSegue" id="r1S-6q-c3t"/>
+                                    <action selector="addClass:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IlE-LR-WoX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ5-yv-IN8">
@@ -178,6 +178,7 @@
                         <outlet property="logOut" destination="t54-yo-1Ut" id="MiB-au-iqd"/>
                         <outlet property="userNameText" destination="VJ5-yv-IN8" id="3Uu-cE-ny1"/>
                         <segue destination="jrm-au-xhf" kind="presentation" identifier="enterClassSegue" id="oMx-gK-gj2"/>
+                        <segue destination="GQF-3m-gz8" kind="show" identifier="addClassSegue" id="3Y6-Ie-Ldy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -281,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIR-OS-bJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="1286"/>
+            <point key="canvasLocation" x="2384" y="1332"/>
         </scene>
         <!--My Posts-->
         <scene sceneID="NKu-Rs-E0t">
@@ -864,7 +865,7 @@
                                     <segue destination="Tdc-VT-Fv8" kind="show" id="L5c-pE-6zG"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7m3-7n-wHG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7m3-7n-wHG">
                                 <rect key="frame" x="0.0" y="90" width="600" height="452"/>
                                 <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -933,7 +934,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your school name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-RR-5Uk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your school name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-RR-5Uk">
                                 <rect key="frame" x="20" y="114" width="176" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="kYz-Pp-Zvm"/>
@@ -1849,7 +1850,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqw-1T-pYY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqw-1T-pYY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GII-cn-t5E">

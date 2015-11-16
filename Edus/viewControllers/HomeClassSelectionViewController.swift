@@ -23,6 +23,9 @@ class HomeClassSelectionViewController: UIViewController {
     @IBOutlet weak var addSchoolButton: UIButton!
     @IBAction func addSchool(sender: AnyObject) {
     }
+    @IBAction func addClass(sender: AnyObject) {
+        forceAddCollegePrompt()
+    }
     @IBOutlet weak var logOut: UIButton!
     @IBAction func logOut(sender: AnyObject) {
         
@@ -111,7 +114,32 @@ class HomeClassSelectionViewController: UIViewController {
         }
     }
     
-
+    //force ADD COLLEGE
+    func forceAddCollegePrompt(){
+        if PFUser.currentUser()!["activeSchoolName"] == nil{
+            showMissingCollegeAlert("Whoa, hold on there!", message: "Select your school first.")
+        }else{
+            self.performSegueWithIdentifier("addClassSegue", sender: self)
+        }
+    }
+    
+    //alert for missing college
+    func showMissingCollegeAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .Alert);
+        
+        
+        let yes = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){
+            (actionCancel) -> () in
+            self.performSegueWithIdentifier("addSchoolSegue", sender: self)
+        }
+        
+        
+        
+        alertController.addAction(yes)
+        presentViewController(alertController, animated: true, completion: nil);
+    }
+    
+    
 }
 
 extension HomeClassSelectionViewController: UITableViewDelegate{
