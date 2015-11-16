@@ -111,8 +111,9 @@ class MyPostsExpandedPostViewController: UIViewController, TimelineComponentTarg
         }
         
         if (segue.identifier == "writeReplyPostSegue") {
-            let writePostReplyViewController = segue.destinationViewController as! WriteReplyPostViewController
+            let writePostReplyViewController = segue.destinationViewController as! MyPostsWriteReplyPostViewController
             writePostReplyViewController.post = self.post
+            print(self.post)
         }
         
     }

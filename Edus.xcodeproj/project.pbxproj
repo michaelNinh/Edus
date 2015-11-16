@@ -52,6 +52,7 @@
 		91374DAB1BF29E190052157B /* AvailableSchoolListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */; };
 		91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */; };
 		91374DB01BF2A4020052157B /* AvailableSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */; };
+		916904211BFA62FA007ADDAB /* MyPostsWriteReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916904201BFA62FA007ADDAB /* MyPostsWriteReplyViewController.swift */; };
 		9176BC611BF40103002FC5AB /* ClassTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */; };
 		9176BC641BF40AD7002FC5AB /* ClassPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */; };
 		9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */; };
@@ -148,6 +149,7 @@
 		91374DAA1BF29E190052157B /* AvailableSchoolListQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableSchoolListQuery.swift; path = Queryers/AvailableSchoolListQuery.swift; sourceTree = "<group>"; };
 		91374DAC1BF2A3A30052157B /* SelectSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSchoolViewController.swift; path = viewControllers/SelectSchoolViewController.swift; sourceTree = "<group>"; };
 		91374DAF1BF2A4020052157B /* AvailableSchoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableSchoolTableViewCell.swift; path = Views/AvailableSchoolTableViewCell.swift; sourceTree = "<group>"; };
+		916904201BFA62FA007ADDAB /* MyPostsWriteReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPostsWriteReplyViewController.swift; path = viewControllers/MyPostsWriteReplyViewController.swift; sourceTree = "<group>"; };
 		9176BC601BF40103002FC5AB /* ClassTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassTabBarViewController.swift; path = viewControllers/ClassTabBarViewController.swift; sourceTree = "<group>"; };
 		9176BC631BF40AD7002FC5AB /* ClassPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostsViewController.swift; path = viewControllers/ClassPostsViewController.swift; sourceTree = "<group>"; };
 		9176BC661BF40BD7002FC5AB /* ClassPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassPostTableViewCell.swift; path = Views/ClassPostTableViewCell.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 			children = (
 				917AB8BB1BF9291D004F884D /* MyPostsViewController.swift */,
 				917AB8C41BF9315B004F884D /* MyPostsExpandedViewController.swift */,
+				916904201BFA62FA007ADDAB /* MyPostsWriteReplyViewController.swift */,
 			);
 			name = MyPostsLevelControllers;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				9120998E1BF31CB100078E74 /* SubjectListTableViewCell.swift in Sources */,
 				91374DA11BF1CC7E0052157B /* SchoolModel.swift in Sources */,
 				9118A0B31BF54F0400F3E122 /* ExpandedPostViewController.swift in Sources */,
+				916904211BFA62FA007ADDAB /* MyPostsWriteReplyViewController.swift in Sources */,
 				9176BC6D1BF47C8A002FC5AB /* GetPostsForClass.swift in Sources */,
 				91374DAD1BF2A3A30052157B /* SelectSchoolViewController.swift in Sources */,
 				9120998C1BF31B8F00078E74 /* SubjectListViewController.swift in Sources */,
