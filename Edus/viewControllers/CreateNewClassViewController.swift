@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Mixpanel
 
 class CreateNewClassViewController: UIViewController, UITextFieldDelegate {
     
@@ -29,6 +30,8 @@ class CreateNewClassViewController: UIViewController, UITextFieldDelegate {
         let classroom = Classroom()
         classroom.subject = self.selectedSubject?.subjectName
         createdClassSegue()
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("New class added")
         
         
         switch levelSegementControlButton.selectedSegmentIndex{

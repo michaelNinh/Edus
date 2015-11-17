@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ConvenienceKit-ConvenienceKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,6 +24,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Mixpanel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ParseCrashReporting.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Edus.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,6 +47,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6B50F9F19FC8CD3CD40A17A127613677</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>802D3B1C197FEA0861F5931F7ED43355</key>
 		<dict>
 			<key>primary</key>
@@ -37,12 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BA0ED018954B2E035A694BF72506145C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBCE0F9046DA1D6D1A86F4F0E63F0ABE</key>
+		<key>CE9387695D2BA7F9FC4492ACE5896A30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D306E1A19F57F62CC2320ED0D34FE3F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

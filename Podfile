@@ -6,6 +6,8 @@ use_frameworks!
 
 pod "ConvenienceKit"
 pod 'DateTools'
+pod "Mixpanel"
+pod 'ParseCrashReporting'
 
 end
 

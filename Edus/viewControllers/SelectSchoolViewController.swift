@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Mixpanel
 
 class SelectSchoolViewController: UIViewController {
     
@@ -71,8 +72,8 @@ extension SelectSchoolViewController: UITableViewDelegate{
         }
         
         confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
-        //let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-        //mixpanel.track("school added")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("School added")
     }
 }
 

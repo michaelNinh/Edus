@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Mixpanel
 
 
 class AddClassViewController: UIViewController {
@@ -50,6 +51,8 @@ class AddClassViewController: UIViewController {
         
         let yes = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){
             (actionCancel) -> () in
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Existing class added")
             self.addedClassSegue()
         }
         

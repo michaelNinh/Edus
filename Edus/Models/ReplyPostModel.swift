@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import Mixpanel
 
 class ReplyPost: PFObject, PFSubclassing{
     
@@ -35,6 +36,8 @@ class ReplyPost: PFObject, PFSubclassing{
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("ReplyPostUploaded")
         }
         
         

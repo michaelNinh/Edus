@@ -11,6 +11,9 @@ import Parse
 import Bolts
 import ParseUI
 import FBSDKCoreKit
+import Mixpanel
+import ParseCrashReporting
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
@@ -75,7 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Override point for customization after application launch.
+        
+        
+        Mixpanel.sharedInstanceWithToken("18e2baa20408d29e0d3104cfb2c90c9d")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("App launched")
+        
+        ParseCrashReporting.enable();
+
         
         Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
             clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")

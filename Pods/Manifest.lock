@@ -1,13 +1,28 @@
 PODS:
+  - Bolts/Tasks (1.5.0)
   - ConvenienceKit (0.4.0)
   - DateTools (1.7.0)
+  - Mixpanel (2.9.0):
+    - Mixpanel/Mixpanel (= 2.9.0)
+  - Mixpanel/Mixpanel (2.9.0)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
+  - ParseCrashReporting (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
+    - Parse (~> 1.9.1)
 
 DEPENDENCIES:
   - ConvenienceKit
   - DateTools
+  - Mixpanel
+  - ParseCrashReporting
 
 SPEC CHECKSUMS:
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   ConvenienceKit: ba1ad8797897dc0d011676e961a2f3e9b270c841
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Mixpanel: 42ae6168effc48481d957f7883dd8514a398738d
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  ParseCrashReporting: c5ea641e698d576f081f080dff06877ef831d30a
 
 COCOAPODS: 0.39.0

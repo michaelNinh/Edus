@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 import ConvenienceKit
-
+import Mixpanel
 
 class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowFlagAlert {
     
@@ -146,8 +146,9 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
 extension ClassPostsViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedPost = timelineComponent.content[indexPath.row]
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("Post expanded")
         expandPostSegue()
-       
     }
     
 }

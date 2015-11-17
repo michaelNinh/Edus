@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import Mixpanel
 
 class ReplyPostPoints: PFObject, PFSubclassing{
     
@@ -16,6 +17,9 @@ class ReplyPostPoints: PFObject, PFSubclassing{
     var toReplyPost: ReplyPost?
     
     func upVote(){
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("replyPost upvoted")
+        
         let postPointQuery = PFQuery(className: "ReplyPostPoints")
         postPointQuery.whereKey("toReplyPost", equalTo: self.toReplyPost!)
         postPointQuery.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in

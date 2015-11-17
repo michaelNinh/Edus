@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Mixpanel
 
 class AddNewSchoolViewController: UIViewController, UITextFieldDelegate {
     
@@ -23,6 +24,8 @@ class AddNewSchoolViewController: UIViewController, UITextFieldDelegate {
         newSchool.createNewSchool()
         print("button pressed")
         addedSchoolSegue()
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("New school added")
     }
     
     
