@@ -8,6 +8,13 @@ pod "ConvenienceKit"
 pod 'DateTools'
 pod "Mixpanel"
 pod 'ParseCrashReporting'
+pod 'ParseUI'
+pod 'Parse'
+pod 'Bolts'
+pod "FBSDKCoreKit"
+pod "FBSDKLoginKit"
+pod "FBSDKShareKit"
+
 
 end
 

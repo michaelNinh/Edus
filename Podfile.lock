@@ -1,7 +1,25 @@
 PODS:
+  - Bolts (1.5.0):
+    - Bolts/AppLinks (= 1.5.0)
+    - Bolts/Tasks (= 1.5.0)
+  - Bolts/AppLinks (1.5.0):
+    - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
   - ConvenienceKit (0.4.0)
   - DateTools (1.7.0)
+  - FBSDKCoreKit (4.8.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.8.0)
+    - FBSDKCoreKit/no-arc (= 4.8.0)
+  - FBSDKCoreKit/arc (4.8.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.8.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.8.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.8.0):
+    - FBSDKCoreKit
   - Mixpanel (2.9.0):
     - Mixpanel/Mixpanel (= 2.9.0)
   - Mixpanel/Mixpanel (2.9.0)
@@ -10,19 +28,32 @@ PODS:
   - ParseCrashReporting (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
     - Parse (~> 1.9.1)
+  - ParseUI (1.1.6):
+    - Bolts/Tasks (~> 1.2)
+    - Parse (~> 1.8)
 
 DEPENDENCIES:
+  - Bolts
   - ConvenienceKit
   - DateTools
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - Mixpanel
+  - Parse
   - ParseCrashReporting
+  - ParseUI
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   ConvenienceKit: ba1ad8797897dc0d011676e961a2f3e9b270c841
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
+  FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   Mixpanel: 42ae6168effc48481d957f7883dd8514a398738d
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseCrashReporting: c5ea641e698d576f081f080dff06877ef831d30a
+  ParseUI: 8a22e448c03f825203d8c379c80523517f68baa3
 
 COCOAPODS: 0.39.0

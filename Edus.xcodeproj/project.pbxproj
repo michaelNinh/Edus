@@ -44,7 +44,6 @@
 		91374D861BF1918E0052157B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D851BF1918E0052157B /* libsqlite3.tbd */; };
 		91374D931BF1989D0052157B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D901BF1989D0052157B /* FBSDKCoreKit.framework */; };
 		91374D941BF1989D0052157B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D911BF1989D0052157B /* FBSDKLoginKit.framework */; };
-		91374D951BF1989D0052157B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D921BF1989D0052157B /* ParseUI.framework */; };
 		91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D971BF199720052157B /* ParseLoginHelper.swift */; };
 		91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D991BF19BAE0052157B /* ErrorHandling.swift */; };
 		91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D9E1BF1A23F0052157B /* UserModel.swift */; };
@@ -143,7 +142,6 @@
 		91374D851BF1918E0052157B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		91374D901BF1989D0052157B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		91374D911BF1989D0052157B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		91374D921BF1989D0052157B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		91374D971BF199720052157B /* ParseLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginHelper.swift; sourceTree = "<group>"; };
 		91374D991BF19BAE0052157B /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		91374D9E1BF1A23F0052157B /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				91374D931BF1989D0052157B /* FBSDKCoreKit.framework in Frameworks */,
 				91374D761BF191550052157B /* CFNetwork.framework in Frameworks */,
 				91374D741BF1914D0052157B /* AudioToolbox.framework in Frameworks */,
-				91374D951BF1989D0052157B /* ParseUI.framework in Frameworks */,
 				91374D721BF191110052157B /* Parse.framework in Frameworks */,
 				91374D711BF191110052157B /* Bolts.framework in Frameworks */,
 				2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */,
@@ -320,7 +317,6 @@
 			children = (
 				91374D901BF1989D0052157B /* FBSDKCoreKit.framework */,
 				91374D911BF1989D0052157B /* FBSDKLoginKit.framework */,
-				91374D921BF1989D0052157B /* ParseUI.framework */,
 				91374D851BF1918E0052157B /* libsqlite3.tbd */,
 				91374D831BF191850052157B /* libz.tbd */,
 				91374D6F1BF191110052157B /* Bolts.framework */,
@@ -817,6 +813,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_CFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -829,6 +826,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -850,6 +848,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -87,15 +87,23 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Edus/Bolts.framework"
   install_framework "Pods-Edus/ConvenienceKit.framework"
   install_framework "Pods-Edus/DateTools.framework"
+  install_framework "Pods-Edus/FBSDKCoreKit.framework"
+  install_framework "Pods-Edus/FBSDKLoginKit.framework"
+  install_framework "Pods-Edus/FBSDKShareKit.framework"
   install_framework "Pods-Edus/Mixpanel.framework"
   install_framework "Pods-Edus/Parse.framework"
   install_framework "Pods-Edus/ParseCrashReporting.framework"
+  install_framework "Pods-Edus/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Edus/Bolts.framework"
   install_framework "Pods-Edus/ConvenienceKit.framework"
   install_framework "Pods-Edus/DateTools.framework"
+  install_framework "Pods-Edus/FBSDKCoreKit.framework"
+  install_framework "Pods-Edus/FBSDKLoginKit.framework"
+  install_framework "Pods-Edus/FBSDKShareKit.framework"
   install_framework "Pods-Edus/Mixpanel.framework"
   install_framework "Pods-Edus/Parse.framework"
   install_framework "Pods-Edus/ParseCrashReporting.framework"
+  install_framework "Pods-Edus/ParseUI.framework"
 fi
