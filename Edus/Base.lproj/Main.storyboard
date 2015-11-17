@@ -941,22 +941,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your school name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-RR-5Uk">
-                                <rect key="frame" x="20" y="114" width="176" height="47"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your school name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-RR-5Uk">
+                                <rect key="frame" x="20" y="114" width="176" height="48"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="jwI-Ld-mrJ"/>
                                     <constraint firstAttribute="width" constant="176" id="kYz-Pp-Zvm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jwI-Ld-mrJ"/>
+                                        <exclude reference="kYz-Pp-Zvm"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-UO-hGr">
-                                <rect key="frame" x="20" y="192" width="54" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-UO-hGr">
+                                <rect key="frame" x="20" y="199" width="54" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="UTJ-DV-Zxc"/>
+                                    <constraint firstAttribute="height" constant="50" id="UTJ-DV-Zxc"/>
                                     <constraint firstAttribute="width" constant="54" id="Wf3-LT-Tgi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="17"/>
                                 <state key="normal" title="Add"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UTJ-DV-Zxc"/>
+                                        <exclude reference="Wf3-LT-Tgi"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="addNewSchoolButton:" destination="Tdc-VT-Fv8" eventType="touchUpInside" id="LLR-Gu-9AZ"/>
                                     <segue destination="Bia-Cj-Mi2" kind="show" identifier="addedSchoolSegue" id="7RQ-v3-hHN"/>
@@ -965,12 +978,32 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Aw7-RR-5Uk" firstAttribute="top" secondItem="m9i-rr-WAB" secondAttribute="bottom" constant="80" id="5QM-TN-ClM"/>
                             <constraint firstItem="dOS-rU-SXN" firstAttribute="top" secondItem="fU1-UO-hGr" secondAttribute="bottom" constant="372" id="Bxf-Ec-xFR"/>
                             <constraint firstItem="Aw7-RR-5Uk" firstAttribute="leading" secondItem="fU1-UO-hGr" secondAttribute="leading" id="CJu-ry-ERv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Aw7-RR-5Uk" secondAttribute="leading" id="E5D-Z2-N3S"/>
                             <constraint firstItem="fU1-UO-hGr" firstAttribute="top" secondItem="Aw7-RR-5Uk" secondAttribute="bottom" constant="31" id="H40-85-uum"/>
+                            <constraint firstItem="fU1-UO-hGr" firstAttribute="top" secondItem="Aw7-RR-5Uk" secondAttribute="bottom" constant="37" id="Wpf-yd-3Pd"/>
+                            <constraint firstItem="fU1-UO-hGr" firstAttribute="top" secondItem="Aw7-RR-5Uk" secondAttribute="bottom" constant="31" id="XrJ-LC-T9n"/>
+                            <constraint firstItem="Aw7-RR-5Uk" firstAttribute="leading" secondItem="fU1-UO-hGr" secondAttribute="leading" id="YhX-sO-zN3"/>
+                            <constraint firstItem="Aw7-RR-5Uk" firstAttribute="leading" secondItem="fU1-UO-hGr" secondAttribute="trailing" constant="-54" id="auu-FB-B69"/>
+                            <constraint firstItem="Aw7-RR-5Uk" firstAttribute="top" secondItem="m9i-rr-WAB" secondAttribute="bottom" constant="50" id="bJE-jZ-hIP"/>
                             <constraint firstItem="Aw7-RR-5Uk" firstAttribute="leading" secondItem="EKP-jE-Jcb" secondAttribute="leadingMargin" id="bjR-Dp-Z2R"/>
                             <constraint firstItem="Aw7-RR-5Uk" firstAttribute="top" secondItem="m9i-rr-WAB" secondAttribute="bottom" constant="50" id="gWA-lf-a5V"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fU1-UO-hGr" secondAttribute="leading" id="lPK-jU-eih"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5QM-TN-ClM"/>
+                                <exclude reference="CJu-ry-ERv"/>
+                                <exclude reference="YhX-sO-zN3"/>
+                                <exclude reference="bjR-Dp-Z2R"/>
+                                <exclude reference="gWA-lf-a5V"/>
+                                <exclude reference="H40-85-uum"/>
+                                <exclude reference="XrJ-LC-T9n"/>
+                                <exclude reference="Bxf-Ec-xFR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add school" id="caO-H3-cua"/>
                     <connections>
@@ -2448,7 +2481,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="37i-k3-c9Y"/>
-        <segue reference="Tou-fL-XJj"/>
+        <segue reference="bzk-rU-H4X"/>
         <segue reference="R4m-vE-v5e"/>
     </inferredMetricsTieBreakers>
 </document>
