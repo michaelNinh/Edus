@@ -72,16 +72,35 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
             self.post.postImage.value = image
             //self.photoPlaceHolder.image = image
+            self.addImageToTextView()
         }
     }
     
+    //add image preview to textView
+    func addImageToTextView(){
+        let image = self.post.postImage.value
+        let imgAttachment = NSTextAttachment()
+        imgAttachment.image = image
+        let attString = NSAttributedString(attachment: imgAttachment)
+        self.contentText.textStorage.insertAttributedString(attString, atIndex: 0)
+    }
+    
+    
     //text placeHolderstuff
     func textViewDidBeginEditing(textView: UITextView) {
+        
+        /*
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.blackColor()
         }
+*/
+        if textView.text.containsString("What do you want to ask?") {
+            textView.textColor = UIColor.blackColor()
+        }
+    
     }
+    
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
