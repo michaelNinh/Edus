@@ -35,7 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - Bolts
-  - Bond
+  - Bond (~> 4.0)
   - ConvenienceKit
   - DateTools
   - FBSDKCoreKit

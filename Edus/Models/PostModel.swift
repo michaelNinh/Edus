@@ -25,8 +25,8 @@ class Post: PFObject, PFSubclassing{
     var subject:String?
     var subjectLevel:String?
     
-    var imageFile: PFFile?
-    var postImage: Dynamic <UIImage?> = Dynamic(nil)
+    @NSManaged var imageFile: PFFile?
+    var postImage: Observable<UIImage?> = Observable(nil)
     
     func uploadPost(){
         let query = PFObject(className: "Post")
@@ -38,6 +38,7 @@ class Post: PFObject, PFSubclassing{
         query["subject"] = self.subject
         query["subjectLevel"] = self.subjectLevel
         query["toClassroom"] = self.toClassroom
+        query["imageFile"] = self.imageFile
     
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
@@ -74,7 +75,7 @@ class Post: PFObject, PFSubclassing{
                 (imageData: NSData?, error: NSError?) -> Void in
                 if (error == nil){
                     let image = UIImage(data: imageData!)
-                    self.image.value = image
+                    self.postImage.value = image
                 }
             })
         }
@@ -84,14 +85,25 @@ class Post: PFObject, PFSubclassing{
     //upload athe photo
     func uploadPhoto() {
         //so...this works but it shouldnt be like this lOL...this is the nil catcher
-        if image.value == nil{
+        if postImage.value == nil{
             //image.value = UIImage(named: "addPhoto")
             print("these is no photo")
         } else{
-            let imageData = UIImageJPEGRepresentation(image.value, 0.8)
-            let imageFile = PFFile(data: imageData)
+            //i think this converts the img in Jpeg
+            let imageData = UIImageJPEGRepresentation(postImage.value!, 0.8)
+            let imageFile = PFFile(data: imageData!)
+            //sets the imageFile to be uploaded
             self.imageFile = imageFile
-            imageFile.saveInBackground()}
+            
+            //the imageFile is now ready to be uploaded -> i could just put the upload with the other uploadPost function
+            
+            /*
+            imageFile?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                print("image saved")
+            })
+*/
+        
+        }
     }
     
     
