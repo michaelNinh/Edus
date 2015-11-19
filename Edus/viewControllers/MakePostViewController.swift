@@ -86,6 +86,7 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
     
     
+    //MUST EVENTUALLY FIX TEXT PLACEHOLDER COLOR AND DELETION
     //text placeHolderstuff
     func textViewDidBeginEditing(textView: UITextView) {
         

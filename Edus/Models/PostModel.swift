@@ -38,7 +38,15 @@ class Post: PFObject, PFSubclassing{
         query["subject"] = self.subject
         query["subjectLevel"] = self.subjectLevel
         query["toClassroom"] = self.toClassroom
-        query["imageFile"] = self.imageFile
+        
+        //IMAGE CODE
+        //if there is an image, upload it
+        if self.postImage.value != nil{
+            uploadPhoto()
+            query["imageFile"] = self.imageFile
+        }else{
+            print("no image")
+        }
     
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
@@ -94,6 +102,7 @@ class Post: PFObject, PFSubclassing{
             let imageFile = PFFile(data: imageData!)
             //sets the imageFile to be uploaded
             self.imageFile = imageFile
+            imageFile?.saveInBackground()
             
             //the imageFile is now ready to be uploaded -> i could just put the upload with the other uploadPost function
             
