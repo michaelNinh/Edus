@@ -64,7 +64,6 @@ class ClassPostTableViewCell: UITableViewCell {
                 
                 postImage.image = post.postImage.value
                 post.postImage.bindTo(postImage.bnd_image)
-                addImageToTextView()
             
                 print("the current text value of the score is \(self.scoreText.text)")
             }
@@ -84,17 +83,7 @@ class ClassPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func addImageToTextView(){
-        let image = self.postImage.image
-        let imgAttachment = NSTextAttachment()
-        imgAttachment.image = image
-        print(image)
-        let attString = NSAttributedString(attachment: imgAttachment)
-        self.postContentText.textStorage.insertAttributedString(attString, atIndex: 0)
-
-        
-        
-    }
+   
     
     func flagContentAction(){
         let postFlagger = PostFlag()

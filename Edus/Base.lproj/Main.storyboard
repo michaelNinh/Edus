@@ -1681,6 +1681,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USz-1B-DEH">
+                                <rect key="frame" x="226" y="131" width="240" height="129"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1754,6 +1757,7 @@
                         <outlet property="questionDate" destination="Zoa-5i-Bja" id="U6S-QT-q5f"/>
                         <outlet property="questionDeleteButton" destination="oz4-tp-1Od" id="S3r-lS-UoA"/>
                         <outlet property="questionFromUserNameText" destination="B9n-8s-Uwu" id="Hly-vS-T8W"/>
+                        <outlet property="questionPostImage" destination="USz-1B-DEH" id="heu-dr-Hab"/>
                         <outlet property="questionScoreText" destination="V2C-c3-lPW" id="Q8M-rq-PrF"/>
                         <outlet property="questionTitleText" destination="nUP-BD-hNU" id="1Bn-fI-fen"/>
                         <outlet property="questionUpvoteButton" destination="amS-5e-Wda" id="TqO-fH-w6I"/>

@@ -10,6 +10,7 @@ import UIKit
 import ConvenienceKit
 import Parse
 import DateTools
+import Bond
 
 class ExpandedPostViewController: UIViewController, TimelineComponentTarget, ShowFlagAlertForReplyPost {
     
@@ -22,6 +23,8 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
     @IBOutlet weak var questionFromUserNameText: UILabel!
     @IBOutlet weak var questionDate: UILabel!
     @IBOutlet weak var questionScoreText: UILabel!
+    
+    @IBOutlet weak var questionPostImage: UIImageView!
     
     @IBOutlet weak var questionUpvoteButton: UIButton!
     @IBAction func questionUpvote(sender: AnyObject) {
@@ -104,6 +107,9 @@ class ExpandedPostViewController: UIViewController, TimelineComponentTarget, Sho
             questionDeleteButton.hidden = true
             questionDeleteButton.enabled = false
         }
+        
+        self.questionPostImage.image = self.post!.postImage.value
+        self.post!.postImage.bindTo(self.questionPostImage.bnd_image)
         
         
         timelineComponent = TimelineComponent(target: self)
