@@ -14,6 +14,7 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
     var classroom: Classroom?
     //create a post Object
     var post = Post()
+    var photoTakingHelper: PhotoTakingHelper?
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var contentText: UITextView!
@@ -27,6 +28,10 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
             self.post.anonymous = false
         }
         
+    }
+    
+    @IBAction func addImage(sender: AnyObject) {
+        takePhoto()
     }
     
     @IBAction func submitPostButton(sender: AnyObject) {
@@ -60,6 +65,14 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //take Photo function
+    func takePhoto() {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
+            self.post.postImage.value = image
+            //self.photoPlaceHolder.image = image
+        }
     }
     
     //text placeHolderstuff

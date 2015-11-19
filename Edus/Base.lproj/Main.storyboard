@@ -596,6 +596,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQA-pq-LmC">
                                         <rect key="frame" x="272" y="140" width="57" height="30"/>
                                         <state key="normal" title="Add img"/>
+                                        <connections>
+                                            <action selector="addImage:" destination="zna-x6-BU4" eventType="touchUpInside" id="yuU-0K-6py"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
