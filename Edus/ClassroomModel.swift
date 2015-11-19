@@ -27,6 +27,7 @@ class Classroom: PFObject, PFSubclassing{
         classroom["subjectLevel"] = self.subjectLevel
         classroom["toSchoolName"] = PFUser.currentUser()!["activeSchoolName"] as! String
         classroom["classTitle"] = self.classTitle
+        //ALL CLASSES WILL HAVE THE SAME PROFESSOR -> MUST FIX THIS LATER
         classroom["professorLastName"] = self.professorLastName
         
         //in order for this to work, need to figure out how to pull relational data from PfUser...
