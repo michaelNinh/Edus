@@ -77,6 +77,7 @@ class Post: PFObject, PFSubclassing{
     }
     
     //function to dl image from parse
+    
     func downloadImage(){
         if let imgData = self["imageFile"] as? PFFile {
             imgData.getDataInBackgroundWithBlock({
@@ -86,9 +87,13 @@ class Post: PFObject, PFSubclassing{
                     self.postImage.value = image
                 }
             })
+        }else{
+            print("no photo in file")
         }
         
     }
+
+    
     
     //upload athe photo
     func uploadPhoto() {
@@ -102,16 +107,11 @@ class Post: PFObject, PFSubclassing{
             let imageFile = PFFile(data: imageData!)
             //sets the imageFile to be uploaded
             self.imageFile = imageFile
-            imageFile?.saveInBackground()
-            
-            //the imageFile is now ready to be uploaded -> i could just put the upload with the other uploadPost function
-            
-            /*
             imageFile?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                print("image saved")
+                print("imageFileSaved")
             })
-*/
-        
+            
+           
         }
     }
     
