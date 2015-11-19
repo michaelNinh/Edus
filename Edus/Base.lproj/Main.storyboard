@@ -2263,6 +2263,13 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeQ-8f-08S">
+                                        <rect key="frame" x="63" y="132" width="68" height="30"/>
+                                        <state key="normal" title="addImage"/>
+                                        <connections>
+                                            <action selector="addImage:" destination="Dv5-3b-Kzn" eventType="touchUpInside" id="FUC-00-jrp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="kaW-0b-h1u" firstAttribute="trailing" secondItem="uyq-Ju-h74" secondAttribute="trailingMargin" id="1ht-Jo-45W"/>
