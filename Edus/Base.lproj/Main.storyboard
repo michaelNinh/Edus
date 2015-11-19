@@ -404,6 +404,9 @@
                                                     <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vh-No-JcN">
+                                                    <rect key="frame" x="110" y="180" width="185" height="99"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SDY-w1-SwB" firstAttribute="trailing" secondItem="VtZ-mj-Qcx" secondAttribute="trailingMargin" id="1XJ-oj-V9B"/>
@@ -499,6 +502,7 @@
                                             <outlet property="deleteButton" destination="8Lb-DW-Yil" id="Ohe-fq-Uon"/>
                                             <outlet property="nameText" destination="vFJ-xl-WCI" id="SWR-Jz-lQR"/>
                                             <outlet property="postContentText" destination="SDY-w1-SwB" id="pep-dn-j5M"/>
+                                            <outlet property="postImage" destination="6vh-No-JcN" id="ohz-13-dTE"/>
                                             <outlet property="postTitleText" destination="YIV-hw-jpj" id="iW4-hR-ep8"/>
                                             <outlet property="scoreText" destination="YDv-j5-rzI" id="Hz9-is-FW6"/>
                                             <outlet property="upVoteButton" destination="41v-nT-ASA" id="0YF-R9-Gu3"/>
@@ -1950,7 +1954,20 @@
                                             <action selector="questionDelete:" destination="ZC1-9q-o4v" eventType="touchUpInside" id="uNK-sK-eHP"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="268" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MlF-Wx-6vX" customClass="reply">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPM-mC-lrO">
+                                        <rect key="frame" x="76" y="88" width="421" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="ozU-co-5NS"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49v-Nk-9er">
+                                        <rect key="frame" x="155" y="40" width="240" height="128"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="268" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MlF-Wx-6vX">
                                         <rect key="frame" x="0.0" y="305" width="600" height="295"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -2027,6 +2044,9 @@
                                                                 <action selector="flagPost:" destination="cv9-oq-Ksa" eventType="touchUpInside" id="OnH-8O-hl5"/>
                                                             </connections>
                                                         </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-pT-yYr">
+                                                            <rect key="frame" x="99" y="144" width="196" height="105"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="04U-O1-sQ0" firstAttribute="leading" secondItem="GIU-XO-4ZX" secondAttribute="leading" id="0lT-PC-Lmq"/>
@@ -2106,6 +2126,7 @@
                                                     <outlet property="deletePostButton" destination="1og-Td-lcS" id="sqk-ya-5d6"/>
                                                     <outlet property="nameText" destination="GIU-XO-4ZX" id="dGm-QV-Qgo"/>
                                                     <outlet property="postContentText" destination="04U-O1-sQ0" id="jdH-SH-ARR"/>
+                                                    <outlet property="replyPostImage" destination="NcX-pT-yYr" id="5kU-EG-3ZQ"/>
                                                     <outlet property="scoreText" destination="3Q9-Jv-X6l" id="wVs-aH-AV0"/>
                                                     <outlet property="upVoteButton" destination="hx4-II-vj3" id="fZ4-Uc-qlE"/>
                                                 </connections>
@@ -2116,16 +2137,6 @@
                                             <outlet property="delegate" destination="ZC1-9q-o4v" id="LJG-lS-To0"/>
                                         </connections>
                                     </tableView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPM-mC-lrO">
-                                        <rect key="frame" x="76" y="88" width="421" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="ozU-co-5NS"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MlF-Wx-6vX" firstAttribute="top" secondItem="GII-cn-t5E" secondAttribute="bottom" constant="18" id="07W-n5-VGb"/>
@@ -2173,6 +2184,7 @@
                         <outlet property="questionDate" destination="qT8-26-OpR" id="rDA-Pr-gCq"/>
                         <outlet property="questionDeleteButton" destination="O6l-Ad-usP" id="Ces-Ph-gz5"/>
                         <outlet property="questionFromUserNameText" destination="Fke-1x-m40" id="UAk-Uq-KZV"/>
+                        <outlet property="questionPostImage" destination="49v-Nk-9er" id="24e-KI-HW5"/>
                         <outlet property="questionScoreText" destination="bvR-Ja-124" id="OYM-iJ-Mj2"/>
                         <outlet property="questionTitleText" destination="xGl-eZ-If0" id="zZa-Ur-7rf"/>
                         <outlet property="questionUpvoteButton" destination="0H0-Z8-ShX" id="Fu8-5T-gRm"/>
@@ -2476,7 +2488,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
+        <segue reference="VG9-aV-Ivg"/>
         <segue reference="R4m-vE-v5e"/>
-        <segue reference="Rph-SL-AI1"/>
     </inferredMetricsTieBreakers>
 </document>
