@@ -9,6 +9,7 @@
 import UIKit
 import DateTools
 import Parse
+import Bond
 
 protocol ShowFlagAlert{
     func showFlagAlert(title: String, message: String, callbackViewCell: ClassPostTableViewCell)
@@ -73,6 +74,14 @@ class ClassPostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func addImageToTextView(){
+        let image = self.post!.postImage.value
+        let imgAttachment = NSTextAttachment()
+        imgAttachment.image = image
+        let attString = NSAttributedString(attachment: imgAttachment)
+        self.postContentText.textStorage.insertAttributedString(attString, atIndex: 0)
     }
     
     func flagContentAction(){

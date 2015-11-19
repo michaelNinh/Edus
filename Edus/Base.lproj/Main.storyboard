@@ -1268,7 +1268,6 @@
                                             <outlet property="dateText" destination="6BQ-oo-Hbe" id="pvm-b7-85L"/>
                                             <outlet property="deleteButton" destination="Gik-04-1dc" id="Ug5-fD-5Gs"/>
                                             <outlet property="nameText" destination="TO1-VB-wxh" id="wfQ-zx-JVK"/>
-                                            <outlet property="postContentText" destination="aYh-DN-xYq" id="jWf-KR-CS0"/>
                                             <outlet property="postTitleText" destination="0Tr-cK-Hho" id="tdX-fP-7OP"/>
                                             <outlet property="scoreText" destination="fHP-tn-CwO" id="AMJ-3P-XZa"/>
                                             <outlet property="upVoteButton" destination="GtE-4g-Zol" id="uMF-hX-rQb"/>
@@ -2488,7 +2487,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
-        <segue reference="bzk-rU-H4X"/>
         <segue reference="R4m-vE-v5e"/>
+        <segue reference="Rph-SL-AI1"/>
     </inferredMetricsTieBreakers>
 </document>
