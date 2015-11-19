@@ -28,6 +28,7 @@ class MyPostsExpandedPostViewController: UIViewController, TimelineComponentTarg
         questionScoreText.text = String(Int(questionScoreText.text!)!+1)
         
     }
+    @IBOutlet weak var questionPostImage: UIImageView!
     
     @IBAction func questionFlag(sender: AnyObject) {
         showFlagAlert("", message: "Flag for inappropriate content?")
@@ -92,6 +93,9 @@ class MyPostsExpandedPostViewController: UIViewController, TimelineComponentTarg
             questionDeleteButton.hidden = true
             questionDeleteButton.enabled = false
         }
+        
+        self.questionPostImage.image = self.post!.postImage.value
+        self.post!.postImage.bindTo(self.questionPostImage.bnd_image)
         
         
         timelineComponent = TimelineComponent(target: self)

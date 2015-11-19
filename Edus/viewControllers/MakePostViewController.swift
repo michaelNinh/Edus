@@ -14,6 +14,7 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
     var classroom: Classroom?
     //create a post Object
     var post = Post()
+    var photoTakingHelper: PhotoTakingHelper?
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var contentText: UITextView!
@@ -27,6 +28,10 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
             self.post.anonymous = false
         }
         
+    }
+    
+    @IBAction func addImage(sender: AnyObject) {
+        takePhoto()
     }
     
     @IBAction func submitPostButton(sender: AnyObject) {
@@ -62,13 +67,41 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
         // Dispose of any resources that can be recreated.
     }
     
+    //take Photo function
+    func takePhoto() {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
+            self.post.postImage.value = image
+            //self.photoPlaceHolder.image = image
+            self.addImageToTextView()
+        }
+    }
+    
+    //add image preview to textView
+    func addImageToTextView(){
+        let image = self.post.postImage.value
+        let imgAttachment = NSTextAttachment()
+        imgAttachment.image = image
+        let attString = NSAttributedString(attachment: imgAttachment)
+        self.contentText.textStorage.insertAttributedString(attString, atIndex: 0)
+    }
+    
+    
+    //MUST EVENTUALLY FIX TEXT PLACEHOLDER COLOR AND DELETION
     //text placeHolderstuff
     func textViewDidBeginEditing(textView: UITextView) {
+        
+        /*
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.blackColor()
         }
+*/
+        if textView.text.containsString("What do you want to ask?") {
+            textView.textColor = UIColor.blackColor()
+        }
+    
     }
+    
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {

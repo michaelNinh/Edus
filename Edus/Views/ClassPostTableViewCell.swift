@@ -9,6 +9,7 @@
 import UIKit
 import DateTools
 import Parse
+import Bond
 
 protocol ShowFlagAlert{
     func showFlagAlert(title: String, message: String, callbackViewCell: ClassPostTableViewCell)
@@ -19,10 +20,10 @@ protocol ShowFlagAlert{
 class ClassPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitleText: UILabel!
-    @IBOutlet weak var postContentText: UILabel!
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var scoreText: UILabel!
+    @IBOutlet weak var postContentText: UITextView!
     
     
     @IBOutlet weak var upVoteButton: UIButton!
@@ -33,6 +34,7 @@ class ClassPostTableViewCell: UITableViewCell {
         scoreText.text = String(Int(scoreText.text!)!+1)
     }
     
+    @IBOutlet weak var postImage: UIImageView!
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBAction func deletePost(sender: AnyObject) {
@@ -57,6 +59,12 @@ class ClassPostTableViewCell: UITableViewCell {
                 postTitleText.text = post.title
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
+                
+                //IMAGE CODE
+                
+                postImage.image = post.postImage.value
+                post.postImage.bindTo(postImage.bnd_image)
+            
                 print("the current text value of the score is \(self.scoreText.text)")
             }
         }
@@ -74,6 +82,8 @@ class ClassPostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+   
     
     func flagContentAction(){
         let postFlagger = PostFlag()

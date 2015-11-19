@@ -24,6 +24,7 @@ class ClassPostFromUserTableViewCell: UITableViewCell {
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var scoreText: UILabel!
     
+    @IBOutlet weak var postImage: UIImageView!
     
     @IBOutlet weak var upVoteButton: UIButton!
     @IBAction func upVote(sender: AnyObject) {
@@ -57,6 +58,11 @@ class ClassPostFromUserTableViewCell: UITableViewCell {
                 postTitleText.text = post.title
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
+                
+                //image code
+                postImage.image = post.postImage.value
+                post.postImage.bindTo(postImage.bnd_image)
+                
                 print("the current text value of the score is \(self.scoreText.text)")
             }
         }

@@ -22,8 +22,15 @@ class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate
         self.replyPost.uploadReplyPost()
     }
     
+    @IBAction func addImage(sender: AnyObject) {
+        takePhoto()
+    }
+    
+    
     var post: Post?
     var replyPost = ReplyPost()
+    var photoTakingHelper: PhotoTakingHelper?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +52,22 @@ class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate
     }
     
     
+    func takePhoto() {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
+            self.replyPost.replyPostImage.value = image
+            //self.photoPlaceHolder.image = image
+            self.addImageToTextView()
+        }
+    }
+    
+    //add image preview to textView
+    func addImageToTextView(){
+        let image = self.replyPost.replyPostImage.value
+        let imgAttachment = NSTextAttachment()
+        imgAttachment.image = image
+        let attString = NSAttributedString(attachment: imgAttachment)
+        self.replyPostContentText.textStorage.insertAttributedString(attString, atIndex: 0)
+    }
     
     //text placeHolderstuff
     func textViewDidBeginEditing(textView: UITextView) {

@@ -15,6 +15,10 @@ class WriteReplyPostViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var postContentText: UILabel!
     @IBOutlet weak var replyPostContentText: UITextView!
     
+    @IBAction func takephoto(sender: AnyObject) {
+        takePhoto()
+    }
+    
     @IBAction func submitReplyPost(sender: AnyObject) {
         print("what")
         self.replyPost.content = self.replyPostContentText.text
@@ -24,6 +28,8 @@ class WriteReplyPostViewController: UIViewController, UITextFieldDelegate, UITex
     
     var post: Post?
     var replyPost = ReplyPost()
+    var photoTakingHelper: PhotoTakingHelper?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +48,23 @@ class WriteReplyPostViewController: UIViewController, UITextFieldDelegate, UITex
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func takePhoto() {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
+            self.replyPost.replyPostImage.value = image
+            //self.photoPlaceHolder.image = image
+            self.addImageToTextView()
+        }
+    }
+    
+    //add image preview to textView
+    func addImageToTextView(){
+        let image = self.replyPost.replyPostImage.value
+        let imgAttachment = NSTextAttachment()
+        imgAttachment.image = image
+        let attString = NSAttributedString(attachment: imgAttachment)
+        self.replyPostContentText.textStorage.insertAttributedString(attString, atIndex: 0)
     }
     
 

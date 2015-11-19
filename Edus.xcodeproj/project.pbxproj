@@ -29,8 +29,6 @@
 		91374D491BF190D20052157B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91374D481BF190D20052157B /* Assets.xcassets */; };
 		91374D571BF190D20052157B /* EdusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D561BF190D20052157B /* EdusTests.swift */; };
 		91374D621BF190D20052157B /* EdusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D611BF190D20052157B /* EdusUITests.swift */; };
-		91374D711BF191110052157B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D6F1BF191110052157B /* Bolts.framework */; };
-		91374D721BF191110052157B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D701BF191110052157B /* Parse.framework */; };
 		91374D741BF1914D0052157B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D731BF1914D0052157B /* AudioToolbox.framework */; };
 		91374D761BF191550052157B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D751BF191550052157B /* CFNetwork.framework */; };
 		91374D781BF1915E0052157B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D771BF1915E0052157B /* CoreGraphics.framework */; };
@@ -41,8 +39,6 @@
 		91374D821BF1917D0052157B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D811BF1917D0052157B /* SystemConfiguration.framework */; };
 		91374D841BF191850052157B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D831BF191850052157B /* libz.tbd */; };
 		91374D861BF1918E0052157B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D851BF1918E0052157B /* libsqlite3.tbd */; };
-		91374D931BF1989D0052157B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D901BF1989D0052157B /* FBSDKCoreKit.framework */; };
-		91374D941BF1989D0052157B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91374D911BF1989D0052157B /* FBSDKLoginKit.framework */; };
 		91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D971BF199720052157B /* ParseLoginHelper.swift */; };
 		91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D991BF19BAE0052157B /* ErrorHandling.swift */; };
 		91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91374D9E1BF1A23F0052157B /* UserModel.swift */; };
@@ -77,6 +73,7 @@
 		917AB8CB1BF938E7004F884D /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C71BF938E7004F884D /* Gravity-Light.ttf */; };
 		917AB8CC1BF938E7004F884D /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */; };
 		917AB8CD1BF938E7004F884D /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */; };
+		91E59C3D1BFE4A76000AC05C /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E59C3C1BFE4A76000AC05C /* PhotoTakingHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,8 +123,6 @@
 		91374D5D1BF190D20052157B /* EdusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91374D611BF190D20052157B /* EdusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdusUITests.swift; sourceTree = "<group>"; };
 		91374D631BF190D20052157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91374D6F1BF191110052157B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
-		91374D701BF191110052157B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		91374D731BF1914D0052157B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		91374D751BF191550052157B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		91374D771BF1915E0052157B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,8 +133,6 @@
 		91374D811BF1917D0052157B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		91374D831BF191850052157B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		91374D851BF1918E0052157B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		91374D901BF1989D0052157B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		91374D911BF1989D0052157B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		91374D971BF199720052157B /* ParseLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginHelper.swift; sourceTree = "<group>"; };
 		91374D991BF19BAE0052157B /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		91374D9E1BF1A23F0052157B /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -174,6 +167,7 @@
 		917AB8C71BF938E7004F884D /* Gravity-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Light.ttf"; sourceTree = "<group>"; };
 		917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
 		917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		91E59C3C1BFE4A76000AC05C /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoTakingHelper.swift; path = Helprs/PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,16 +180,12 @@
 				91374D841BF191850052157B /* libz.tbd in Frameworks */,
 				91374D821BF1917D0052157B /* SystemConfiguration.framework in Frameworks */,
 				91374D801BF191730052157B /* StoreKit.framework in Frameworks */,
-				91374D941BF1989D0052157B /* FBSDKLoginKit.framework in Frameworks */,
 				91374D7E1BF1916C0052157B /* Security.framework in Frameworks */,
 				91374D7C1BF191670052157B /* QuartzCore.framework in Frameworks */,
 				91374D7A1BF191620052157B /* CoreLocation.framework in Frameworks */,
 				91374D781BF1915E0052157B /* CoreGraphics.framework in Frameworks */,
-				91374D931BF1989D0052157B /* FBSDKCoreKit.framework in Frameworks */,
 				91374D761BF191550052157B /* CFNetwork.framework in Frameworks */,
 				91374D741BF1914D0052157B /* AudioToolbox.framework in Frameworks */,
-				91374D721BF191110052157B /* Parse.framework in Frameworks */,
-				91374D711BF191110052157B /* Bolts.framework in Frameworks */,
 				2E3272866D47820BD38012C3 /* Pods_Edus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,12 +302,8 @@
 		91374D871BF1919F0052157B /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				91374D901BF1989D0052157B /* FBSDKCoreKit.framework */,
-				91374D911BF1989D0052157B /* FBSDKLoginKit.framework */,
 				91374D851BF1918E0052157B /* libsqlite3.tbd */,
 				91374D831BF191850052157B /* libz.tbd */,
-				91374D6F1BF191110052157B /* Bolts.framework */,
-				91374D701BF191110052157B /* Parse.framework */,
 				91374D811BF1917D0052157B /* SystemConfiguration.framework */,
 				91374D7F1BF191730052157B /* StoreKit.framework */,
 				91374D7D1BF1916C0052157B /* Security.framework */,
@@ -335,6 +321,7 @@
 			children = (
 				91374D971BF199720052157B /* ParseLoginHelper.swift */,
 				91374D991BF19BAE0052157B /* ErrorHandling.swift */,
+				91E59C3C1BFE4A76000AC05C /* PhotoTakingHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -672,6 +659,7 @@
 				911B24F81BF3BF4500B5510D /* GetAvailableClassesForSchool.swift in Sources */,
 				917AB8C21BF92C13004F884D /* ClassPostsFromUserTableViewCell.swift in Sources */,
 				917AB8B61BF8744E004F884D /* PostFlagModel.swift in Sources */,
+				91E59C3D1BFE4A76000AC05C /* PhotoTakingHelper.swift in Sources */,
 				917AB8B41BF7F4E1004F884D /* GetReplyPointsForReplyPost.swift in Sources */,
 				917AB8BC1BF9291D004F884D /* MyPostsViewController.swift in Sources */,
 				912099901BF3B1FD00078E74 /* SubjectListModel.swift in Sources */,
