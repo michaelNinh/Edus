@@ -9,6 +9,7 @@
 import Foundation
 import Parse
 import Mixpanel
+import Bond
 
 class ReplyPost: PFObject, PFSubclassing{
     
@@ -19,6 +20,8 @@ class ReplyPost: PFObject, PFSubclassing{
     
     var toPost:Post?
     
+    @NSManaged var imageFile: PFFile?
+    var replyPostImage: Observable<UIImage?> = Observable(nil)
     
     func uploadReplyPost(){
         let query = PFObject(className: "ReplyPost")
@@ -32,7 +35,14 @@ class ReplyPost: PFObject, PFSubclassing{
         query["toPost"] = self.toPost
         
         
-        //THIS CREATES A POSTPOINT OBJECT
+        //IMAGE CODE
+        //if there is an image, upload it
+        if self.replyPostImage.value != nil{
+            uploadPhoto()
+            query["imageFile"] = self.imageFile
+        }else{
+            print("no image")
+        }
         
         query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("post uploaded")
@@ -49,7 +59,44 @@ class ReplyPost: PFObject, PFSubclassing{
         self.fromUserName = self["fromUserName"] as? String
         //self.toPostPoints = self["toPostPoints"] as! PostPoints
         self.toPost = self["toPost"] as? Post
-        
+        downloadImage()
+    }
+    
+    func downloadImage(){
+        if let imgData = self["imageFile"] as? PFFile {
+            imgData.getDataInBackgroundWithBlock({
+                (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil){
+                    let image = UIImage(data: imageData!)
+                    self.replyPostImage.value = image
+                    print("got image")
+                }
+            })
+        }else{
+            print("no photo in file")
+        }
+    }
+    
+    
+    
+    //upload athe photo
+    func uploadPhoto() {
+        //so...this works but it shouldnt be like this lOL...this is the nil catcher
+        if replyPostImage.value == nil{
+            //image.value = UIImage(named: "addPhoto")
+            print("these is no photo")
+        } else{
+            //i think this converts the img in Jpeg
+            let imageData = UIImageJPEGRepresentation(replyPostImage.value!, 0.8)
+            let imageFile = PFFile(data: imageData!)
+            //sets the imageFile to be uploaded
+            self.imageFile = imageFile
+            imageFile?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                print("imageFileSaved")
+            })
+            
+            
+        }
     }
     
     

@@ -1507,6 +1507,9 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LS-FX-Z5U">
+                                                    <rect key="frame" x="25" y="146" width="148" height="79"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AqE-Sl-afh" firstAttribute="leading" secondItem="ah5-4z-phb" secondAttribute="trailing" constant="8" symbolic="YES" id="0Ds-B4-v3q"/>
@@ -1649,6 +1652,7 @@
                                             <outlet property="deletePostButton" destination="cbX-vl-56P" id="zBX-bd-pvD"/>
                                             <outlet property="nameText" destination="nEa-D2-akH" id="ONw-o9-mXl"/>
                                             <outlet property="postContentText" destination="ah5-4z-phb" id="SV4-ta-zsG"/>
+                                            <outlet property="replyPostImage" destination="6LS-FX-Z5U" id="x5U-pl-alw"/>
                                             <outlet property="scoreText" destination="dcy-BR-Zsf" id="5hb-Hy-aaK"/>
                                             <outlet property="upVoteButton" destination="FvG-FH-HKE" id="0ID-OR-lX9"/>
                                         </connections>
@@ -1801,8 +1805,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-RO-a7J">
-                                        <rect key="frame" x="8" y="170" width="584" height="199"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-RO-a7J">
+                                        <rect key="frame" x="8" y="256" width="584" height="199"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="199" id="n3g-VA-clq"/>
@@ -1811,6 +1815,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-yB-jQy">
+                                        <rect key="frame" x="8" y="160" width="73" height="30"/>
+                                        <state key="normal" title="Add image"/>
+                                        <connections>
+                                            <action selector="takephoto:" destination="ONY-sw-GjG" eventType="touchUpInside" id="YyB-NE-WeV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="kAT-eP-wVS" firstAttribute="top" secondItem="VZw-8G-Jeq" secondAttribute="top" constant="72" id="3tv-2E-x6T"/>

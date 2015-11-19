@@ -78,7 +78,6 @@ class Post: PFObject, PFSubclassing{
     }
     
     //function to dl image from parse
-    
     func downloadImage(){
         if let imgData = self["imageFile"] as? PFFile {
             imgData.getDataInBackgroundWithBlock({
@@ -92,7 +91,6 @@ class Post: PFObject, PFSubclassing{
         }else{
             print("no photo in file")
         }
-        
     }
 
     

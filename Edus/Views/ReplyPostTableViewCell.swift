@@ -9,6 +9,7 @@
 import UIKit
 import DateTools
 import Parse
+import Bond
 
 protocol ShowFlagAlertForReplyPost{
     func showFlagAlert(title: String, message: String, callbackViewCell: ReplyPostTableViewCell)
@@ -23,6 +24,7 @@ class ReplyPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postContentText: UITextView!
     @IBOutlet weak var scoreText: UILabel!
     @IBOutlet weak var dateText: UILabel!
+    @IBOutlet weak var replyPostImage: UIImageView!
     
     @IBOutlet weak var deletePostButton: UIButton!
     @IBAction func deletePost(sender: AnyObject) {
@@ -51,6 +53,10 @@ class ReplyPostTableViewCell: UITableViewCell {
                 dateText.text = replyPost.createdAt?.shortTimeAgoSinceDate(NSDate()) ?? ""
                 postContentText.text = replyPost.content
                 nameText.text = replyPost.fromUserName
+                
+                //image code
+                replyPostImage.image = replyPost.replyPostImage.value
+                replyPost.replyPostImage.bindTo(replyPostImage.bnd_image)
             }
         }
     }
