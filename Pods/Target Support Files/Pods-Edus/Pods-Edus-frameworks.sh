@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Edus/Bolts.framework"
+  install_framework "Pods-Edus/Bond.framework"
   install_framework "Pods-Edus/ConvenienceKit.framework"
   install_framework "Pods-Edus/DateTools.framework"
   install_framework "Pods-Edus/FBSDKCoreKit.framework"
@@ -97,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Edus/Bolts.framework"
+  install_framework "Pods-Edus/Bond.framework"
   install_framework "Pods-Edus/ConvenienceKit.framework"
   install_framework "Pods-Edus/DateTools.framework"
   install_framework "Pods-Edus/FBSDKCoreKit.framework"

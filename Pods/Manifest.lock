@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
+  - Bond (4.2.0)
   - ConvenienceKit (0.4.0)
   - DateTools (1.7.0)
   - FBSDKCoreKit (4.8.0):
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - Bolts
+  - Bond
   - ConvenienceKit
   - DateTools
   - FBSDKCoreKit
@@ -46,6 +48,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  Bond: 944cdfcc6ffad0fe57742a7fa5c3b6923019f353
   ConvenienceKit: ba1ad8797897dc0d011676e961a2f3e9b270c841
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8

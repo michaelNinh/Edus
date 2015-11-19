@@ -9,6 +9,7 @@
 import Foundation
 import Parse
 import Mixpanel
+import Bond
 
 class Post: PFObject, PFSubclassing{
     
@@ -23,6 +24,9 @@ class Post: PFObject, PFSubclassing{
     var toClassroom:Classroom?
     var subject:String?
     var subjectLevel:String?
+    
+    var imageFile: PFFile?
+    var postImage: Dynamic <UIImage?> = Dynamic(nil)
     
     func uploadPost(){
         let query = PFObject(className: "Post")
@@ -58,7 +62,39 @@ class Post: PFObject, PFSubclassing{
         }else{
             self.fromUserName = self["fromUserName"] as? String
         }
+        
+        //set image
+        downloadImage()
     }
+    
+    //function to dl image from parse
+    func downloadImage(){
+        if let imgData = self["imageFile"] as? PFFile {
+            imgData.getDataInBackgroundWithBlock({
+                (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil){
+                    let image = UIImage(data: imageData!)
+                    self.image.value = image
+                }
+            })
+        }
+        
+    }
+    
+    //upload athe photo
+    func uploadPhoto() {
+        //so...this works but it shouldnt be like this lOL...this is the nil catcher
+        if image.value == nil{
+            //image.value = UIImage(named: "addPhoto")
+            print("these is no photo")
+        } else{
+            let imageData = UIImageJPEGRepresentation(image.value, 0.8)
+            let imageFile = PFFile(data: imageData)
+            self.imageFile = imageFile
+            imageFile.saveInBackground()}
+    }
+    
+    
     
     func deletePost(){
         print(self.objectId!)

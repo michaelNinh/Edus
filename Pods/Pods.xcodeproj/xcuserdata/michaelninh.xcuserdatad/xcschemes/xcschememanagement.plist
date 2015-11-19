@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bond.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ConvenienceKit-ConvenienceKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,12 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>80076C510C29F960587E43C0597ECBD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>802D3B1C197FEA0861F5931F7ED43355</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8D0E51B9487CE4758F18FF19ADA4F80</key>
+		<key>ADF755A30AA387394D85FEA5680E3051</key>
 		<dict>
 			<key>primary</key>
 			<true/>
