@@ -73,6 +73,7 @@ class Post: PFObject, PFSubclassing{
         }
         
         //set image
+        
         downloadImage()
     }
     
@@ -85,6 +86,7 @@ class Post: PFObject, PFSubclassing{
                 if (error == nil){
                     let image = UIImage(data: imageData!)
                     self.postImage.value = image
+                    print("got image")
                 }
             })
         }else{

@@ -20,10 +20,10 @@ protocol ShowFlagAlert{
 class ClassPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitleText: UILabel!
-    @IBOutlet weak var postContentText: UILabel!
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var scoreText: UILabel!
+    @IBOutlet weak var postContentText: UITextView!
     
     
     @IBOutlet weak var upVoteButton: UIButton!
@@ -34,6 +34,7 @@ class ClassPostTableViewCell: UITableViewCell {
         scoreText.text = String(Int(scoreText.text!)!+1)
     }
     
+    @IBOutlet weak var postImage: UIImageView!
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBAction func deletePost(sender: AnyObject) {
@@ -58,6 +59,13 @@ class ClassPostTableViewCell: UITableViewCell {
                 postTitleText.text = post.title
                 postContentText.text = post.content
                 nameText.text = post.fromUserName
+                
+                //IMAGE CODE
+                
+                postImage.image = post.postImage.value
+                post.postImage.bindTo(postImage.bnd_image)
+                addImageToTextView()
+            
                 print("the current text value of the score is \(self.scoreText.text)")
             }
         }
@@ -77,11 +85,15 @@ class ClassPostTableViewCell: UITableViewCell {
     }
     
     func addImageToTextView(){
-        let image = self.post!.postImage.value
+        let image = self.postImage.image
         let imgAttachment = NSTextAttachment()
         imgAttachment.image = image
+        print(image)
         let attString = NSAttributedString(attachment: imgAttachment)
         self.postContentText.textStorage.insertAttributedString(attString, atIndex: 0)
+
+        
+        
     }
     
     func flagContentAction(){

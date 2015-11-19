@@ -167,6 +167,7 @@ extension ClassPostsViewController: UITableViewDataSource {
         let post = timelineComponent.content[indexPath.row]
         post.setPost()
         cell.post = post
+        
         cell.delegate = self
         
         GetPointsForPost.getPointsForPost({ (result: [PFObject]?, error: NSError?) -> Void in
@@ -190,11 +191,9 @@ extension ClassPostsViewController: UITableViewDataSource {
         
         
         if post.fromUserName == PFUser.currentUser()?.username{
-            print("del enabled")
             cell.deleteButton.hidden = false
             cell.deleteButton.enabled = true
         }else{
-            print("del dis")
             cell.deleteButton.hidden = true
             cell.deleteButton.enabled = false
         }
