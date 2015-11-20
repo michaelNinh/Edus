@@ -2692,7 +2692,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="600" height="250"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EiF-z5-Jja" id="XOS-5K-Jjq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="249.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3u-Dn-OAL">
@@ -2757,12 +2757,12 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="XPu-pw-SM4"/>
-                                                                    <exclude reference="c21-Za-5Mh"/>
-                                                                    <exclude reference="meq-FV-8ai"/>
                                                                     <exclude reference="ACt-JR-ml8"/>
                                                                     <exclude reference="AE3-ZC-pw5"/>
                                                                     <exclude reference="KwN-MK-mm7"/>
+                                                                    <exclude reference="XPu-pw-SM4"/>
+                                                                    <exclude reference="c21-Za-5Mh"/>
+                                                                    <exclude reference="meq-FV-8ai"/>
                                                                 </mask>
                                                             </variation>
                                                         </textView>
@@ -2776,9 +2776,9 @@
                                                             <state key="normal" image="Trash"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
+                                                                    <exclude reference="8Dw-nj-YEU"/>
                                                                     <exclude reference="EiN-0X-xJK"/>
                                                                     <exclude reference="mcR-Qh-IkK"/>
-                                                                    <exclude reference="8Dw-nj-YEU"/>
                                                                 </mask>
                                                             </variation>
                                                             <connections>
@@ -2794,8 +2794,8 @@
                                                             <state key="normal" image="Flag"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="tZ5-cD-5g2"/>
                                                                     <exclude reference="rAD-Fh-2Fx"/>
+                                                                    <exclude reference="tZ5-cD-5g2"/>
                                                                 </mask>
                                                             </variation>
                                                             <connections>
@@ -2819,12 +2819,12 @@
                                                             <nil key="highlightedColor"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="tNq-3M-AFM"/>
-                                                                    <exclude reference="c7E-yS-ew9"/>
                                                                     <exclude reference="GVT-Db-bP3"/>
                                                                     <exclude reference="Kr6-hU-m5d"/>
-                                                                    <exclude reference="raZ-MB-F70"/>
                                                                     <exclude reference="Oc0-z6-g2A"/>
+                                                                    <exclude reference="c7E-yS-ew9"/>
+                                                                    <exclude reference="raZ-MB-F70"/>
+                                                                    <exclude reference="tNq-3M-AFM"/>
                                                                 </mask>
                                                             </variation>
                                                         </label>
