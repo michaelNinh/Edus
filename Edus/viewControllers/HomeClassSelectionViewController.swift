@@ -18,7 +18,8 @@ class HomeClassSelectionViewController: UIViewController {
 
     var enrolledClasses: [Classroom] = []
     var selectedClassroom: Classroom?
-    static var delegate: loggingOut!
+    
+    //static var delegate: loggingOut!
 
     @IBOutlet weak var addSchoolButton: UIButton!
     @IBAction func addSchool(sender: AnyObject) {
@@ -28,6 +29,8 @@ class HomeClassSelectionViewController: UIViewController {
     }
     @IBOutlet weak var logOut: UIButton!
     @IBAction func logOut(sender: AnyObject) {
+        
+        /*
         
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             //if error == nil {
@@ -41,6 +44,7 @@ class HomeClassSelectionViewController: UIViewController {
                 //SCLAlertView().showInfo("Log out", subTitle: "Log out did not work. Check your Internet connection and try again")
             }
         }
+*/
         
     }
     

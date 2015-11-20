@@ -12,15 +12,16 @@ import Bolts
 import ParseUI
 import FBSDKCoreKit
 import Mixpanel
-import ParseCrashReporting
+//import ParseCrashReporting
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var parseLoginHelper: ParseLoginHelper!
     
+    /*
     func loggerOuter() {
         //LOG IN STUFF
         let user = PFUser.currentUser()
@@ -56,10 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
         self.window?.rootViewController = startViewController
         self.window?.makeKeyAndVisible()
     }
+*/
     
     override init() {
         super.init()
-        HomeClassSelectionViewController.delegate = self // I have the power over HomeClassSelectionViewController! :)
+        //HomeClassSelectionViewController.delegate = self // I have the power over HomeClassSelectionViewController! :)
         parseLoginHelper = ParseLoginHelper {[unowned self] user, error in
             // Initialize the ParseLoginHelper with a callback
             if let error = error {
@@ -86,14 +88,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
         let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("App launched")
         
-        ParseCrashReporting.enable();
+        //ParseCrashReporting.enable();
 
-        
+        Parse.enableLocalDatastore()
+
         Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
             clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         
-       loggerOuter()
+
+       //loggerOuter()
+        
+        let user = PFUser.currentUser()
+        
+        let startViewController: UIViewController
+        
+        if (user != nil) {
+            // 3
+            // if we have a user, set the ClassNavEntry to be the initial View Controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //problem may arise here
+            startViewController =
+                storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry") as! UINavigationController
+        } else {
+            // 4
+            // Otherwise set the LoginViewController to be the first
+            let loginViewController = PFLogInViewController()
+            loginViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten]
+            loginViewController.delegate = parseLoginHelper
+            loginViewController.signUpController?.delegate = parseLoginHelper
+            startViewController = loginViewController
+            
+            let roseColor = UIColor(red: 210/255, green: 77/255, blue: 87/255, alpha: 1)
+            loginViewController.view.backgroundColor = roseColor
+            let logoView = UIImageView(image: UIImage(named: "logInLogo.png"))
+            loginViewController.logInView?.logo = logoView
+            
+            loginViewController.signUpController?.view.backgroundColor = roseColor
+            loginViewController.signUpController?.signUpView?.logo = nil
+        }
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = startViewController
+        self.window?.makeKeyAndVisible()
         
         
         //PFUser.logInWithUsername("test", password: "test")

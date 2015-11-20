@@ -146,7 +146,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="8cY-ZL-Qdm"/>
                                                     <exclude reference="PKC-ud-GcI"/>
+                                                    <exclude reference="TX5-Ll-9Yf"/>
                                                     <exclude reference="qw9-Ps-wJU"/>
                                                 </mask>
                                             </variation>
