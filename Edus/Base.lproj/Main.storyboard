@@ -24,6 +24,7 @@
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
         </mutableArray>
         <mutableArray key="Gravity-Light.ttf">
             <string>Gravity-Light</string>
@@ -397,6 +398,9 @@
                                                         <action selector="flagPost:" destination="IZi-7g-wZ4" eventType="touchUpInside" id="L8P-Is-Uaa"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vh-No-JcN">
+                                                    <rect key="frame" x="110" y="180" width="185" height="99"/>
+                                                </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDY-w1-SwB">
                                                     <rect key="frame" x="42" y="68" width="550" height="164"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -404,9 +408,6 @@
                                                     <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vh-No-JcN">
-                                                    <rect key="frame" x="110" y="180" width="185" height="99"/>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SDY-w1-SwB" firstAttribute="trailing" secondItem="VtZ-mj-Qcx" secondAttribute="trailingMargin" id="1XJ-oj-V9B"/>
@@ -1187,11 +1188,11 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5YS-d0-vdt">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YS-d0-vdt">
                                                     <rect key="frame" x="63" y="82" width="515" height="117"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6a-Hv-9eC">
@@ -1330,7 +1331,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-kw-yop">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-kw-yop">
                                 <rect key="frame" x="266" y="268" width="69" height="32"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                 <state key="normal" title="Answer"/>
@@ -1667,7 +1668,7 @@
                                     <outlet property="delegate" destination="G7D-hx-vvG" id="8WG-ZR-CSb"/>
                                 </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-WK-LaK">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-WK-LaK">
                                 <rect key="frame" x="86" y="131" width="474" height="129"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1692,6 +1693,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USz-1B-DEH">
                                 <rect key="frame" x="226" y="131" width="240" height="129"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FM7-pv-n1O">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1759,7 +1763,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="bBh-hB-TWK"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="questionContentText" destination="Rac-WK-LaK" id="Tue-Zb-C0U"/>
                         <outlet property="questionDate" destination="Zoa-5i-Bja" id="U6S-QT-q5f"/>
@@ -2495,7 +2499,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxN-oV-TdB"/>
-        <segue reference="VG9-aV-Ivg"/>
         <segue reference="R4m-vE-v5e"/>
+        <segue reference="Rph-SL-AI1"/>
     </inferredMetricsTieBreakers>
 </document>
