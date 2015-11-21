@@ -85,7 +85,7 @@
                                 <state key="normal" title="+Add school/university"/>
                                 <connections>
                                     <action selector="addSchool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wkp-SK-pU4"/>
-                                    <segue destination="BRz-bA-eZS" kind="show" identifier="addSchoolSegue" id="1yA-fm-xT1"/>
+                                    <segue destination="Spb-my-dGa" kind="show" id="YGM-ho-ZvM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLu-Uj-8jX">
@@ -945,11 +945,12 @@
                     <navigationItem key="navigationItem" title="Select School" id="uST-dY-Adw"/>
                     <connections>
                         <outlet property="schoolTableView" destination="7m3-7n-wHG" id="kGL-Iq-wN1"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="clickAddSchoolSegue" id="Apg-Rq-iku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0k-E5-37f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="612"/>
+            <point key="canvasLocation" x="2345" y="615"/>
         </scene>
         <!--Add school-->
         <scene sceneID="7gC-t1-eTc">
@@ -1029,11 +1030,12 @@
                     <navigationItem key="navigationItem" title="Add school" id="caO-H3-cua"/>
                     <connections>
                         <outlet property="schoolNameTextField" destination="Aw7-RR-5Uk" id="5Ue-lz-oqQ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="addedSchoolSegue" id="Bj0-t7-vAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7e-mU-ejZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="600"/>
+            <point key="canvasLocation" x="3041" y="615"/>
         </scene>
         <!--TestBoard-->
         <scene sceneID="1eV-X9-3Le">
@@ -3144,7 +3146,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6P-61-Qns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="1463"/>
+            <point key="canvasLocation" x="1701" y="1463"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9lP-BL-dIW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Spb-my-dGa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Tw-sR-9R3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BRz-bA-eZS" kind="relationship" relationship="rootViewController" id="ioq-7E-S9V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cef-XC-8Wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1533" y="615"/>
         </scene>
     </scenes>
     <resources>
@@ -3158,7 +3178,7 @@
         <image name="postUnselected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RhK-jH-tat"/>
+        <segue reference="Apg-Rq-iku"/>
         <segue reference="R4m-vE-v5e"/>
     </inferredMetricsTieBreakers>
 </document>
