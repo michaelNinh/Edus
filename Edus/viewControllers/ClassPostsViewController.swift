@@ -42,10 +42,6 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
     override func viewDidAppear(animated: Bool) {
         
         timelineComponent.loadInitialIfRequired()
-        //timelineComponent = TimelineComponent(target: self)
-
-
-        
     }
 
     

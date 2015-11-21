@@ -9,29 +9,45 @@
 import UIKit
 import Parse
 import Mixpanel
+import ConvenienceKit
 
 
-class AddClassViewController: UIViewController {
+
+class AddClassViewController: UIViewController, TimelineComponentTarget {
     
     var classrooms: [Classroom] = []
     var selectedClass: Classroom?
-
-    @IBOutlet weak var classroomsTableView: UITableView!
     
+    
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
+    var timelineComponent: TimelineComponent<Classroom, AddClassViewController>!
+    @IBOutlet weak var tableView: UITableView!
+    
+    //TIMELINE IMPLEMENTATION
+    func loadInRange(range: Range<Int>, completionBlock: ([Classroom]?) -> Void) {
+        
+        GetClassForSchool.getClassForSchool({ (result: [PFObject]?, error: NSError?) -> Void in
+            self.classrooms = result as? [Classroom] ?? []
+            //do I need this for loop?
+            for classroom in self.classrooms{
+                classroom.setClass()
+                completionBlock(self.classrooms)
+            }
+            }, range: range)
+    
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        timelineComponent.loadInitialIfRequired()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GetClassForSchool.getClassForSchool { (result: [PFObject]?, error: NSError?) -> Void in
-            self.classrooms = result as? [Classroom] ?? []
-            for classroom in self.classrooms{
-                classroom.setClass()
-                self.classroomsTableView.reloadData()
-            }
-        }
-        self.classroomsTableView.reloadData()
-
-
+        timelineComponent = TimelineComponent(target: self)
+       
         // Do any additional setup after loading the view.
     }
 
@@ -87,8 +103,10 @@ extension AddClassViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("classCell") as! AddClassTableViewCell
-        //the tableViewCell post is equal to the post[arrayNumber]
-        cell.classOptionLabel.text = classrooms[indexPath.row].classTitle
+        
+        let classroom = timelineComponent.content[indexPath.row]
+        classroom.setClass()
+        cell.classOptionLabel.text = classroom.classTitle
         return cell
     }
     
