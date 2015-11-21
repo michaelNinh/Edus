@@ -32,7 +32,7 @@ class ReplyPostPoints: PFObject, PFSubclassing{
                 query["toPost"] = self.toReplyPost
                 query["score"] = self.score
                 query.addObject(PFUser.currentUser()!.objectId!, forKey: "voterList")
-                query.ACL?.setPublicWriteAccess(true)
+                //query.ACL?.setPublicWriteAccess(true)
                 query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     print("replyPostPoint created and saved")
                 }

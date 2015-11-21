@@ -36,7 +36,7 @@ class Classroom: PFObject, PFSubclassing{
         
         classroom.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
         //set classroom public write access
-        classroom.ACL?.setPublicWriteAccess(true)
+        //classroom.ACL?.setPublicWriteAccess(true)
         classroom.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("added student to class.")
         }

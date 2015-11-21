@@ -101,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //let acl = PFACL()
         //acl.setPublicReadAccess(true)
-        PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
+        //PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
         
         
         

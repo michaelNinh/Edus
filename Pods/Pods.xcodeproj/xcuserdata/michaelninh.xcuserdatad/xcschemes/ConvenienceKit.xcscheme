@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AF58A6E3E2EC8D71B803FC2E'
+               BlueprintIdentifier = '4638DC175498ADEB53A47FB8'
                BlueprintName = 'ConvenienceKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ConvenienceKit.framework'>
