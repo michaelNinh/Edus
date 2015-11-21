@@ -23,7 +23,9 @@ class School: PFObject, PFSubclassing{
         school["schoolName"] = self.schoolName
         school.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
         
-        ACL?.publicWriteAccess = true
+        school.ACL?.publicReadAccess = true
+        school.ACL?.publicWriteAccess = true
+
         
         school.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("School saved.")

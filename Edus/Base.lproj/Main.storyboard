@@ -942,7 +942,9 @@
                             <constraint firstAttribute="bottom" secondItem="TaC-jK-E8O" secondAttribute="bottom" constant="20" symbolic="YES" id="lTq-R2-pjm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select School" id="uST-dY-Adw"/>
+                    <navigationItem key="navigationItem" title="Select School" id="uST-dY-Adw">
+                        <barButtonItem key="leftBarButtonItem" image="BackArrow" id="hTk-ZX-lrm"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7m3-7n-wHG" id="m6i-8f-J5B"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="clickAddSchoolSegue" id="Apg-Rq-iku"/>

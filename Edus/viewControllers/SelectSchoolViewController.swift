@@ -28,7 +28,6 @@ class SelectSchoolViewController: UIViewController, TimelineComponentTarget {
                 completionBlock(availableSchools)
             }
             }, range: range)
-        
     }
     
     var availableSchools: [School] = []
