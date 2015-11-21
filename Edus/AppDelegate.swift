@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
             clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
        
+        /*
         let user = PFUser.currentUser()
         
         let startViewController: UIViewController
@@ -85,9 +86,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = startViewController
         self.window?.makeKeyAndVisible()
+*/
         
-        
-        //PFUser.logInWithUsername("test", password: "test")
+        do{
+            try PFUser.logInWithUsername("test", password: "test")
+
+        }catch{
+            print("fucked up")
+        }
         
         if let user = PFUser.currentUser() {
             print("Log in successful")
@@ -99,9 +105,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        //let acl = PFACL()
-        //acl.setPublicReadAccess(true)
-        //PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
+        let acl = PFACL()
+        acl.publicReadAccess = true
+        
+
+        PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
         
         
         
