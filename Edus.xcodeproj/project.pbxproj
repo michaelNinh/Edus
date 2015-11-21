@@ -73,6 +73,7 @@
 		917AB8CB1BF938E7004F884D /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C71BF938E7004F884D /* Gravity-Light.ttf */; };
 		917AB8CC1BF938E7004F884D /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */; };
 		917AB8CD1BF938E7004F884D /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */; };
+		91918EEA1C00EF97004C4B3B /* TestBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91918EE91C00EF97004C4B3B /* TestBoardViewController.swift */; };
 		91E59C3D1BFE4A76000AC05C /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E59C3C1BFE4A76000AC05C /* PhotoTakingHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +168,7 @@
 		917AB8C71BF938E7004F884D /* Gravity-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Light.ttf"; sourceTree = "<group>"; };
 		917AB8C81BF938E7004F884D /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
 		917AB8C91BF938E7004F884D /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		91918EE91C00EF97004C4B3B /* TestBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBoardViewController.swift; sourceTree = "<group>"; };
 		91E59C3C1BFE4A76000AC05C /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoTakingHelper.swift; path = Helprs/PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		AE601640052A399FA99A441E /* Pods_Edus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -277,6 +279,7 @@
 				91374D451BF190D20052157B /* Main.storyboard */,
 				91374D481BF190D20052157B /* Assets.xcassets */,
 				91374D4D1BF190D20052157B /* Info.plist */,
+				91918EE91C00EF97004C4B3B /* TestBoardViewController.swift */,
 			);
 			path = Edus;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				911B25021BF3CD4200B5510D /* GetUserEnrolledClasses.swift in Sources */,
 				91374D9A1BF19BAE0052157B /* ErrorHandling.swift in Sources */,
 				91374D981BF199720052157B /* ParseLoginHelper.swift in Sources */,
+				91918EEA1C00EF97004C4B3B /* TestBoardViewController.swift in Sources */,
 				91374D9F1BF1A23F0052157B /* UserModel.swift in Sources */,
 				9176BC671BF40BD7002FC5AB /* ClassPostTableViewCell.swift in Sources */,
 				917AB8AA1BF65526004F884D /* GetReplyPostsForPost.swift in Sources */,

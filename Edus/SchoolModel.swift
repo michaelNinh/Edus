@@ -21,9 +21,7 @@ class School: PFObject, PFSubclassing{
     func createNewSchool(){
         let school = PFObject(className: "School")
         school["schoolName"] = self.schoolName
-        //must use currentUserObjId, parse will not take user in array
         school.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
-        //set public write access of schoolObjects
         
         ACL?.publicWriteAccess = true
         

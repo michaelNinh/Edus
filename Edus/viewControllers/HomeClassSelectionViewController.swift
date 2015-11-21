@@ -63,7 +63,7 @@ class HomeClassSelectionViewController: UIViewController {
         
         
         query.findObjectsInBackgroundWithBlock { (userResult:[PFObject]?, error:NSError?) -> Void in
-            
+            //sometimes SHIT CRASHES HERE
             let thisUser = userResult![0] as! PFUser
             //add NIL CATCH HERE
             if thisUser["enrolledClasses"] != nil{

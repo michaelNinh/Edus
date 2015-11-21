@@ -30,7 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else  if let user = user {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 //creation
-                let classNavEntry = storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry")
+                //  CODE SWITCHED FROM "ClassNavEntry" -> "TestBoard"
+                let classNavEntry = storyboard.instantiateViewControllerWithIdentifier("HomeClassSelection")
                 //presentation
                 self.window?.rootViewController!.presentViewController(classNavEntry, animated:true, completion:nil)
             }
@@ -52,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
             clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
        
-        /*
+        
         let user = PFUser.currentUser()
         
         let startViewController: UIViewController
@@ -63,10 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             //problem may arise here
             startViewController =
-                storyboard.instantiateViewControllerWithIdentifier("ClassNavEntry") as! UINavigationController
+                //  CODE SWITCHED FROM "ClassNavEntry" -> "TestBoard"
+                //it forced me to remove casting as a UINavigation controller...perhaps problem?
+                storyboard.instantiateViewControllerWithIdentifier("HomeClassSelection")
+            
+            
         } else {
-            // 4
-            // Otherwise set the LoginViewController to be the first
             let loginViewController = PFLogInViewController()
             loginViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten]
             loginViewController.delegate = parseLoginHelper
@@ -86,14 +89,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = startViewController
         self.window?.makeKeyAndVisible()
-*/
+
         
+        /*
         do{
             try PFUser.logInWithUsername("test", password: "test")
 
         }catch{
             print("fucked up")
         }
+*/
         
         if let user = PFUser.currentUser() {
             print("Log in successful")
