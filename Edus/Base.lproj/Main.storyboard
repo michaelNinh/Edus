@@ -2826,7 +2826,7 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <state key="normal" title="Answer"/>
                                         <connections>
-                                            <segue destination="ONY-sw-GjG" kind="show" id="MVE-nv-ql4"/>
+                                            <segue destination="ONY-sw-GjG" kind="show" identifier="writeReplyPostSegue" id="MVE-nv-ql4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk0-Nz-oip">
