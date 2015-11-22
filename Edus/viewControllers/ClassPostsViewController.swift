@@ -34,7 +34,6 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
         
         GetPostsForClass.getPostsForClass({ (result:[PFObject]?, error:NSError?) -> Void in
             let posts = result as? [Post] ?? []
-            print(posts)
             completionBlock(posts)
             }, classroom: self.classroom!, range: range)
         
@@ -43,10 +42,6 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
     override func viewDidAppear(animated: Bool) {
         
         timelineComponent.loadInitialIfRequired()
-        //timelineComponent = TimelineComponent(target: self)
-
-
-        
     }
 
     

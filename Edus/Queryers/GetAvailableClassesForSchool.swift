@@ -11,10 +11,12 @@ import Parse
 
 class GetClassForSchool{
     
-    static func getClassForSchool(completionBlock: PFQueryArrayResultBlock){
+    static func getClassForSchool(completionBlock: PFQueryArrayResultBlock, range: Range<Int>){
         let query = PFQuery(className: "Classroom")
         query.whereKey("toSchoolName", equalTo: PFUser.currentUser()!["activeSchoolName"]!)
         query.orderByAscending("classTitle")
+        query.skip = range.startIndex
+        query.limit = range.endIndex - range.startIndex
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
     

@@ -9,27 +9,38 @@
 import UIKit
 import Parse
 import Mixpanel
+import ConvenienceKit
 
-class SelectSchoolViewController: UIViewController {
+class SelectSchoolViewController: UIViewController, TimelineComponentTarget {
     
+    @IBOutlet weak var tableView: UITableView!
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
+    
+    var timelineComponent: TimelineComponent<School, SelectSchoolViewController>!
+    
+    func loadInRange(range: Range<Int>, completionBlock: ([School]?) -> Void) {
+        
+        GetAvailableSchools.getAvailableSchools({ (result: [PFObject]?, error: NSError?) -> Void in
+            let availableSchools = result as? [School] ?? []
+            for school in self.availableSchools{
+                school.setSchoolName()
+                completionBlock(availableSchools)
+            }
+            }, range: range)
+    }
     
     var availableSchools: [School] = []
     var selectedSchool: School?
 
-    @IBOutlet weak var schoolTableView: UITableView!
+    override func viewDidAppear(animated: Bool) {
+        timelineComponent.loadInitialIfRequired()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GetAvailableSchools.getClassesForUser { (result: [PFObject]?, error: NSError?) -> Void in
-            print("the returned result number is \(result?.count)")
-            self.availableSchools = result as? [School] ?? []
-            for school in self.availableSchools{
-                school.setSchoolName()
-                self.schoolTableView.reloadData()
-            }
-        }
-        self.schoolTableView.reloadData()
+        timelineComponent = TimelineComponent(target: self)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +73,7 @@ class SelectSchoolViewController: UIViewController {
 
 extension SelectSchoolViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedSchool = availableSchools[indexPath.row]
+        self.selectedSchool = timelineComponent.content[indexPath.row]
         let currentUser = PFUser.currentUser()!
         //this code adds a new colm into parse database -> transfer this over to adding new school as well
         currentUser["activeSchoolName"] = self.selectedSchool?.schoolName
@@ -80,13 +91,16 @@ extension SelectSchoolViewController: UITableViewDelegate{
 extension SelectSchoolViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableSchools.count
+        return timelineComponent.content.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("schoolCell") as! AvailableSchoolTableViewCell
-        //the tableViewCell post is equal to the post[arrayNumber]
-        cell.schoolOption.text = availableSchools[indexPath.row].schoolName
+        
+        let school = timelineComponent.content[indexPath.row]
+        
+        
+        cell.schoolOption.text = school.schoolName
 
         return cell
     }

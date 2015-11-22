@@ -14,7 +14,7 @@ pod 'Bolts'
 pod "FBSDKCoreKit"
 pod "FBSDKLoginKit"
 pod "FBSDKShareKit"
-pod 'Bond', '~> 4.0'
+pod 'Bond'
 
 end
 

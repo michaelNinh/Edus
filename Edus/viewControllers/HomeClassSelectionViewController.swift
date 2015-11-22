@@ -8,17 +8,37 @@
 
 import UIKit
 import Parse
+import ConvenienceKit
 
 protocol loggingOut{
     func loggerOuter()
 }
 
-class HomeClassSelectionViewController: UIViewController {
+class HomeClassSelectionViewController: UIViewController, TimelineComponentTarget {
     
-
+    //timeline implementation
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
+    var timelineComponent: TimelineComponent<Classroom, HomeClassSelectionViewController>!
+    
+    //TIMELINE IMPLEMENTATION
+    func loadInRange(range: Range<Int>, completionBlock: ([Classroom]?) -> Void) {
+     
+        let query = PFQuery(className: "_User")
+        query.includeKey("enrolledClasses")
+        query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {(result:PFObject?, error: NSError?) -> Void in
+            let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
+            completionBlock(userEnrolledClasses)
+           print("FUU")
+        }
+    }
+        
+    
+    
     var enrolledClasses: [Classroom] = []
     var selectedClassroom: Classroom?
-    static var delegate: loggingOut!
+    
+    //static var delegate: loggingOut!
 
     @IBOutlet weak var addSchoolButton: UIButton!
     @IBAction func addSchool(sender: AnyObject) {
@@ -28,6 +48,8 @@ class HomeClassSelectionViewController: UIViewController {
     }
     @IBOutlet weak var logOut: UIButton!
     @IBAction func logOut(sender: AnyObject) {
+        
+        /*
         
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             //if error == nil {
@@ -41,46 +63,51 @@ class HomeClassSelectionViewController: UIViewController {
                 //SCLAlertView().showInfo("Log out", subTitle: "Log out did not work. Check your Internet connection and try again")
             }
         }
+*/
         
     }
     
     @IBOutlet weak var userNameText: UILabel!
     
-    @IBOutlet weak var enrolledClassesTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
         print("appeared")
+        timelineComponent.loadInitialIfRequired()
+        
+        /*
         //this query would be called getUserEnrolledClasses
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
-        
-        
         query.findObjectsInBackgroundWithBlock { (userResult:[PFObject]?, error:NSError?) -> Void in
-            
+            //sometimes SHIT CRASHES HERE
             let thisUser = userResult![0] as! PFUser
             //add NIL CATCH HERE
             if thisUser["enrolledClasses"] != nil{
                 self.enrolledClasses = thisUser["enrolledClasses"] as! [Classroom]
                 for classroom in self.enrolledClasses{
                     classroom.setClass()
-                    self.enrolledClassesTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }else{
                 print("not enrolled in any classes yet")
             }
             
             
-            self.enrolledClassesTableView.reloadData()
+            self.tableView.reloadData()
         }
+*/
+
         //end query
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timelineComponent = TimelineComponent(target: self)
+
         checkActiveSchoolButtonText()
         userNameText.text = PFUser.currentUser()?.username!
     
@@ -143,7 +170,7 @@ class HomeClassSelectionViewController: UIViewController {
 
 extension HomeClassSelectionViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedClassroom = enrolledClasses[indexPath.row]
+        self.selectedClassroom = timelineComponent.content[indexPath.row]
         enterClassSegue()
     }
     
@@ -152,13 +179,12 @@ extension HomeClassSelectionViewController: UITableViewDelegate{
     }
     
     
-    //this is for deleting a class
+    //this is for deleting a class -> HAVE TO EDIT FOR CONVENIENCE KIT
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            self.selectedClassroom = enrolledClasses[indexPath.row]
+            self.selectedClassroom = timelineComponent.content[indexPath.row]
             self.selectedClassroom?.deleteClass(self.selectedClassroom!)
-            self.enrolledClasses.removeAtIndex(indexPath.row)
-            self.enrolledClassesTableView.reloadData()
+            timelineComponent.content.removeAtIndex(indexPath.row)
         }
     }
 
@@ -169,14 +195,15 @@ extension HomeClassSelectionViewController: UITableViewDelegate{
 extension HomeClassSelectionViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return enrolledClasses.count
+        return timelineComponent.content.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("enrolledClassCell") as! EnrolledClassesTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
-        cell.enrolledOption.text = enrolledClasses[indexPath.row].classTitle
-        
+        let classroom = timelineComponent.content[indexPath.row] as? Classroom
+        classroom?.setClass()
+        cell.enrolledOption.text = classroom?.classTitle
         return cell
     }
     
