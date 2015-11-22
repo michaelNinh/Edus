@@ -26,23 +26,14 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
      
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
-        query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) { (result:PFObject?, error: NSError?) -> Void in
-            let user = result as? PFUser
-            if user!["enrolledClasses"] != nil{
-                print(user!["enrolledClasses"])
-                completionBlock(user!["enrolledClasses"] as! [Classroom])
-            }else{
-                print("not enrolled in classes")
-            }
+        query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {(result:PFObject?, error: NSError?) -> Void in
+            let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
+            completionBlock(userEnrolledClasses)
+           print("FUU")
         }
-        
-      
-        
     }
         
-        
     
-
     
     var enrolledClasses: [Classroom] = []
     var selectedClassroom: Classroom?
@@ -85,8 +76,9 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
         super.viewDidLoad()
         print("appeared")
         timelineComponent.loadInitialIfRequired()
-        //this query would be called getUserEnrolledClasses
+        
         /*
+        //this query would be called getUserEnrolledClasses
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
@@ -108,6 +100,7 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
             self.tableView.reloadData()
         }
 */
+
         //end query
     }
     
@@ -208,9 +201,9 @@ extension HomeClassSelectionViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("enrolledClassCell") as! EnrolledClassesTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
-        //let classroom = timelineComponent.content[indexPath.row]
-        cell.enrolledOption.text = timelineComponent.content[indexPath.row].classTitle
-        
+        let classroom = timelineComponent.content[indexPath.row] as? Classroom
+        classroom?.setClass()
+        cell.enrolledOption.text = classroom?.classTitle
         return cell
     }
     
