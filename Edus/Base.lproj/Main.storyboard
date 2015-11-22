@@ -578,6 +578,7 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backToHomeSegue:" destination="KGJ-NJ-MI4" id="Nqf-9v-KDg"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="backToHomeSegue" id="Bhs-PM-MEO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -590,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCm-9B-fGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3866" y="2075"/>
+            <point key="canvasLocation" x="3957" y="2235"/>
         </scene>
         <!--Make post-->
         <scene sceneID="5zY-FV-axf">
@@ -1384,11 +1385,12 @@
                     <connections>
                         <outlet property="tableView" destination="klW-8J-hbl" id="cVz-Pa-5ZN"/>
                         <segue destination="7yd-uw-0qY" kind="show" identifier="expandPostSegue" id="u92-00-fNq"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToHomeSegue" id="udN-0F-8Ur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDx-XK-dga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2031" y="3056"/>
+            <point key="canvasLocation" x="2048" y="3133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bnH-M1-aUU">
@@ -1925,7 +1927,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beh-j0-fLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4603" y="2075"/>
+            <point key="canvasLocation" x="4619" y="2241"/>
         </scene>
         <!--My posts-->
         <scene sceneID="cTo-Ih-xdC">
@@ -1938,6 +1940,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.7843137255" green="0.20784313730000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="0.0"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1950,7 +1953,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbX-fs-dsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3006" y="2312"/>
+            <point key="canvasLocation" x="2998" y="2235"/>
         </scene>
         <!--Your answer-->
         <scene sceneID="NGq-EW-DMR">
@@ -2058,7 +2061,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pi8-Ib-VUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xfJ-Ca-joW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5316" y="2075"/>
+            <point key="canvasLocation" x="5337" y="2241"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="xrO-AD-F4v">
@@ -2222,6 +2225,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Feedback" id="rD9-2o-7Z5"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="messageBox" destination="ZcK-QK-Qxo" id="jL7-aV-1oe"/>
                     </connections>
@@ -3371,7 +3375,7 @@
         <image name="postUnselected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R4m-vE-v5e"/>
-        <segue reference="T0U-t1-hTa"/>
+        <segue reference="M7v-vt-RP5"/>
+        <segue reference="Bhs-PM-MEO"/>
     </inferredMetricsTieBreakers>
 </document>
