@@ -48,18 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        Parse.enableLocalDatastore()
-       
-        Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
-            clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
-        
         Classroom.registerSubclass()
         School.registerSubclass()
         Post.registerSubclass()
         PostPoints.registerSubclass()
         ReplyPost.registerSubclass()
         ReplyPostPoints.registerSubclass()
+        
+        Parse.enableLocalDatastore()
        
+        Parse.setApplicationId("n0VDpunIf6wmtPJaOSGHRjRjaeFPHtt2aLzWOASq",
+            clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
+        
+        
         
         let user = PFUser.currentUser()
         

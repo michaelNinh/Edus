@@ -24,6 +24,8 @@ class AddNewSchoolViewController: UIViewController, UITextFieldDelegate {
         //newSchool.enrolledUsers.append(PFUser.currentUser()!)
         newSchool.createNewSchool()
         print("button pressed")
+        
+        
         addedSchoolSegue()
         let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("New school added")

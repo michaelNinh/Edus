@@ -17,13 +17,14 @@ protocol loggingOut{
 class HomeClassSelectionViewController: UIViewController, TimelineComponentTarget {
     
     //timeline implementation
-    let defaultRange = 0...4
+    let defaultRange = 0...20
     let additionalRangeSize = 5
     var timelineComponent: TimelineComponent<Classroom, HomeClassSelectionViewController>!
     
     //TIMELINE IMPLEMENTATION
     func loadInRange(range: Range<Int>, completionBlock: ([Classroom]?) -> Void) {
-     
+        Classroom.registerSubclass()
+        
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {(result:PFObject?, error: NSError?) -> Void in
