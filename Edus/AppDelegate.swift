@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PostPoints.registerSubclass()
         ReplyPost.registerSubclass()
         ReplyPostPoints.registerSubclass()
+        SubjectList.registerSubclass()
         
         Parse.enableLocalDatastore()
        

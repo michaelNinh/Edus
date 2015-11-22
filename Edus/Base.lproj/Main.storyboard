@@ -915,7 +915,7 @@
                     <navigationItem key="navigationItem" title="Select subject" id="gqb-v3-vuk"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="subjectListTableView" destination="ilF-6M-ZcT" id="zzX-ne-QJy"/>
+                        <outlet property="tableView" destination="ilF-6M-ZcT" id="480-yS-qVK"/>
                         <segue destination="u8H-VC-dE0" kind="show" identifier="selectedSubjectSegue" id="Dwg-SR-Bdh"/>
                     </connections>
                 </viewController>

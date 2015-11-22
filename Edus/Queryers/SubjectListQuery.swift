@@ -14,9 +14,11 @@ class GetSubjectList{
     
     //MUST MAKE SURE VIEW GETS UPDATED
     
-    static func getSubjectList(completionBlock: PFQueryArrayResultBlock){
+    static func getSubjectList(completionBlock: PFQueryArrayResultBlock, range: Range<Int>){
         let query = PFQuery(className: "SubjectList")
         query.orderByAscending("subjectName")
+        query.skip = range.startIndex
+        query.limit = range.endIndex - range.startIndex
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
     

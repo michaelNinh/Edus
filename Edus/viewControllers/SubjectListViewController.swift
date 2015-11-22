@@ -8,17 +8,40 @@
 
 import UIKit
 import Parse
+import ConvenienceKit
 
-class SubjectListViewController: UIViewController {
+
+class SubjectListViewController: UIViewController, TimelineComponentTarget {
     
     var subjectList: [SubjectList] = []
     var selectedSubject: SubjectList?
 
-    @IBOutlet weak var subjectListTableView: UITableView!
+    //TIMELINE IMPLE
+    @IBOutlet weak var tableView: UITableView!
+    let defaultRange = 0...99
+    let additionalRangeSize = 10
+    var timelineComponent: TimelineComponent<SubjectList, SubjectListViewController>!
+    func loadInRange(range: Range<Int>, completionBlock: ([SubjectList]?) -> Void) {
+        
+        GetSubjectList.getSubjectList({ (result: [PFObject]?, error: NSError?) -> Void in
+            let subjectList = result as? [SubjectList] ?? []
+            completionBlock(subjectList)
+        }, range: range)
+        
+    }
     
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        timelineComponent.loadInitialIfRequired()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timelineComponent = TimelineComponent(target: self)
+
+        /*
         GetSubjectList.getSubjectList { (result:[PFObject]?, error: NSError?) -> Void in
             self.subjectList = result as? [SubjectList] ?? []
             for subject in self.subjectList{
@@ -31,7 +54,7 @@ class SubjectListViewController: UIViewController {
         }
         
         subjectListTableView.reloadData()
-
+*/
     }
     
     func passBackSegue(){
@@ -66,8 +89,10 @@ class SubjectListViewController: UIViewController {
 
 extension SubjectListViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedSubject = subjectList[indexPath.row]
+        
+        self.selectedSubject = timelineComponent.content[indexPath.row]
         self.passBackSegue()
+        
         //this should call a "prepare for segue" and pass back the selected subject
         }
         //confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
@@ -79,13 +104,18 @@ extension SubjectListViewController: UITableViewDelegate{
 extension SubjectListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjectList.count
+        return timelineComponent.content.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("subjectCell") as! SubjectListTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
-        cell.subjectOption.text = subjectList[indexPath.row].subjectName
+        
+        let subject = timelineComponent.content[indexPath.row] as? SubjectList
+        
+        subject?.setSubjectName()
+        
+        cell.subjectOption.text = subject?.subjectName
         
         return cell
     }
