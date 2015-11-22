@@ -31,6 +31,9 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
             let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
             completionBlock(userEnrolledClasses)
         }
+        
+        
+
     }
         
     

@@ -50,6 +50,7 @@ class CreateNewClassViewController: UIViewController, UITextFieldDelegate {
         classroom.professorLastName = self.professorLastNameField.text
         
         classroom.enrollClass()
+            
     }
     
     func createdClassSegue(){
