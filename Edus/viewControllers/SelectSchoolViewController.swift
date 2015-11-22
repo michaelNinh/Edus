@@ -14,7 +14,7 @@ import ConvenienceKit
 class SelectSchoolViewController: UIViewController, TimelineComponentTarget {
     
     @IBOutlet weak var tableView: UITableView!
-    let defaultRange = 0...4
+    let defaultRange = 0...50
     let additionalRangeSize = 5
     
     var timelineComponent: TimelineComponent<School, SelectSchoolViewController>!
@@ -23,10 +23,7 @@ class SelectSchoolViewController: UIViewController, TimelineComponentTarget {
         
         GetAvailableSchools.getAvailableSchools({ (result: [PFObject]?, error: NSError?) -> Void in
             let availableSchools = result as? [School] ?? []
-            for school in self.availableSchools{
-                school.setSchoolName()
-                completionBlock(availableSchools)
-            }
+            completionBlock(availableSchools)
             }, range: range)
     }
     
@@ -98,7 +95,7 @@ extension SelectSchoolViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("schoolCell") as! AvailableSchoolTableViewCell
         
         let school = timelineComponent.content[indexPath.row]
-        
+        school.setSchoolName()
         
         cell.schoolOption.text = school.schoolName
 

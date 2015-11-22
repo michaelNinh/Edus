@@ -12,13 +12,14 @@ import Mixpanel
 
 class AddNewSchoolViewController: UIViewController, UITextFieldDelegate {
     
-    
+    let newSchool = School()
+
 
     @IBOutlet weak var schoolNameTextField: UITextField!
     
     @IBAction func addNewSchoolButton(sender: AnyObject) {
-        
-        let newSchool = School()
+        //CREATING A NEW SCHOOL CREATES A PFOBJECT INSTEAD OF A SCHOOL
+        //let newSchool = School()
         newSchool.schoolName = self.schoolNameTextField.text
         //newSchool.enrolledUsers.append(PFUser.currentUser()!)
         newSchool.createNewSchool()

@@ -29,7 +29,6 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
         query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {(result:PFObject?, error: NSError?) -> Void in
             let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
             completionBlock(userEnrolledClasses)
-           print("FUU")
         }
     }
         

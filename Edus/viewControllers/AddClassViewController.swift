@@ -19,7 +19,7 @@ class AddClassViewController: UIViewController, TimelineComponentTarget {
     var selectedClass: Classroom?
     
     
-    let defaultRange = 0...4
+    let defaultRange = 0...99
     let additionalRangeSize = 5
     var timelineComponent: TimelineComponent<Classroom, AddClassViewController>!
     @IBOutlet weak var tableView: UITableView!
@@ -29,11 +29,8 @@ class AddClassViewController: UIViewController, TimelineComponentTarget {
         
         GetClassForSchool.getClassForSchool({ (result: [PFObject]?, error: NSError?) -> Void in
             self.classrooms = result as? [Classroom] ?? []
-            //do I need this for loop?
-            for classroom in self.classrooms{
-                classroom.setClass()
-                completionBlock(self.classrooms)
-            }
+            completionBlock(self.classrooms)
+            
             }, range: range)
     
         
