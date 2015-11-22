@@ -29,7 +29,6 @@ class CreateNewClassViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addClassButton(sender: AnyObject) {
         let classroom = Classroom()
         classroom.subject = self.selectedSubject?.subjectName
-        createdClassSegue()
         let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("New class added")
         
@@ -50,7 +49,9 @@ class CreateNewClassViewController: UIViewController, UITextFieldDelegate {
         classroom.professorLastName = self.professorLastNameField.text
         
         classroom.enrollClass()
-            
+        createdClassSegue()
+
+        
     }
     
     func createdClassSegue(){

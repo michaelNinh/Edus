@@ -31,9 +31,6 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
             let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
             completionBlock(userEnrolledClasses)
         }
-        
-        
-
     }
         
     
@@ -79,6 +76,7 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
         super.viewDidLoad()
         print("appeared")
         timelineComponent.loadInitialIfRequired()
+
         
         /*
         //this query would be called getUserEnrolledClasses
@@ -126,6 +124,9 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
     
     func enterClassSegue(){
         self.performSegueWithIdentifier("enterClassSegue", sender: self)
+    }
+    
+    @IBAction func unwindToHomeClassSelection(segue: UIStoryboardSegue) {
     }
 
     override func didReceiveMemoryWarning() {

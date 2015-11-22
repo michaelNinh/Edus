@@ -1584,7 +1584,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USx-Zp-JVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OHP-E0-El3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3093" y="3830"/>
+            <point key="canvasLocation" x="3200" y="3854"/>
         </scene>
         <!--Post-->
         <scene sceneID="ig2-4A-J65">
@@ -2233,7 +2233,7 @@
         <!--Post-->
         <scene sceneID="YtN-69-tJu">
             <objects>
-                <viewController id="ebY-3O-cN7" customClass="ExpandedPostViewController" customModule="Edus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ebY-3O-cN7" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GVf-jw-mMa"/>
                         <viewControllerLayoutGuide type="bottom" id="Cjx-4d-UyL"/>
@@ -2825,6 +2825,9 @@
                                         <animations/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <state key="normal" title="Answer"/>
+                                        <connections>
+                                            <segue destination="ONY-sw-GjG" kind="show" id="MVE-nv-ql4"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk0-Nz-oip">
                                         <rect key="frame" x="512" y="50" width="80" height="21"/>
@@ -3316,7 +3319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Plc-5H-peK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2795" y="3668"/>
+            <point key="canvasLocation" x="2345" y="3854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="taU-JQ-TDM">
@@ -3368,7 +3371,7 @@
         <image name="postUnselected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZxN-oV-TdB"/>
         <segue reference="R4m-vE-v5e"/>
+        <segue reference="T0U-t1-hTa"/>
     </inferredMetricsTieBreakers>
 </document>
