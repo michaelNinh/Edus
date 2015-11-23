@@ -25,10 +25,12 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
     func loadInRange(range: Range<Int>, completionBlock: ([Classroom]?) -> Void) {
         Classroom.registerSubclass()
         
+       
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {(result:PFObject?, error: NSError?) -> Void in
-            /*
+            
+             /*
             let rawPFObject = result!["enrolledClasses"] as! [PFObject]
             var classroomArray: [Classroom] = []
             
@@ -44,12 +46,14 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
             completionBlock(classroomArray)
 */
 
+
             if result!["enrolledClasses"] != nil{
                 let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
                 completionBlock(userEnrolledClasses)
             }else{
                 print("no classes yet")
             }
+
         
         }
 
@@ -229,9 +233,9 @@ extension HomeClassSelectionViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("enrolledClassCell") as! EnrolledClassesTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
-        let classroom = timelineComponent.content[indexPath.row] as? Classroom
-        classroom?.setClass()
-        cell.enrolledOption.text = classroom?.classTitle
+        let classroom = timelineComponent.content[indexPath.row]
+        classroom.setClass()
+        cell.enrolledOption.text = classroom.classTitle
         return cell
     }
     

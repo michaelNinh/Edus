@@ -79,6 +79,8 @@ extension SelectSchoolViewController: UITableViewDelegate{
             print("User assigned school saved.")
         }
         
+        self.selectedSchool!.addStudentIntoSchool()
+        
         confirmSchoolAlert("You have selected \(self.selectedSchool!.schoolName!) as your active school", message: "")
         let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("School added")

@@ -2346,11 +2346,11 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2r-4V-RR8">
-                                        <rect key="frame" x="50" y="440" width="43" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2r-4V-RR8">
+                                        <rect key="frame" x="50" y="440" width="85" height="21"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="43" id="clf-Dw-I8z"/>
+                                            <constraint firstAttribute="width" constant="100" id="clf-Dw-I8z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Gravity-Light" family="Gravity" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -2978,6 +2978,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="R4m-vE-v5e"/>
-        <segue reference="T0U-t1-hTa"/>
+        <segue reference="sRB-hA-R8Y"/>
     </inferredMetricsTieBreakers>
 </document>

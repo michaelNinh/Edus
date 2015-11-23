@@ -42,6 +42,18 @@ class School: PFObject, PFSubclassing{
         
     }
     
+    func addStudentIntoSchool(){
+        let schoolQuery = PFQuery(className: "School")
+        schoolQuery.getObjectInBackgroundWithId(self.objectId!) { (result:  PFObject?, error: NSError?) -> Void in
+            let targetSchool = result as! School
+            targetSchool.addObject(PFUser.currentUser()!.objectId!, forKey: "enrolledUsers")
+            targetSchool.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                print("added User to school")
+            }
+        }
+        
+    }
+    
     func enrolledSchool(){
         let school = PFObject(className: "School")
         school.saveInBackground()
