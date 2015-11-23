@@ -1404,7 +1404,7 @@
                     <connections>
                         <outlet property="tableView" destination="klW-8J-hbl" id="cVz-Pa-5ZN"/>
                         <segue destination="7yd-uw-0qY" kind="show" identifier="expandPostSegue" id="u92-00-fNq"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToHomeSegue" id="udN-0F-8Ur"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="backToHomeSegue" id="udN-0F-8Ur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDx-XK-dga" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3200,11 +3200,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hm-qO-2A1">
-                                        <rect key="frame" x="50" y="87" width="474" height="129"/>
+                                        <rect key="frame" x="50" y="87" width="474" height="128"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="129" id="lwE-Zr-duq"/>
+                                            <constraint firstAttribute="height" constant="150" id="lwE-Zr-duq"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="stupid xcode">
@@ -3215,6 +3215,11 @@
                                             </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lwE-Zr-duq"/>
+                                            </mask>
+                                        </variation>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-iP-eko">
                                         <rect key="frame" x="50" y="215" width="474" height="206"/>
@@ -3262,6 +3267,7 @@
                                     <constraint firstItem="WaI-nG-Qk1" firstAttribute="top" secondItem="Nbw-Yg-wyp" secondAttribute="bottom" constant="14" id="kI3-di-9Qn"/>
                                     <constraint firstAttribute="bottom" secondItem="Nk0-Nz-oip" secondAttribute="bottom" constant="554" id="m0v-3v-w6r"/>
                                     <constraint firstAttribute="trailing" secondItem="WaI-nG-Qk1" secondAttribute="trailing" id="o9q-XZ-BaA"/>
+                                    <constraint firstItem="qVs-iP-eko" firstAttribute="top" secondItem="5Hm-qO-2A1" secondAttribute="bottom" id="pPr-B8-Q5e"/>
                                     <constraint firstItem="5Hm-qO-2A1" firstAttribute="leading" secondItem="vAl-jd-iNw" secondAttribute="leading" id="pmV-hO-FJD"/>
                                     <constraint firstAttribute="trailing" secondItem="5Hm-qO-2A1" secondAttribute="trailing" constant="76" id="rX9-Mv-iqG"/>
                                     <constraint firstItem="Nk0-Nz-oip" firstAttribute="top" secondItem="vAl-jd-iNw" secondAttribute="top" id="sYq-FF-C7l"/>
@@ -3373,7 +3379,7 @@
         <image name="postUnselected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M7v-vt-RP5"/>
+        <segue reference="R4m-vE-v5e"/>
         <segue reference="udN-0F-8Ur"/>
     </inferredMetricsTieBreakers>
 </document>
