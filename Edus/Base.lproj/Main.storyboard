@@ -1220,7 +1220,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-RO-a7J">
-                                        <rect key="frame" x="8" y="256" width="584" height="199"/>
+                                        <rect key="frame" x="8" y="173" width="584" height="199"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1231,7 +1231,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-yB-jQy">
-                                        <rect key="frame" x="8" y="183" width="73" height="30"/>
+                                        <rect key="frame" x="8" y="406" width="73" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Add image"/>
                                         <connections>
@@ -1248,6 +1248,10 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oU0-od-jWp">
+                                        <rect key="frame" x="8" y="439" width="200" height="200"/>
+                                        <animations/>
+                                    </imageView>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -1303,6 +1307,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="postContentText" destination="3aQ-ie-nfL" id="GsI-mn-aWI"/>
+                        <outlet property="postImageView" destination="oU0-od-jWp" id="rle-dk-V3c"/>
                         <outlet property="postQuestionText" destination="kAT-eP-wVS" id="tPb-AM-fzg"/>
                         <outlet property="replyPostContentText" destination="PZ7-RO-a7J" id="Exi-Y4-42E"/>
                     </connections>
