@@ -14,13 +14,54 @@ import FBSDKCoreKit
 import Mixpanel
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, loggingOut {
     
     var window: UIWindow?
     var parseLoginHelper: ParseLoginHelper!
     
+    func loggerOuter() {
+        //LOG IN STUFF
+        let user = PFUser.currentUser()
+        
+        let startViewController: UIViewController
+        
+        if (user != nil) {
+            // 3
+            // if we have a user, set the ClassNavEntry to be the initial View Controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //problem may arise here
+            startViewController =
+                //  CODE SWITCHED FROM "ClassNavEntry" -> "TestBoard"
+                //it forced me to remove casting as a UINavigation controller...perhaps problem?
+                storyboard.instantiateViewControllerWithIdentifier("HomeClassSelection")
+            
+            
+        } else {
+            let loginViewController = PFLogInViewController()
+            loginViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten]
+            loginViewController.delegate = parseLoginHelper
+            loginViewController.signUpController?.delegate = parseLoginHelper
+            startViewController = loginViewController
+            
+            let roseColor = UIColor(red: 210/255, green: 77/255, blue: 87/255, alpha: 1)
+            loginViewController.view.backgroundColor = roseColor
+            let logoView = UIImageView(image: UIImage(named: "logInLogo.png"))
+            loginViewController.logInView?.logo = logoView
+            
+            loginViewController.signUpController?.view.backgroundColor = roseColor
+            loginViewController.signUpController?.signUpView?.logo = nil
+        }
+        
+        // 5
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = startViewController
+        self.window?.makeKeyAndVisible()
+    }
+    
     override init() {
         super.init()
+        HomeClassSelectionViewController.delegate = self // I have the power over HomeClassSelectionViewController! :)
+
         
         parseLoginHelper = ParseLoginHelper {[unowned self] user, error in
             // Initialize the ParseLoginHelper with a callback
@@ -62,43 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "YLHnqErlxm35J64dMJ514qxAyn4OYfGO3JDfCtpf")
         
         
-        
-        let user = PFUser.currentUser()
-        
-        let startViewController: UIViewController
-        
-        if (user != nil) {
-            // 3
-            // if we have a user, set the ClassNavEntry to be the initial View Controller
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //problem may arise here
-            startViewController =
-                //  CODE SWITCHED FROM "ClassNavEntry" -> "TestBoard"
-                //it forced me to remove casting as a UINavigation controller...perhaps problem?
-                storyboard.instantiateViewControllerWithIdentifier("HomeClassSelection")
-            
-            
-        } else {
-            let loginViewController = PFLogInViewController()
-            loginViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten]
-            loginViewController.delegate = parseLoginHelper
-            loginViewController.signUpController?.delegate = parseLoginHelper
-            startViewController = loginViewController
-            
-            let roseColor = UIColor(red: 210/255, green: 77/255, blue: 87/255, alpha: 1)
-            loginViewController.view.backgroundColor = roseColor
-            let logoView = UIImageView(image: UIImage(named: "logInLogo.png"))
-            loginViewController.logInView?.logo = logoView
-            
-            loginViewController.signUpController?.view.backgroundColor = roseColor
-            loginViewController.signUpController?.signUpView?.logo = nil
-        }
-        
-        // 5
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = startViewController
-        self.window?.makeKeyAndVisible()
-
+       loggerOuter()
         
         /*
         do{

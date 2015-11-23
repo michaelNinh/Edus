@@ -40,13 +40,19 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
                 convertedClassroom.subjectLevel = rawClassroom["classTitle"] as? String
                 classroomArray.append(convertedClassroom)
             }
-           
+
             completionBlock(classroomArray)
 */
-            
-            let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
-            completionBlock(userEnrolledClasses)
+
+            if result!["enrolledClasses"] != nil{
+                let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
+                completionBlock(userEnrolledClasses)
+            }else{
+                print("no classes yet")
+            }
+        
         }
+
     }
         
     
@@ -54,7 +60,7 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
     var enrolledClasses: [Classroom] = []
     var selectedClassroom: Classroom?
     
-    //static var delegate: loggingOut!
+    static var delegate: loggingOut!
 
     @IBOutlet weak var addSchoolButton: UIButton!
     @IBAction func addSchool(sender: AnyObject) {
@@ -65,7 +71,7 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
     @IBOutlet weak var logOut: UIButton!
     @IBAction func logOut(sender: AnyObject) {
         
-        /*
+        
         
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             //if error == nil {
@@ -79,7 +85,7 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
                 //SCLAlertView().showInfo("Log out", subTitle: "Log out did not work. Check your Internet connection and try again")
             }
         }
-*/
+
         
     }
     
@@ -92,6 +98,7 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
         super.viewDidLoad()
         print("appeared")
         timelineComponent.loadInitialIfRequired()
+
 
         
         /*
@@ -205,6 +212,7 @@ extension HomeClassSelectionViewController: UITableViewDelegate{
             self.selectedClassroom = timelineComponent.content[indexPath.row]
             self.selectedClassroom?.deleteClass(self.selectedClassroom!)
             timelineComponent.content.removeAtIndex(indexPath.row)
+            tableView.reloadData()
         }
     }
 
@@ -222,7 +230,6 @@ extension HomeClassSelectionViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("enrolledClassCell") as! EnrolledClassesTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
         let classroom = timelineComponent.content[indexPath.row] as? Classroom
-        print(timelineComponent.content[0])
         classroom?.setClass()
         cell.enrolledOption.text = classroom?.classTitle
         return cell

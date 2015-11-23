@@ -83,19 +83,22 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
         imgAttachment.image = image
         let attString = NSAttributedString(attachment: imgAttachment)
         self.contentText.textStorage.insertAttributedString(attString, atIndex: 0)
+        
     }
+    
+    
     
     
     //MUST EVENTUALLY FIX TEXT PLACEHOLDER COLOR AND DELETION
     //text placeHolderstuff
     func textViewDidBeginEditing(textView: UITextView) {
         
-        /*
+        
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.blackColor()
         }
-*/
+
         if textView.text.containsString("What do you want to ask?") {
             textView.textColor = UIColor.blackColor()
         }
@@ -128,4 +131,12 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
         self.view.endEditing(true)
     }
     
+}
+
+extension String
+{
+    func replace(target: String, withString: String) -> String
+    {
+        return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
 }
