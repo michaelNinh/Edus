@@ -12,6 +12,7 @@ class WriteReplyPostViewController: UIViewController, UITextFieldDelegate, UITex
     
     
     @IBOutlet weak var postQuestionText: UILabel!
+
     @IBOutlet weak var postContentText: UILabel!
     @IBOutlet weak var replyPostContentText: UITextView!
     

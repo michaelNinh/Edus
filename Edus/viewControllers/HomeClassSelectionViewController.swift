@@ -28,6 +28,22 @@ class HomeClassSelectionViewController: UIViewController, TimelineComponentTarge
         let query = PFQuery(className: "_User")
         query.includeKey("enrolledClasses")
         query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {(result:PFObject?, error: NSError?) -> Void in
+            /*
+            let rawPFObject = result!["enrolledClasses"] as! [PFObject]
+            var classroomArray: [Classroom] = []
+            
+            for rawClassroom in rawPFObject{
+                let convertedClassroom = Classroom()
+                convertedClassroom.classTitle = rawClassroom["classTitle"] as? String
+                convertedClassroom.subject = rawClassroom["subject"] as? String
+                convertedClassroom.professorLastName = rawClassroom["professorLastName"] as? String
+                convertedClassroom.subjectLevel = rawClassroom["classTitle"] as? String
+                classroomArray.append(convertedClassroom)
+            }
+           
+            completionBlock(classroomArray)
+*/
+            
             let userEnrolledClasses = result!["enrolledClasses"] as! [Classroom]
             completionBlock(userEnrolledClasses)
         }
@@ -206,10 +222,12 @@ extension HomeClassSelectionViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("enrolledClassCell") as! EnrolledClassesTableViewCell
         //the tableViewCell post is equal to the post[arrayNumber]
         let classroom = timelineComponent.content[indexPath.row] as? Classroom
+        print(timelineComponent.content[0])
         classroom?.setClass()
         cell.enrolledOption.text = classroom?.classTitle
         return cell
     }
+    
     
     
 }
