@@ -41,6 +41,12 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
     
     override func viewDidAppear(animated: Bool) {
         
+        //this is how I pass the class data from the tabBar into this controller
+        if self.tabBarController != nil{
+            let tabBarReference = self.tabBarController as! ClassTabBarViewController
+            self.classroom = tabBarReference.classroom
+        }
+        
         timelineComponent.loadInitialIfRequired()
     }
 
@@ -48,12 +54,7 @@ class ClassPostsViewController: UIViewController, TimelineComponentTarget, ShowF
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //this is how I pass the class data from the tabBar into this controller
-        if self.tabBarController != nil{
-            let tabBarReference = self.tabBarController as! ClassTabBarViewController
-            self.classroom = tabBarReference.classroom
-        }
+    
         
         timelineComponent = TimelineComponent(target: self)
 
@@ -144,6 +145,15 @@ extension ClassPostsViewController: UITableViewDelegate{
         let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("Post expanded")
         expandPostSegue()
+    }
+    
+}
+
+extension ClassPostsViewController{
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        timelineComponent.targetWillDisplayEntry(indexPath.row)
     }
     
 }
