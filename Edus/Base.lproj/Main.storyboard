@@ -608,16 +608,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPJ-Jo-tfO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subject" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t41-VC-cvK">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subject" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t41-VC-cvK">
                                         <rect key="frame" x="8" y="101" width="377" height="30"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="377" id="8qd-TD-8Cq"/>
+                                            <constraint firstAttribute="height" constant="30" id="SOE-px-gHm"/>
+                                            <constraint firstAttribute="width" constant="377" id="aOM-1z-9mB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-vS-Dlb">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-vS-Dlb">
                                         <rect key="frame" x="543" y="135" width="51" height="31"/>
                                         <animations/>
                                         <connections>
@@ -627,27 +628,32 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIs-ID-dHe">
                                         <rect key="frame" x="426" y="140" width="91" height="21"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="91" id="ovi-bt-PIU"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Efn-3P-AFQ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Efn-3P-AFQ">
                                         <rect key="frame" x="8" y="180" width="584" height="222"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="222" id="fql-LF-Ov6"/>
+                                            <constraint firstAttribute="height" constant="222" id="vAO-08-uqZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQA-pq-LmC">
-                                        <rect key="frame" x="272" y="140" width="57" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQA-pq-LmC">
+                                        <rect key="frame" x="8" y="433" width="57" height="30"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="57" id="nDL-lC-4Rt"/>
+                                        </constraints>
                                         <state key="normal" title="Add img"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nDL-lC-4Rt"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="addImage:" destination="zna-x6-BU4" eventType="touchUpInside" id="yuU-0K-6py"/>
                                         </connections>
@@ -655,29 +661,49 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="t41-VC-cvK" firstAttribute="leading" secondItem="sPJ-Jo-tfO" secondAttribute="leadingMargin" id="04d-9B-b2a"/>
-                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="trailing" secondItem="sPJ-Jo-tfO" secondAttribute="trailingMargin" id="0Rz-HX-r8z"/>
-                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="dIs-ID-dHe" secondAttribute="bottom" constant="19" id="97Y-cz-yRd"/>
-                                    <constraint firstAttribute="bottom" secondItem="Efn-3P-AFQ" secondAttribute="bottom" constant="198" id="9q2-D4-6DZ"/>
-                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="centerY" secondItem="dIs-ID-dHe" secondAttribute="centerY" id="DiD-QQ-b7H"/>
-                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="trailing" secondItem="eKg-vS-Dlb" secondAttribute="trailing" id="HVm-AH-5pl"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t41-VC-cvK" secondAttribute="trailing" constant="10" id="QTF-eo-3jJ"/>
-                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="eKg-vS-Dlb" secondAttribute="bottom" constant="14" id="QpX-C5-QKY"/>
-                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="t41-VC-cvK" secondAttribute="bottom" constant="49" id="Yw6-tx-kKe"/>
-                                    <constraint firstItem="t41-VC-cvK" firstAttribute="top" secondItem="sPJ-Jo-tfO" secondAttribute="top" constant="101" id="ZlS-Np-Ezy"/>
-                                    <constraint firstItem="t41-VC-cvK" firstAttribute="leading" secondItem="Efn-3P-AFQ" secondAttribute="leading" id="aDs-DL-NTH"/>
-                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="leading" secondItem="dIs-ID-dHe" secondAttribute="trailing" constant="26" id="cuU-qM-Fpq"/>
-                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="centerX" secondItem="sPJ-Jo-tfO" secondAttribute="centerX" id="nvH-dz-Awz"/>
+                                    <constraint firstItem="IQA-pq-LmC" firstAttribute="leading" secondItem="sPJ-Jo-tfO" secondAttribute="leading" constant="8" id="0cq-Vp-6Ei"/>
+                                    <constraint firstItem="IQA-pq-LmC" firstAttribute="top" secondItem="Efn-3P-AFQ" secondAttribute="bottom" constant="31" id="0hi-b1-Pzs"/>
+                                    <constraint firstItem="dIs-ID-dHe" firstAttribute="centerY" secondItem="eKg-vS-Dlb" secondAttribute="centerY" id="1qS-gF-68U"/>
+                                    <constraint firstItem="t41-VC-cvK" firstAttribute="top" secondItem="sPJ-Jo-tfO" secondAttribute="top" constant="101" id="54M-WW-MAe"/>
+                                    <constraint firstItem="dIs-ID-dHe" firstAttribute="centerY" secondItem="eKg-vS-Dlb" secondAttribute="centerY" id="63f-c8-RL9"/>
+                                    <constraint firstItem="IQA-pq-LmC" firstAttribute="centerX" secondItem="Efn-3P-AFQ" secondAttribute="centerX" id="7aU-vg-rvg"/>
+                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="leading" secondItem="dIs-ID-dHe" secondAttribute="trailing" constant="26" id="849-Gc-G4s"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="trailing" secondItem="eKg-vS-Dlb" secondAttribute="trailing" id="BXS-My-aq1"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="dIs-ID-dHe" secondAttribute="bottom" constant="19" id="DAS-EX-ELr"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="t41-VC-cvK" secondAttribute="bottom" constant="49" id="F1B-5E-avm"/>
+                                    <constraint firstItem="IQA-pq-LmC" firstAttribute="top" secondItem="Efn-3P-AFQ" secondAttribute="bottom" constant="31" id="Hht-nc-ZbB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Efn-3P-AFQ" secondAttribute="bottom" constant="198" id="Hwd-ef-kTv"/>
+                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="leading" secondItem="dIs-ID-dHe" secondAttribute="trailing" constant="26" id="ILo-4y-uez"/>
+                                    <constraint firstItem="dIs-ID-dHe" firstAttribute="leading" secondItem="IQA-pq-LmC" secondAttribute="trailing" constant="97" id="KvP-PC-NV3"/>
+                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="trailing" secondItem="sPJ-Jo-tfO" secondAttribute="trailingMargin" id="LX2-gb-EtV"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="centerX" secondItem="sPJ-Jo-tfO" secondAttribute="centerX" id="OpN-4A-Rj5"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="eKg-vS-Dlb" secondAttribute="bottom" constant="14" id="SRa-Zt-u8w"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="top" secondItem="IQA-pq-LmC" secondAttribute="bottom" constant="20" id="UxD-i9-wTN"/>
+                                    <constraint firstItem="eKg-vS-Dlb" firstAttribute="leading" secondItem="dIs-ID-dHe" secondAttribute="trailing" constant="26" id="prK-4N-dv1"/>
+                                    <constraint firstItem="t41-VC-cvK" firstAttribute="leading" secondItem="Efn-3P-AFQ" secondAttribute="leading" id="tW6-iw-dZM"/>
+                                    <constraint firstItem="Efn-3P-AFQ" firstAttribute="leading" secondItem="sPJ-Jo-tfO" secondAttribute="leadingMargin" id="tvl-gB-5n0"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DAS-EX-ELr"/>
+                                        <exclude reference="UxD-i9-wTN"/>
+                                        <exclude reference="0hi-b1-Pzs"/>
+                                        <exclude reference="7aU-vg-rvg"/>
+                                        <exclude reference="63f-c8-RL9"/>
+                                        <exclude reference="KvP-PC-NV3"/>
+                                        <exclude reference="849-Gc-G4s"/>
+                                        <exclude reference="prK-4N-dv1"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sPJ-Jo-tfO" secondAttribute="trailing" id="0cD-Os-e5a"/>
-                            <constraint firstItem="sPJ-Jo-tfO" firstAttribute="leading" secondItem="PWB-j8-IVX" secondAttribute="leading" id="IQX-WN-beG"/>
-                            <constraint firstItem="sPJ-Jo-tfO" firstAttribute="top" secondItem="PWB-j8-IVX" secondAttribute="top" id="SqG-Z7-d7k"/>
-                            <constraint firstItem="sPJ-Jo-tfO" firstAttribute="bottom" secondItem="oWl-cZ-Lb4" secondAttribute="top" id="mUv-ar-Hds"/>
+                            <constraint firstItem="sPJ-Jo-tfO" firstAttribute="bottom" secondItem="oWl-cZ-Lb4" secondAttribute="top" id="CeE-vo-w32"/>
+                            <constraint firstAttribute="trailing" secondItem="sPJ-Jo-tfO" secondAttribute="trailing" id="JY4-TC-qpe"/>
+                            <constraint firstItem="sPJ-Jo-tfO" firstAttribute="top" secondItem="PWB-j8-IVX" secondAttribute="top" id="KyZ-EL-hWV"/>
+                            <constraint firstItem="sPJ-Jo-tfO" firstAttribute="leading" secondItem="PWB-j8-IVX" secondAttribute="leading" id="QHx-Ij-r4K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Make post" id="8CN-Cl-f1g">
@@ -1508,11 +1534,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Uad-fK-Yub"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4eB-I2-aik">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZw-8G-Jeq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1156"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAT-eP-wVS">
                                         <rect key="frame" x="8" y="72" width="584" height="50"/>
@@ -3380,6 +3406,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="R4m-vE-v5e"/>
-        <segue reference="udN-0F-8Ur"/>
+        <segue reference="Bhs-PM-MEO"/>
     </inferredMetricsTieBreakers>
 </document>
