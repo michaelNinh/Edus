@@ -242,6 +242,16 @@ extension ExpandedPostViewController: UITableViewDelegate{
     
 }
 
+
+extension ExpandedPostViewController{
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        timelineComponent.targetWillDisplayEntry(indexPath.row)
+    }
+    
+}
+
 extension ExpandedPostViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
