@@ -14,6 +14,7 @@ class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var postQuestionText: UILabel!
     @IBOutlet weak var postContentText: UILabel!
     @IBOutlet weak var replyPostContentText: UITextView!
+    @IBOutlet weak var replyPostImageView: UIImageView!
     
     @IBAction func submitReplyPost(sender: AnyObject) {
         print("what")
@@ -55,8 +56,9 @@ class MyPostsWriteReplyPostViewController: UIViewController, UITextFieldDelegate
     func takePhoto() {
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
             self.replyPost.replyPostImage.value = image
+            self.replyPostImageView.image = image
             //self.photoPlaceHolder.image = image
-            self.addImageToTextView()
+            //self.addImageToTextView()
         }
     }
     

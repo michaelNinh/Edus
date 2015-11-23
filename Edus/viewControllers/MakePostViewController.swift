@@ -18,6 +18,7 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var postImageView: UIImageView!
     
     @IBOutlet weak var anonymousToggleButton: UISwitch!
     @IBAction func anonymousToggle(sender: AnyObject) {
@@ -71,8 +72,9 @@ class MakePostViewController: UIViewController, UITextFieldDelegate, UITextViewD
     func takePhoto() {
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
             self.post.postImage.value = image
+            self.postImageView.image = image
             //self.photoPlaceHolder.image = image
-            self.addImageToTextView()
+            //self.addImageToTextView()
         }
     }
     
